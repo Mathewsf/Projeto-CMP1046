@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <conio.h>
 #include <locale.h>
+#include <math.h>
 
 void gotoxy(int x, int y);
 
@@ -19,6 +20,14 @@ void CnsVeiculo();
 
 void Prestacao();
 
+void Hipotenusa();
+
+void Circulo();
+
+void Quadrado();
+
+void Losango();
+
 int main() {
     //Traduz pro portugues
     setlocale(LC_ALL,"portuguese");
@@ -29,12 +38,191 @@ int main() {
     //Limpa a sujeira das variaveis
     fflush(stdin); 
    
-    //chama a fun��o do menu principal
+    //chama a fun??o do menu principal
     TelaInicial();
 
     gotoxy(1, 25);
 
     return 0;
+}
+
+void Hipotenusa()
+{
+	setlocale(LC_ALL, "Portuguese");
+
+    double ctt1, ctt2, hipotenusa;
+	int OpcaoR;
+
+do{
+
+	gotoxy(41,2);
+	printf("   ");
+	
+	gotoxy(40,3);
+	printf("   ");
+	
+	gotoxy(32,5);
+	printf("     ");
+	
+	gotoxy(8,6);
+	printf("    ");
+	
+    //primeiro cateto
+    gotoxy(3, 2);
+    printf("Digite o valor do primeiro cateto:...[   ]");
+    gotoxy(41, 2); 
+    scanf("%lf", &ctt1);
+
+    //segundo cateto
+    gotoxy(3, 3);
+    printf("Digite o valor do segundo cateto:...[   ]");
+    gotoxy(40, 3); 
+    scanf("%lf", &ctt2);
+
+	//hipotenusa
+    hipotenusa = sqrt((ctt1 * ctt1) + (ctt2 * ctt2));
+
+    gotoxy(8, 5);
+    printf("Valor da hipotenusa é: [%.2lf]\n", hipotenusa);
+	
+	gotoxy(8,6);
+	scanf("%d", &OpcaoR);	
+  }
+	while (OpcaoR == 1);
+}
+
+void Circulo()
+{
+	 setlocale(LC_ALL, "Portuguese");
+
+    double raio, area, perimetro;
+    double pi = 3.14159;
+    int OpcaoR;
+
+    do{
+        
+        gotoxy(39, 2);  
+		printf("    "); 
+        
+		gotoxy(30, 4);  
+		printf("        "); 
+        
+		gotoxy(30, 5);  
+		printf("        "); 
+
+        //entrada do raio
+        gotoxy(3, 2);
+        printf("Digite o valor do raio do círculo: [    ]");
+        gotoxy(39, 2);
+        scanf("%lf", &raio);
+
+        //cálculos
+        area = pi * (raio * raio);
+        perimetro = 2 * pi * raio;
+
+        //resultados
+        gotoxy(3, 4);
+        printf("A área do círculo é:       [ %.2lf ]", area);
+
+        gotoxy(3, 5);
+        printf("O perímetro do círculo é:  [ %.2lf ]", perimetro);
+
+        gotoxy(3, 7);
+        scanf("%d", &OpcaoR);
+
+      } 
+		
+		while (OpcaoR == 1);   
+}
+
+void Quadrado()
+{
+		setlocale(LC_ALL, "Portuguese");
+
+	double ld, a, p, d; 
+	int OpcaoR;
+
+	do{
+		
+		gotoxy(42, 3); 
+		printf("    "); 
+		gotoxy(33, 5); 
+		printf("       "); 
+		gotoxy(33, 6); 
+		printf("       "); 
+		gotoxy(33, 7); 
+		printf("       "); 
+
+		//entrada do lado
+		gotoxy(5, 3);
+		printf("Digite o valor do lado do quadrado: [    ]");
+		gotoxy(42, 3);
+		scanf("%lf", &ld);
+		
+		//cálculos 
+		a = ld * ld;
+		p = ld * 4;
+		d = ld * sqrt(2);
+		
+		//saídas
+		gotoxy(6, 5);
+		printf("A área do quadrado é:......[ %.2lf ]", a);
+		
+		gotoxy(6, 6);
+		printf("O perímetro do quadrado é:.[ %.2lf ]", p);
+		
+		gotoxy(6, 7);
+		printf("A diagonal do quadrado é:..[ %.2lf ]", d);
+
+		gotoxy(3, 9);
+		scanf("%d", &OpcaoR);
+
+	  } 
+		while (OpcaoR == 1);
+}
+
+void Losango()
+{
+	setlocale(LC_ALL, "Portuguese");
+	
+	double dmaior, dmenor, a;
+	int OpcaoR;
+
+	do{
+		
+		gotoxy(40, 3); 
+		printf("     "); 
+		gotoxy(40, 4); 
+		printf("     "); 
+		gotoxy(30, 6); 
+		printf("        "); 
+
+		//entrada da diagonal maior
+		gotoxy(5, 3);
+		printf("Digite o valor da diagonal maior: [     ]");
+		gotoxy(40, 3);
+		scanf("%lf", &dmaior);
+
+		//entrada da diagonal menor
+		gotoxy(5, 4);
+		printf("Digite o valor da diagonal menor: [     ]");
+		gotoxy(40, 4);
+		scanf("%lf", &dmenor);
+
+		//calculo da area
+		a = (dmaior * dmenor) / 2;
+
+		//saída
+		gotoxy(6, 6);
+		printf("A área do losango é: [ %.2lf ]", a);
+
+		gotoxy(3, 8);
+		scanf("%d", &OpcaoR);
+
+	  } 
+	
+		while (OpcaoR == 1);
+
 }
 
 void CnsVeiculo()
@@ -80,10 +268,9 @@ void CnsVeiculo()
 		scanf("%d", &opcao);
 		}while(opcao == 1);
 	
-		return 0;
 }
 
-// fun��o apenas pra usar gotoxy
+// fun??o apenas pra usar gotoxy
 void gotoxy(int x, int y) {
     COORD coord;
     coord.X = x;
@@ -91,7 +278,7 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-//fun��o de desenhar a janela padr�o
+//fun??o de desenhar a janela padr?o
 void DesenharLinhaHorizontal(int x, int y, int largura) {
     
     int i;
@@ -130,7 +317,7 @@ void DesenharTela() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Op��o [  ]");
+    gotoxy(5, 23); printf("Op??o [  ]");
 }
 
 void LimparTela () {
@@ -155,7 +342,7 @@ void LimparTela () {
     printf("  ");
 }
 
-//fun��o exercicio sequencial
+//fun??o exercicio sequencial
 void Prestacao() {
     int DiasAtrasados, Meses;
     float ValorPrestacao, ValorAtualizado, Juros = 0;
@@ -178,7 +365,7 @@ do {
     printf("  ");
     
     gotoxy(3, 5);
-    printf("Digite o valor da presta��o.............[R$             ]");
+    printf("Digite o valor da presta??o.............[R$             ]");
     gotoxy(47, 5);
     scanf("%f", &ValorPrestacao);
     fflush(stdin);
@@ -192,19 +379,19 @@ do {
         {
             ValorAtualizado = (1.05 * ValorPrestacao) + (ValorPrestacao * 0.09 * (DiasAtrasados / 30.0));
             gotoxy(3, 8);
-            printf("O valor da presta��o atualizado �.......[R$ %.2f             ]", ValorAtualizado);
+            printf("O valor da presta??o atualizado ?.......[R$ %.2f             ]", ValorAtualizado);
         }
     else
         {
             gotoxy(3, 8);
-            printf("O valor da presta��o atualizado �.......[R$ %.2f             ]", ValorPrestacao);
+            printf("O valor da presta??o atualizado ?.......[R$ %.2f             ]", ValorPrestacao);
         }
     gotoxy(12, 23);
     scanf("%d", &OpcaoR);
 } while (OpcaoR == 1);
 }
 
-//fun��o da primeira tela quando come�a o programa
+//fun??o da primeira tela quando come?a o programa
 void TelaInicial() {
     int esquerda = 1;
     int vertical = 1;
@@ -235,15 +422,15 @@ void TelaInicial() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Op��o [  ]");
+    gotoxy(5, 23); printf("Op??o [  ]");
 
     gotoxy(5, 8); printf("1 - Estrutura Sequencial");
 
     gotoxy(5, 10); printf("2 - Estrutura Condicional");
 
-    gotoxy(5, 12); printf("3 - Estrutura de Repeti��o");
+    gotoxy(5, 12); printf("3 - Estrutura de Repeti??o");
 
-    gotoxy(5, 14); printf("4 - Vari�veis compostas homog�neas");
+    gotoxy(5, 14); printf("4 - Vari?veis compostas homog?neas");
 
     gotoxy(5, 16); printf("5 - Encerrar");
 
@@ -276,7 +463,7 @@ Ler:
     }
 }
 
-// fun��o menu sequencial
+// fun??o menu sequencial
 void Sequencial() {
     gotoxy(7, 8); printf("OI");
 }
