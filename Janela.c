@@ -218,13 +218,7 @@ Ler:
         Sequencial();
         break;
     case 2:
-        gotoxy(12, 21); printf("Ainda em desenvolvimento... (Enter para continuar o programa)");
-        system("pause > null");
-        goto Ler;
     case 3:
-        gotoxy(12, 21); printf("Ainda em desenvolvimento... (Enter para continuar o programa)");
-        system("pause > null");
-        goto Ler;
     case 4:
         gotoxy(12, 21); printf("Ainda em desenvolvimento... (Enter para continuar o programa)");
         system("pause > null");
