@@ -15,6 +15,8 @@ void TelaInicial();
 
 void Sequencial();
 
+void CnsVeiculo();
+
 void Prestacao();
 
 int main() {
@@ -27,7 +29,7 @@ int main() {
     //Limpa a sujeira das variaveis
     fflush(stdin); 
    
-    //chama a função do menu principal
+    //chama a funï¿½ï¿½o do menu principal
     TelaInicial();
 
     gotoxy(1, 25);
@@ -35,7 +37,53 @@ int main() {
     return 0;
 }
 
-// função apenas pra usar gotoxy
+void CnsVeiculo()
+{
+    int DH, VelM, a , b , c, opcao;
+		do
+		{
+		gotoxy(38, 0);
+		printf("   ");
+		
+		gotoxy(38, 1);
+		printf("   ");
+		
+		gotoxy(2, 9);
+		printf("   ");
+		
+		gotoxy(0,0);
+		printf("digite a duraÃ§Ã£o da viagem...........[   ]");
+		gotoxy(38,0);
+		scanf("%d", &DH);
+		
+		gotoxy(0,1);
+		printf("digite a velocidade media da viagem..[   ]");
+		gotoxy(38,1);
+		scanf("%d", &VelM);
+		
+		a = (DH*VelM)/8;
+		printf("PreÃ§o gasolina carro a..: 	     [R$ %d]\n", a);
+	    a = a*1.04;
+	    printf("PreÃ§o etanol carro a....: 	     [R$ %d]\n", a);
+		
+		b = (DH*VelM)/10;
+		printf("PreÃ§o gasolina carro b..: 	     [R$ %d]\n", b);
+		b = b*1.04;
+		printf("PreÃ§o etanol carro b....: 	     [R$ %d]\n", b);
+		
+		c = (DH*VelM)/12;
+		printf("PreÃ§o gasolina carro c..: 	     [R$ %d]\n", c);
+		c = c*1.04;
+		printf("PreÃ§o etanol carro c....:            [R$ %d]\n", c);
+		
+		gotoxy(2, 9);
+		scanf("%d", &opcao);
+		}while(opcao == 1);
+	
+		return 0;
+}
+
+// funï¿½ï¿½o apenas pra usar gotoxy
 void gotoxy(int x, int y) {
     COORD coord;
     coord.X = x;
@@ -43,7 +91,7 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-//função de desenhar a janela padrão
+//funï¿½ï¿½o de desenhar a janela padrï¿½o
 void DesenharLinhaHorizontal(int x, int y, int largura) {
     
     int i;
@@ -82,7 +130,7 @@ void DesenharTela() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
 }
 
 void LimparTela () {
@@ -107,7 +155,7 @@ void LimparTela () {
     printf("  ");
 }
 
-//função exercicio sequencial
+//funï¿½ï¿½o exercicio sequencial
 void Prestacao() {
     int DiasAtrasados, Meses;
     float ValorPrestacao, ValorAtualizado, Juros = 0;
@@ -130,7 +178,7 @@ do {
     printf("  ");
     
     gotoxy(3, 5);
-    printf("Digite o valor da prestação.............[R$             ]");
+    printf("Digite o valor da prestaï¿½ï¿½o.............[R$             ]");
     gotoxy(47, 5);
     scanf("%f", &ValorPrestacao);
     fflush(stdin);
@@ -144,19 +192,19 @@ do {
         {
             ValorAtualizado = (1.05 * ValorPrestacao) + (ValorPrestacao * 0.09 * (DiasAtrasados / 30.0));
             gotoxy(3, 8);
-            printf("O valor da prestação atualizado é.......[R$ %.2f             ]", ValorAtualizado);
+            printf("O valor da prestaï¿½ï¿½o atualizado ï¿½.......[R$ %.2f             ]", ValorAtualizado);
         }
     else
         {
             gotoxy(3, 8);
-            printf("O valor da prestação atualizado é.......[R$ %.2f             ]", ValorPrestacao);
+            printf("O valor da prestaï¿½ï¿½o atualizado ï¿½.......[R$ %.2f             ]", ValorPrestacao);
         }
     gotoxy(12, 23);
     scanf("%d", &OpcaoR);
 } while (OpcaoR == 1);
 }
 
-//função da primeira tela quando começa o programa
+//funï¿½ï¿½o da primeira tela quando comeï¿½a o programa
 void TelaInicial() {
     int esquerda = 1;
     int vertical = 1;
@@ -187,15 +235,15 @@ void TelaInicial() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
 
     gotoxy(5, 8); printf("1 - Estrutura Sequencial");
 
     gotoxy(5, 10); printf("2 - Estrutura Condicional");
 
-    gotoxy(5, 12); printf("3 - Estrutura de Repetição");
+    gotoxy(5, 12); printf("3 - Estrutura de Repetiï¿½ï¿½o");
 
-    gotoxy(5, 14); printf("4 - Variáveis compostas homogêneas");
+    gotoxy(5, 14); printf("4 - Variï¿½veis compostas homogï¿½neas");
 
     gotoxy(5, 16); printf("5 - Encerrar");
 
@@ -228,7 +276,7 @@ Ler:
     }
 }
 
-// função menu sequencial
+// funï¿½ï¿½o menu sequencial
 void Sequencial() {
     gotoxy(7, 8); printf("OI");
 }
