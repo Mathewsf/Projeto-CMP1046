@@ -16,6 +16,8 @@ void TelaInicial();
 
 void Sequencial();
 
+void FigurasGeometricas();
+
 void CnsVeiculo();
 
 void Prestacao();
@@ -399,7 +401,7 @@ void TelaInicial() {
     int altura = 25;
     int i, Opcao, X;
 
-    
+    system("cls");
     DesenharLinhaHorizontal(esquerda, 2, largura);
     DesenharLinhaHorizontal(esquerda, 4, largura);
     DesenharLinhaHorizontal(esquerda, 20, largura);
@@ -465,5 +467,49 @@ Ler:
 
 // fun??o menu sequencial
 void Sequencial() {
-    gotoxy(7, 8); printf("OI");
+    int i, Opcao, X;
+    gotoxy(5, 8); printf("1 - Figuras Geométricas");
+
+    gotoxy(5, 10); printf("2 - Consumo de Veículo");
+
+    gotoxy(5, 12); printf("3 - Atualizar Prestação de Veículo");
+
+    gotoxy(5, 14); printf("4 - Retornar ao Menu Principal");
+
+    for (X = 12; X <= 80; X++)
+        {
+            gotoxy(X, 21);
+            printf("   ");
+        }
+    gotoxy(12, 23);
+    scanf("%d", &Opcao);
+
+    switch (Opcao)
+    {
+    case 1:
+        system("cls");
+        DesenharTela();
+        FigurasGeometricas();
+        break;
+    case 2:
+        system("cls");
+        DesenharTela();
+        CnsVeiculo();
+        break;
+    case 3:
+        system("cls");
+        DesenharTela();
+        Prestacao();
+        break;
+    case 4:
+        system("cls");
+        DesenharTela();
+        TelaInicial();
+        break;
+    }
+}
+
+void FigurasGeometricas() {
+
+    return 0;
 }
