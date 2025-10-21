@@ -57,84 +57,89 @@ void Hipotenusa()
 
 do{
 
-	gotoxy(41,2);
+	gotoxy(41,5);
 	printf("   ");
 	
-	gotoxy(40,3);
+	gotoxy(40,6);
 	printf("   ");
 	
-	gotoxy(32,5);
+	gotoxy(33,8);
 	printf("     ");
 	
-	gotoxy(8,6);
+	gotoxy(8,9);
 	printf("    ");
 	
     //primeiro cateto
-    gotoxy(3, 2);
+    gotoxy(3, 5);
     printf("Digite o valor do primeiro cateto:...[   ]");
-    gotoxy(41, 2); 
+    gotoxy(41, 5); 
     scanf("%lf", &ctt1);
 
     //segundo cateto
-    gotoxy(3, 3);
+    gotoxy(3, 6);
     printf("Digite o valor do segundo cateto:...[   ]");
-    gotoxy(40, 3); 
+    gotoxy(40, 6); 
     scanf("%lf", &ctt2);
 
 	//hipotenusa
     hipotenusa = sqrt((ctt1 * ctt1) + (ctt2 * ctt2));
 
-    gotoxy(8, 5);
-    printf("Valor da hipotenusa Ã©: [%.2lf]\n", hipotenusa);
+    gotoxy(8, 8);
+    printf("Valor da hipotenusa é: [%.2lf]\n", hipotenusa);
 	
-	gotoxy(8,6);
-	scanf("%d", &OpcaoR);	
+	gotoxy(12,23);
+	scanf("%d", &OpcaoR);
+	
   }
-	while (OpcaoR == 1);
+  
+  	while (OpcaoR==1);
 }
 
 void Circulo()
 {
 	 setlocale(LC_ALL, "Portuguese");
 
-    double raio, area, perimetro;
-    double pi = 3.14159;
-    int OpcaoR;
+    double ctt1, ctt2, hipotenusa;
+	int OpcaoR;
 
-    do{
-        
-        gotoxy(39, 2);  
-		printf("    "); 
-        
-		gotoxy(30, 4);  
-		printf("        "); 
-        
-		gotoxy(30, 5);  
-		printf("        "); 
+do{
 
-        //entrada do raio
-        gotoxy(3, 2);
-        printf("Digite o valor do raio do cÃ­rculo: [    ]");
-        gotoxy(39, 2);
-        scanf("%lf", &raio);
+	gotoxy(41,5);
+	printf("   ");
+	
+	gotoxy(40,6);
+	printf("   ");
+	
+	gotoxy(33,8);
+	printf("       ");
+	
+	gotoxy(8,9);
+	printf("    ");
+	
+    //primeiro cateto
+    gotoxy(3, 5);
+    printf("Digite o valor do primeiro cateto:...[    ]");
+    gotoxy(41, 5); 
+    scanf("%lf", &ctt1);
 
-        //cÃ¡lculos
-        area = pi * (raio * raio);
-        perimetro = 2 * pi * raio;
+    //segundo cateto
+    gotoxy(3, 6);
+    printf("Digite o valor do segundo cateto:...[    ]");
+    gotoxy(40, 6); 
+    scanf("%lf", &ctt2);
 
-        //resultados
-        gotoxy(3, 4);
-        printf("A Ã¡rea do cÃ­rculo Ã©:       [ %.2lf ]", area);
+	//hipotenusa
+    hipotenusa = sqrt((ctt1 * ctt1) + (ctt2 * ctt2));
 
-        gotoxy(3, 5);
-        printf("O perÃ­metro do cÃ­rculo Ã©:  [ %.2lf ]", perimetro);
-
-        gotoxy(3, 7);
-        scanf("%d", &OpcaoR);
-
-      } 
-		
-		while (OpcaoR == 1);   
+    gotoxy(8, 8);
+    printf("Valor da hipotenusa é: [ %.2lf ]\n", hipotenusa);
+	
+	gotoxy(8,9);
+	scanf("%d", &OpcaoR);
+	
+  }
+  
+  	while (OpcaoR==1);  
 }
 
 void Quadrado()
@@ -145,38 +150,39 @@ void Quadrado()
 	int OpcaoR;
 
 	do{
-		
-		gotoxy(42, 3); 
+		gotoxy(42, 5); 
 		printf("    "); 
-		gotoxy(33, 5); 
-		printf("       "); 
-		gotoxy(33, 6); 
-		printf("       "); 
 		gotoxy(33, 7); 
-		printf("       "); 
+		printf("        "); 
+		gotoxy(33, 8); 
+		printf("        "); 
+		gotoxy(33, 9); 
+		printf("        "); 
+        gotoxy(3, 11); 
+        printf("   ");
 
 		//entrada do lado
-		gotoxy(5, 3);
+		gotoxy(5, 5);
 		printf("Digite o valor do lado do quadrado: [    ]");
-		gotoxy(42, 3);
+		gotoxy(42, 5);
 		scanf("%lf", &ld);
 		
-		//cÃ¡lculos 
+		//cálculos 
 		a = ld * ld;
 		p = ld * 4;
 		d = ld * sqrt(2);
 		
-		//saÃ­das
-		gotoxy(6, 5);
-		printf("A Ã¡rea do quadrado Ã©:......[ %.2lf ]", a);
-		
-		gotoxy(6, 6);
-		printf("O perÃ­metro do quadrado Ã©:.[ %.2lf ]", p);
-		
+		//saídas
 		gotoxy(6, 7);
-		printf("A diagonal do quadrado Ã©:..[ %.2lf ]", d);
+		printf("A área do quadrado é:......[ %.2lf ]", a);
+		
+		gotoxy(6, 8);
+		printf("O perímetro do quadrado é:.[ %.2lf ]", p);
+		
+		gotoxy(6, 9);
+		printf("A diagonal do quadrado é:..[ %.2lf ]", d);
 
-		gotoxy(3, 9);
+		gotoxy(3, 11);
 		scanf("%d", &OpcaoR);
 
 	  } 
@@ -521,7 +527,62 @@ void Sequencial() {
     }
 }
 
-void FigurasGeometricas() {
+void FigurasGeometricas() 
+{
+    int i, Opcao, X;
+    gotoxy(5, 8); printf("1 - Calcular Hipotenusa");
 
-    return 0;
+    gotoxy(5, 10); printf("2 - Calcular Perímetro e Área de Circuitos");
+
+    gotoxy(5, 12); printf("3 - Calcular Perímettro, Área e Diagonal de Quadrados");
+
+    gotoxy(5, 14); printf("4 - Calcular Perímetro e Área de Losangos");
+
+    gotoxy(5, 16); printf("5 - Retornar ao Menu Anterior");
+
+    gotoxy(5, 18); printf("6 - Retornar ao Menu Principal");
+
+    for (X = 12; X <= 80; X++)
+        {
+            gotoxy(X, 21);
+            printf("   ");
+        }
+    gotoxy(12, 23);
+    scanf("%d", &Opcao);
+
+    switch (Opcao)
+    {
+    case 1:
+        system("cls");
+        DesenharTela();
+        Hipotenusa();
+        break;
+    case 2:
+        system("cls");
+        DesenharTela();
+        Circulo();
+        break;
+    case 3:
+        system("cls");
+        DesenharTela();
+        Quadrado();
+        break;
+    case 4:
+        system("cls");
+        DesenharTela();
+        Losango();
+
+    case 5:
+        system("cls");
+        DesenharTela();
+        Sequencial();
+        
+    case 6:
+        TelaInicial();
+        break;
+    }
 }
+
+    
+
+
