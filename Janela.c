@@ -28,7 +28,8 @@ void Quadrado();
 
 void Losango();
 
-int main() {
+int main() 
+{
     //Traduz pro portugues
     setlocale(LC_ALL,"portuguese");
 
@@ -365,7 +366,7 @@ do {
     printf("  ");
     
     gotoxy(3, 5);
-    printf("Digite o valor da presta??o.............[R$             ]");
+    printf("Digite o valor da prestação.............[R$             ]");
     gotoxy(47, 5);
     scanf("%f", &ValorPrestacao);
     fflush(stdin);
@@ -379,12 +380,12 @@ do {
         {
             ValorAtualizado = (1.05 * ValorPrestacao) + (ValorPrestacao * 0.09 * (DiasAtrasados / 30.0));
             gotoxy(3, 8);
-            printf("O valor da presta??o atualizado ?.......[R$ %.2f             ]", ValorAtualizado);
+            printf("O valor da prestação atualizado ?.......[R$ %.2f             ]", ValorAtualizado);
         }
     else
         {
             gotoxy(3, 8);
-            printf("O valor da presta??o atualizado ?.......[R$ %.2f             ]", ValorPrestacao);
+            printf("O valor da prestação atualizado ?.......[R$ %.2f             ]", ValorPrestacao);
         }
     gotoxy(12, 23);
     scanf("%d", &OpcaoR);
@@ -422,15 +423,15 @@ void TelaInicial() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Op??o [  ]");
+    gotoxy(5, 23); printf("Opção [  ]");
 
     gotoxy(5, 8); printf("1 - Estrutura Sequencial");
 
     gotoxy(5, 10); printf("2 - Estrutura Condicional");
 
-    gotoxy(5, 12); printf("3 - Estrutura de Repeti??o");
+    gotoxy(5, 12); printf("3 - Estrutura de Repetição");
 
-    gotoxy(5, 14); printf("4 - Vari?veis compostas homog?neas");
+    gotoxy(5, 14); printf("4 - Variáveis compostas homogêneas");
 
     gotoxy(5, 16); printf("5 - Encerrar");
 
@@ -463,7 +464,7 @@ Ler:
     }
 }
 
-// fun??o menu sequencial
+// função menu sequencial
 void Sequencial() {
-    gotoxy(7, 8); printf("OI");
+    gotoxy(7, 8); printf("");
 }
