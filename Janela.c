@@ -16,6 +16,8 @@ void TelaInicial();
 
 void Sequencial();
 
+void FigurasGeometricas();
+
 void CnsVeiculo();
 
 void Prestacao();
@@ -28,8 +30,7 @@ void Quadrado();
 
 void Losango();
 
-int main() 
-{
+int main() {
     //Traduz pro portugues
     setlocale(LC_ALL,"portuguese");
 
@@ -84,7 +85,7 @@ do{
     hipotenusa = sqrt((ctt1 * ctt1) + (ctt2 * ctt2));
 
     gotoxy(8, 5);
-    printf("Valor da hipotenusa é: [%.2lf]\n", hipotenusa);
+    printf("Valor da hipotenusa Ã©: [%.2lf]\n", hipotenusa);
 	
 	gotoxy(8,6);
 	scanf("%d", &OpcaoR);	
@@ -113,20 +114,20 @@ void Circulo()
 
         //entrada do raio
         gotoxy(3, 2);
-        printf("Digite o valor do raio do círculo: [    ]");
+        printf("Digite o valor do raio do cÃ­rculo: [    ]");
         gotoxy(39, 2);
         scanf("%lf", &raio);
 
-        //cálculos
+        //cÃ¡lculos
         area = pi * (raio * raio);
         perimetro = 2 * pi * raio;
 
         //resultados
         gotoxy(3, 4);
-        printf("A área do círculo é:       [ %.2lf ]", area);
+        printf("A Ã¡rea do cÃ­rculo Ã©:       [ %.2lf ]", area);
 
         gotoxy(3, 5);
-        printf("O perímetro do círculo é:  [ %.2lf ]", perimetro);
+        printf("O perÃ­metro do cÃ­rculo Ã©:  [ %.2lf ]", perimetro);
 
         gotoxy(3, 7);
         scanf("%d", &OpcaoR);
@@ -160,20 +161,20 @@ void Quadrado()
 		gotoxy(42, 3);
 		scanf("%lf", &ld);
 		
-		//cálculos 
+		//cÃ¡lculos 
 		a = ld * ld;
 		p = ld * 4;
 		d = ld * sqrt(2);
 		
-		//saídas
+		//saÃ­das
 		gotoxy(6, 5);
-		printf("A área do quadrado é:......[ %.2lf ]", a);
+		printf("A Ã¡rea do quadrado Ã©:......[ %.2lf ]", a);
 		
 		gotoxy(6, 6);
-		printf("O perímetro do quadrado é:.[ %.2lf ]", p);
+		printf("O perÃ­metro do quadrado Ã©:.[ %.2lf ]", p);
 		
 		gotoxy(6, 7);
-		printf("A diagonal do quadrado é:..[ %.2lf ]", d);
+		printf("A diagonal do quadrado Ã©:..[ %.2lf ]", d);
 
 		gotoxy(3, 9);
 		scanf("%d", &OpcaoR);
@@ -213,9 +214,9 @@ void Losango()
 		//calculo da area
 		a = (dmaior * dmenor) / 2;
 
-		//saída
+		//saÃ­da
 		gotoxy(6, 6);
-		printf("A área do losango é: [ %.2lf ]", a);
+		printf("A Ã¡rea do losango Ã©: [ %.2lf ]", a);
 
 		gotoxy(3, 8);
 		scanf("%d", &OpcaoR);
@@ -241,7 +242,7 @@ void CnsVeiculo()
 		printf("   ");
 		
 		gotoxy(0,0);
-		printf("digite a duração da viagem...........[   ]");
+		printf("digite a duraÃ§Ã£o da viagem...........[   ]");
 		gotoxy(38,0);
 		scanf("%d", &DH);
 		
@@ -251,19 +252,19 @@ void CnsVeiculo()
 		scanf("%d", &VelM);
 		
 		a = (DH*VelM)/8;
-		printf("Preço gasolina carro a..: 	     [R$ %d]\n", a);
+		printf("PreÃ§o gasolina carro a..: 	     [R$ %d]\n", a);
 	    a = a*1.04;
-	    printf("Preço etanol carro a....: 	     [R$ %d]\n", a);
+	    printf("PreÃ§o etanol carro a....: 	     [R$ %d]\n", a);
 		
 		b = (DH*VelM)/10;
-		printf("Preço gasolina carro b..: 	     [R$ %d]\n", b);
+		printf("PreÃ§o gasolina carro b..: 	     [R$ %d]\n", b);
 		b = b*1.04;
-		printf("Preço etanol carro b....: 	     [R$ %d]\n", b);
+		printf("PreÃ§o etanol carro b....: 	     [R$ %d]\n", b);
 		
 		c = (DH*VelM)/12;
-		printf("Preço gasolina carro c..: 	     [R$ %d]\n", c);
+		printf("PreÃ§o gasolina carro c..: 	     [R$ %d]\n", c);
 		c = c*1.04;
-		printf("Preço etanol carro c....:            [R$ %d]\n", c);
+		printf("PreÃ§o etanol carro c....:            [R$ %d]\n", c);
 		
 		gotoxy(2, 9);
 		scanf("%d", &opcao);
@@ -366,7 +367,7 @@ do {
     printf("  ");
     
     gotoxy(3, 5);
-    printf("Digite o valor da prestação.............[R$             ]");
+    printf("Digite o valor da presta??o.............[R$             ]");
     gotoxy(47, 5);
     scanf("%f", &ValorPrestacao);
     fflush(stdin);
@@ -380,12 +381,12 @@ do {
         {
             ValorAtualizado = (1.05 * ValorPrestacao) + (ValorPrestacao * 0.09 * (DiasAtrasados / 30.0));
             gotoxy(3, 8);
-            printf("O valor da prestação atualizado ?.......[R$ %.2f             ]", ValorAtualizado);
+            printf("O valor da presta??o atualizado ?.......[R$ %.2f             ]", ValorAtualizado);
         }
     else
         {
             gotoxy(3, 8);
-            printf("O valor da prestação atualizado ?.......[R$ %.2f             ]", ValorPrestacao);
+            printf("O valor da presta??o atualizado ?.......[R$ %.2f             ]", ValorPrestacao);
         }
     gotoxy(12, 23);
     scanf("%d", &OpcaoR);
@@ -400,7 +401,7 @@ void TelaInicial() {
     int altura = 25;
     int i, Opcao, X;
 
-    
+    system("cls");
     DesenharLinhaHorizontal(esquerda, 2, largura);
     DesenharLinhaHorizontal(esquerda, 4, largura);
     DesenharLinhaHorizontal(esquerda, 20, largura);
@@ -423,15 +424,15 @@ void TelaInicial() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Op??o [  ]");
 
     gotoxy(5, 8); printf("1 - Estrutura Sequencial");
 
     gotoxy(5, 10); printf("2 - Estrutura Condicional");
 
-    gotoxy(5, 12); printf("3 - Estrutura de Repetição");
+    gotoxy(5, 12); printf("3 - Estrutura de Repeti??o");
 
-    gotoxy(5, 14); printf("4 - Variáveis compostas homogêneas");
+    gotoxy(5, 14); printf("4 - Vari?veis compostas homog?neas");
 
     gotoxy(5, 16); printf("5 - Encerrar");
 
@@ -464,7 +465,51 @@ Ler:
     }
 }
 
-// função menu sequencial
+// fun??o menu sequencial
 void Sequencial() {
-    gotoxy(7, 8); printf("");
+    int i, Opcao, X;
+    gotoxy(5, 8); printf("1 - Figuras Geométricas");
+
+    gotoxy(5, 10); printf("2 - Consumo de Veículo");
+
+    gotoxy(5, 12); printf("3 - Atualizar Prestação de Veículo");
+
+    gotoxy(5, 14); printf("4 - Retornar ao Menu Principal");
+
+    for (X = 12; X <= 80; X++)
+        {
+            gotoxy(X, 21);
+            printf("   ");
+        }
+    gotoxy(12, 23);
+    scanf("%d", &Opcao);
+
+    switch (Opcao)
+    {
+    case 1:
+        system("cls");
+        DesenharTela();
+        FigurasGeometricas();
+        break;
+    case 2:
+        system("cls");
+        DesenharTela();
+        CnsVeiculo();
+        break;
+    case 3:
+        system("cls");
+        DesenharTela();
+        Prestacao();
+        break;
+    case 4:
+        system("cls");
+        DesenharTela();
+        TelaInicial();
+        break;
+    }
+}
+
+void FigurasGeometricas() {
+
+    return 0;
 }
