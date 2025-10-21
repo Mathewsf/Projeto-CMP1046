@@ -232,43 +232,72 @@ void CnsVeiculo()
     int DH, VelM, a , b , c, opcao;
 		do
 		{
-		gotoxy(38, 0);
+		gotoxy(38, 5);
 		printf("   ");
 		
-		gotoxy(38, 1);
+		gotoxy(41, 7);
 		printf("   ");
 		
-		gotoxy(2, 9);
-		printf("   ");
+        gotoxy(40,11);
+		printf("       ");
+
+        gotoxy(40,12);
+		printf("       ");
+
+        gotoxy(40,13);
+		printf("       ");
+
+        gotoxy(40,14);
+		printf("       ");
+
+        gotoxy(40,15);
+		printf("       ");
+
+        gotoxy(40,16);
+		printf("       ");
+
+		gotoxy(12,23);
+		printf("  ");
 		
-		gotoxy(0,0);
-		printf("digite a duraÃƒÂ§ÃƒÂ£o da viagem...........[   ]");
-		gotoxy(38,0);
+		gotoxy(3,5);
+		printf("Digite a duração da viagem...........[   ]");
+		gotoxy(41,5);
 		scanf("%d", &DH);
 		
-		gotoxy(0,1);
-		printf("digite a velocidade media da viagem..[   ]");
-		gotoxy(38,1);
+		gotoxy(3,7);
+		printf("Digite a velocidade média............[   ]");
+		gotoxy(41,7);
 		scanf("%d", &VelM);
 		
 		a = (DH*VelM)/8;
-		printf("PreÃƒÂ§o gasolina carro a..: 	     [R$ %d]\n", a);
+        gotoxy(3,11);
+		printf("Preço gasolina carro A..: 	     [R$ %d  ]\n", a);
 	    a = a*1.04;
-	    printf("PreÃƒÂ§o etanol carro a....: 	     [R$ %d]\n", a);
+        gotoxy(3,12);
+	    printf("Preço etanol carro A....: 	     [R$ %d  ]\n", a);
 		
 		b = (DH*VelM)/10;
-		printf("PreÃƒÂ§o gasolina carro b..: 	     [R$ %d]\n", b);
+        gotoxy(3,13);
+		printf("Preço gasolina carro b..: 	     [R$ %d  ]\n", b);
 		b = b*1.04;
-		printf("PreÃƒÂ§o etanol carro b....: 	     [R$ %d]\n", b);
+        gotoxy(3,14);
+		printf("Preço etanol carro b....: 	     [R$ %d  ]\n", b);
 		
 		c = (DH*VelM)/12;
-		printf("PreÃƒÂ§o gasolina carro c..: 	     [R$ %d]\n", c);
+        gotoxy(3,15);
+		printf("Preço gasolina carro c..: 	     [R$ %d  ]\n", c);
 		c = c*1.04;
-		printf("PreÃƒÂ§o etanol carro c....:            [R$ %d]\n", c);
+        gotoxy(3,16);
+		printf("Preço etanol carro c....:         [R$ %d  ]\n", c);
 		
-		gotoxy(2, 9);
-		scanf("%d", &opcao);
-		}while(opcao == 1);
+		gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+        gotoxy(12, 23);
+        scanf("%d", &opcao);
+    }   while (opcao == 1);
+
+    system("cls");
+    DesenharTela();
+    Sequencial();
 	
 }
 
@@ -322,28 +351,6 @@ void DesenharTela() {
     gotoxy(5, 23); printf("Op??o [  ]");
 }
 
-void LimparTela () {
-    int Lin;
-
-    gotoxy(33, 10);
-    printf("                     ");
-
-    for (Lin = 11; Lin <= 14; Lin++)
-        {
-            gotoxy(32, Lin);
-            printf("   ");
-        }
-
-    for (Lin = 17; Lin <= 20; Lin++)
-        {
-            gotoxy(33, Lin);
-            printf("    ");
-        }
-
-    gotoxy(12,24);
-    printf("  ");
-}
-
 //fun??o exercicio sequencial
 void Prestacao() {
     int DiasAtrasados, Meses;
@@ -388,9 +395,14 @@ do {
             gotoxy(3, 8);
             printf("O valor da presta??o atualizado ?.......[R$ %.2f             ]", ValorPrestacao);
         }
+    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
     gotoxy(12, 23);
     scanf("%d", &OpcaoR);
 } while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Sequencial();
 }
 
 //fun??o da primeira tela quando come?a o programa
