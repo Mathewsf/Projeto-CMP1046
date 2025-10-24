@@ -82,7 +82,7 @@ void Hipotenusa()
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("OpÃ§Ã£o [  ]");
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
@@ -96,10 +96,10 @@ void Hipotenusa()
 	printf("Valor da hipotenusa: [         ]");
 
     do {
-        // limpar apenas o conteúdo numérico dentro dos colchetes
+        // limpar apenas o conteudo numerico dentro dos colchetes
 	    gotoxy(41, 5); printf("     ");
 	    gotoxy(40, 8); printf("     ");
-	    gotoxy(25, 16); printf("         "); // limpa só dentro dos colchetes do resultado
+	    gotoxy(25, 16); printf("         "); // limpa so dentro dos colchetes do resultado
 	    gotoxy(12, 23); printf("  ");
 
         gotoxy(41, 5);
@@ -129,21 +129,21 @@ void Circulo()
     double raio, area, perimetro;
     int OpcaoR, i;
 
-    // título
+    // tï¿½tulo
     gotoxy(28, 2);
-    printf("Projeto CMP1046 - Cálculo do Círculo");
+    printf("Projeto CMP1046 - Cï¿½lculo do Cï¿½rculo");
 
-    // linha horizontal dividindo entrada e saída
+    // linha horizontal dividindo entrada e saï¿½da
     gotoxy(2, 11);
     for (i = 0; i < 89; i++)
         printf("=");
 
-    // instruções no rodapé
+    // instruï¿½ï¿½es no rodapï¿½
     gotoxy(17, 23);
     printf("1 - Repetir    2 - Voltar ao menu");
 
     do {
-        // limpar áreas de entrada e saída
+        // limpar ï¿½reas de entrada e saï¿½da
         gotoxy(37, 7); printf("       ");
         gotoxy(28, 14); printf("       ");
         gotoxy(27, 16); printf("       ");
@@ -151,25 +151,25 @@ void Circulo()
 
         // entrada
         gotoxy(3, 7);
-        printf("Digite o valor do raio do círculo:...[     ]");
+        printf("Digite o valor do raio do cï¿½rculo:...[     ]");
         gotoxy(42, 7);
         scanf("%lf", &raio);
 
-        // cálculos
+        // cï¿½lculos
         area = 3.1416 * (raio * raio);
         perimetro = 2 * 3.1416 * raio;
 
-        // saída
+        // saï¿½da
         gotoxy(3, 14);
         printf("                                                    ");
         gotoxy(3, 14);
-        printf("Área do círculo:       [ %.2lf ]", area);
+        printf("ï¿½rea do cï¿½rculo:       [ %.2lf ]", area);
         gotoxy(3, 16);
         printf("                                                    ");
         gotoxy(3, 16);
-        printf("Perímetro do círculo:  [ %.2lf ]", perimetro);
+        printf("Perï¿½metro do cï¿½rculo:  [ %.2lf ]", perimetro);
 
-        // opção (campo fixo)
+        // opï¿½ï¿½o (campo fixo)
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
 
@@ -187,21 +187,21 @@ void Quadrado()
     double ld, a, p, d;
     int OpcaoR, i;
 
-    // título
+    // tï¿½tulo
     gotoxy(28, 2);
-    printf("Projeto CMP1046 - Cálculo do Quadrado");
+    printf("Projeto CMP1046 - Cï¿½lculo do Quadrado");
 
-    // linha horizontal dividindo entrada e saída
+    // linha horizontal dividindo entrada e saï¿½da
     gotoxy(2, 11);
     for (i = 0; i < 89; i++)
         printf("=");
 
-    // instruções no rodapé
+    // instruï¿½ï¿½es no rodapï¿½
     gotoxy(17, 23);
     printf("1 - Repetir    2 - Voltar ao menu");
 
     do {
-        // limpar áreas de entrada e saída
+        // limpar ï¿½reas de entrada e saï¿½da
         gotoxy(42, 7); printf("     ");
         gotoxy(27, 13); printf("        ");
         gotoxy(27, 15); printf("       ");
@@ -214,28 +214,28 @@ void Quadrado()
         gotoxy(42, 7);
         scanf("%lf", &ld);
 
-        // cálculos
+        // cï¿½lculos
         a = ld * ld;
         p = ld * 4;
         d = ld * sqrt(2);
 
-        // saídas
+        // saï¿½das
         gotoxy(3, 13);
         printf("                                                    ");
         gotoxy(3, 13);
-        printf("Área do quadrado:......[ %.2lf ]", a);
+        printf("ï¿½rea do quadrado:......[ %.2lf ]", a);
 		
 		gotoxy(3, 15);
         printf("                                                    ");
         gotoxy(3, 15);
-        printf("Perímetro do quadrado:.[ %.2lf ]", p);
+        printf("Perï¿½metro do quadrado:.[ %.2lf ]", p);
 
 		gotoxy(3, 17);
         printf("                                                    ");
         gotoxy(3, 17);
         printf("Diagonal do quadrado:..[ %.2lf ]", d);
 
-        // opção no campo fixo (NÃO ALTERAR)
+        // opï¿½ï¿½o no campo fixo (Nï¿½O ALTERAR)
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
 
@@ -253,21 +253,21 @@ void Losango()
     double dmaior, dmenor, a;
     int OpcaoR, i;
 
-    // título
+    // tï¿½tulo
     gotoxy(28, 2);
-    printf("Projeto CMP1046 - Cálculo do Losango");
+    printf("Projeto CMP1046 - Cï¿½lculo do Losango");
 
-    // linha horizontal dividindo entrada e saída
+    // linha horizontal dividindo entrada e saï¿½da
     gotoxy(2, 11);
     for (i = 0; i < 89; i++)
         printf("=");
 
-    // instruções no rodapé
+    // instruï¿½ï¿½es no rodapï¿½
     gotoxy(17, 23);
     printf("1 - Repetir    2 - Voltar ao menu");
 
     do {
-        // limpar apenas áreas de entrada e saída
+        // limpar apenas ï¿½reas de entrada e saï¿½da
         gotoxy(40, 5); printf("     ");
         gotoxy(40, 8); printf("     ");
         gotoxy(25, 15); printf("        ");
@@ -285,14 +285,14 @@ void Losango()
         gotoxy(40, 8);
         scanf("%lf", &dmenor);
 
-        // cálculo da área
+        // cï¿½lculo da ï¿½rea
         a = (dmaior * dmenor) / 2;
 
-        // saída
+        // saï¿½da
         gotoxy(3, 15);
-        printf("A área do losango é: [ %.2lf  ]", a);
+        printf("A ï¿½rea do losango ï¿½: [ %.2lf  ]", a);
 
-        // opção (campo fixo, não alterar)
+        // opï¿½ï¿½o (campo fixo, nï¿½o alterar)
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
 
@@ -344,35 +344,35 @@ void CnsVeiculo()
     printf("  ");
     
     gotoxy(3,5);
-    printf("Digite a duração da viagem...........[   ]");
+    printf("Digite a duraï¿½ï¿½o da viagem...........[   ]");
     gotoxy(41,5);
     scanf("%d", &DH);
     
     gotoxy(3,7);
-    printf("Digite a velocidade média............[   ]");
+    printf("Digite a velocidade mï¿½dia............[   ]");
     gotoxy(41,7);
     scanf("%d", &VelM);
 
     a = (DH*VelM)/8;
     gotoxy(3,11);
-    printf("Preço gasolina carro A..: 	     [R$ %d  ]\n", a);
+    printf("Preï¿½o gasolina carro A..: 	     [R$ %d  ]\n", a);
     a = a*1.04;
     gotoxy(3,12);
-    printf("Preço etanol carro A....: 	     [R$ %d  ]\n", a);
+    printf("Preï¿½o etanol carro A....: 	     [R$ %d  ]\n", a);
     
     b = (DH*VelM)/10;
     gotoxy(3,13);
-    printf("Preço gasolina carro b..: 	     [R$ %d  ]\n", b);
+    printf("Preï¿½o gasolina carro b..: 	     [R$ %d  ]\n", b);
     b = b*1.04;
     gotoxy(3,14);
-    printf("Preço etanol carro b....: 	     [R$ %d  ]\n", b);
+    printf("Preï¿½o etanol carro b....: 	     [R$ %d  ]\n", b);
     
     c = (DH*VelM)/12;
     gotoxy(3,15);
-    printf("Preço gasolina carro c..: 	     [R$ %d  ]\n", c);
+    printf("Preï¿½o gasolina carro c..: 	     [R$ %d  ]\n", c);
     c = c*1.04;
     gotoxy(3,16);
-    printf("Preço etanol carro c....:         [R$ %d  ]\n", c);
+    printf("Preï¿½o etanol carro c....:         [R$ %d  ]\n", c);
     
     
     gotoxy(12, 23);
@@ -385,7 +385,7 @@ void CnsVeiculo()
 	
 }
 
-// função apenas pra usar gotoxy
+// funï¿½ï¿½o apenas pra usar gotoxy
 void gotoxy(int x, int y) {
     COORD coord;
     coord.X = x;
@@ -393,7 +393,7 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-//função de desenhar a janela padrão
+//funï¿½ï¿½o de desenhar a janela padrï¿½o
 void DesenharLinhaHorizontal(int x, int y, int largura) {
     
     int i;
@@ -432,10 +432,10 @@ void DesenharTela() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
 }
 
-//função exercicio sequencial
+//funï¿½ï¿½o exercicio sequencial
 void Prestacao() {
     int DiasAtrasados, Meses, i;
     float ValorPrestacao, ValorAtualizado, Juros = 0;
@@ -467,7 +467,7 @@ do {
     printf("  ");
     
     gotoxy(3, 5);
-    printf("Digite o valor da prestação.............[R$             ]");
+    printf("Digite o valor da prestaï¿½ï¿½o.............[R$             ]");
     gotoxy(47, 5);
     scanf("%f", &ValorPrestacao);
     fflush(stdin);
@@ -483,14 +483,14 @@ do {
             gotoxy(3, 16);
             printf("                                                    ");
             gotoxy(3, 16);
-            printf("O valor da prestação atualizado ........[R$ %.2f             ]", ValorAtualizado);
+            printf("O valor da prestaï¿½ï¿½o atualizado ........[R$ %.2f             ]", ValorAtualizado);
         }
     else
         {
             gotoxy(3, 16);
             printf("                                                    ");
             gotoxy(3, 16);
-            printf("O valor da prestação atualizado ........[R$ %.2f              ]", ValorPrestacao);
+            printf("O valor da prestaï¿½ï¿½o atualizado ........[R$ %.2f              ]", ValorPrestacao);
         }
 
     gotoxy(12, 23);
@@ -502,7 +502,7 @@ do {
     Sequencial();
 }
 
-//função da primeira tela quando come?a o programa
+//funï¿½ï¿½o da primeira tela quando come?a o programa
 void TelaInicial() {
     int esquerda = 1;
     int vertical = 1;
@@ -533,15 +533,15 @@ void TelaInicial() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
 
     gotoxy(5, 8); printf("1 - Estrutura Sequencial");
 
     gotoxy(5, 10); printf("2 - Estrutura Condicional");
 
-    gotoxy(5, 12); printf("3 - Estrutura de Repetição");
+    gotoxy(5, 12); printf("3 - Estrutura de Repetiï¿½ï¿½o");
 
-    gotoxy(5, 14); printf("4 - Variáveis compostas homogêneas");
+    gotoxy(5, 14); printf("4 - Variï¿½veis compostas homogï¿½neas");
 
     gotoxy(5, 16); printf("5 - Encerrar");
 
@@ -574,14 +574,14 @@ Ler:
     }
 }
 
-// função menu sequencial
+// funï¿½ï¿½o menu sequencial
 void Sequencial() {
     int i, Opcao, X;
-    gotoxy(5, 8); printf("1 - Figuras Geométricas");
+    gotoxy(5, 8); printf("1 - Figuras Geomï¿½tricas");
 
-    gotoxy(5, 10); printf("2 - Consumo de Veículo");
+    gotoxy(5, 10); printf("2 - Consumo de Veï¿½culo");
 
-    gotoxy(5, 12); printf("3 - Atualizar Prestação de Veículo");
+    gotoxy(5, 12); printf("3 - Atualizar Prestaï¿½ï¿½o de Veï¿½culo");
 
     gotoxy(5, 14); printf("4 - Retornar ao Menu Principal");
 
@@ -623,11 +623,11 @@ void FigurasGeometricas()
     int i, Opcao, X;
     gotoxy(5, 7); printf("1 - Calcular Hipotenusa");
 
-    gotoxy(5, 9); printf("2 - Calcular Perímetro e Área de Círculos");
+    gotoxy(5, 9); printf("2 - Calcular Perï¿½metro e ï¿½rea de Cï¿½rculos");
 
-    gotoxy(5, 11); printf("3 - Calcular Perímetro, Área e Diagonal de Quadrados");
+    gotoxy(5, 11); printf("3 - Calcular Perï¿½metro, ï¿½rea e Diagonal de Quadrados");
 
-    gotoxy(5, 13); printf("4 - Calcular Área de Losangos");
+    gotoxy(5, 13); printf("4 - Calcular ï¿½rea de Losangos");
 
     gotoxy(5, 15); printf("5 - Retornar ao Menu Anterior");
 
