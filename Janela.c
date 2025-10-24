@@ -50,63 +50,75 @@ int main() {
 }
 
 void Hipotenusa()
-{
-	setlocale(LC_ALL, "Portuguese");
-	
+{	
 	double ctt1, ctt2, hipotenusa;
 	int OpcaoR, i;
-	
-	// título
-	gotoxy(28, 2);
-	printf("Projeto CMP1046 - Cálculo da Hipotenusa");
-	
-	// linha horizontal para dividir entrada e saída
-	gotoxy(2,11);
-	for (i = 0; i < 89; i++)
-	    printf("=");
-	
-	// instruções no rodapé
-	gotoxy(17, 23);
-	printf("1 - Repetir    2 - Voltar ao menu");
-	
-	do {
-	    // limpar apenas o conteúdo numérico dentro dos colchetes
-	    gotoxy(41, 5); printf("   ");
-	    gotoxy(40, 8); printf("   ");
-	    gotoxy(25, 16); printf("       "); // limpa só dentro dos colchetes do resultado
+	int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
+
+    setlocale(LC_ALL, "Portuguese");
+    
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(esquerda, 11, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    //Desenha as linhas na vertical
+    for (i = vertical; i < altura; i++)
+        {
+            gotoxy(esquerda, i);
+            printf("=");
+            gotoxy(largura, i); 
+            printf("=");
+            
+        }
+
+    gotoxy(35, 2); printf("Projeto CMP1046");
+    
+    gotoxy(5, 21); printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23); printf("Opção [  ]");
+
+    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+
+    gotoxy(3, 5);
+	printf("Digite o valor do primeiro cateto:...[     ]");
+
+    gotoxy(3, 8);
+	printf("Digite o valor do segundo cateto:...[     ]");
+
+    gotoxy(3, 16);
+	printf("Valor da hipotenusa: [         ]");
+
+    do {
+        // limpar apenas o conteúdo numérico dentro dos colchetes
+	    gotoxy(41, 5); printf("     ");
+	    gotoxy(40, 8); printf("     ");
+	    gotoxy(25, 16); printf("         "); // limpa só dentro dos colchetes do resultado
 	    gotoxy(12, 23); printf("  ");
-	
-	    // primeiro cateto
-	    gotoxy(3, 5);
-	    printf("Digite o valor do primeiro cateto:...[   ]");
-	    gotoxy(41, 5);
+
+        gotoxy(41, 5);
 	    scanf("%lf", &ctt1);
-	
-	    // segundo cateto
-	    gotoxy(3, 8);
-	    printf("Digite o valor do segundo cateto:...[   ]");
-	    gotoxy(40, 8);
+
+        gotoxy(40, 8);
 	    scanf("%lf", &ctt2);
-	
-	    // cálculo da hipotenusa
-	    hipotenusa = sqrt((ctt1 * ctt1) + (ctt2 * ctt2));
-	
-	    // imprime fixo (colchete sempre igual)
-	    gotoxy(3, 16);
-	    printf("Valor da hipotenusa: [       ]");
-	
-	    // imprime só o número dentro do campo fixo
-	    gotoxy(25, 16);
-	    printf("%7.2lf", hipotenusa);
-	
-	    // opção no campo fixo (NÃO ALTERAR)
-	    gotoxy(12, 23);
+
+        hipotenusa = sqrt((ctt1 * ctt1) + (ctt2 * ctt2));
+
+        gotoxy(25, 16);
+	    printf("%.2lf", hipotenusa);
+
+        gotoxy(12, 23);
 	    scanf("%d", &OpcaoR);
-	
-	} while (OpcaoR == 1);
+    } while (OpcaoR == 1);
 	
 	system("cls");
-	DesenharTela();
+    DesenharTela();
 	FigurasGeometricas();
 }
 
