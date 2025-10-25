@@ -82,7 +82,7 @@ void Hipotenusa()
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("OpÃ§Ã£o [  ]");
+    gotoxy(5, 23); printf("Opção [  ]");
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
@@ -437,17 +437,52 @@ void DesenharTela() {
 
 //funï¿½ï¿½o exercicio sequencial
 void Prestacao() {
-    int DiasAtrasados, Meses, i;
+    int DiasAtrasados, Meses;
     float ValorPrestacao, ValorAtualizado, Juros = 0;
-    char OpcaoR;
+    int OpcaoR, i;
+	int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
 
     setlocale(LC_ALL,"portuguese");
 
+    setlocale(LC_ALL, "Portuguese");
+    
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(esquerda, 11, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    //Desenha as linhas na vertical
+    for (i = vertical; i < altura; i++)
+        {
+            gotoxy(esquerda, i);
+            printf("=");
+            gotoxy(largura, i); 
+            printf("=");
+            
+        }
+
+    gotoxy(35, 2); printf("Projeto CMP1046");
+    
+    gotoxy(5, 21); printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23); printf("Opção [  ]");
+
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
-    gotoxy(2,11);
-    for (i = 0; i < 88; i++)
-    printf("=");
+    gotoxy(3, 5);
+    printf("Digite o valor da prestação.............[R$             ]");
+
+    gotoxy(3, 7);
+    printf("Digite a quantidade de dias em atraso...[      ]");
+
+    gotoxy(3, 16);
+    printf("O valor da prestação atualizado ........[R$                 ]");
     
 do {
 
@@ -461,36 +496,31 @@ do {
     printf("                ");
 
     gotoxy(47,16);
-    printf("                 ");
+    printf("               ");
 
     gotoxy(12,23);
     printf("  ");
     
-    gotoxy(3, 5);
-    printf("Digite o valor da prestação.............[R$             ]");
+    
     gotoxy(47, 5);
     scanf("%f", &ValorPrestacao);
     fflush(stdin);
     // ou usar isso: while (getchar() != '\n');
-    gotoxy(3, 7);
-    printf("Digite a quantidade de dias em atraso...[      ]");
+    
     gotoxy(45, 7);
     scanf("%d", &DiasAtrasados);
 
     if  (DiasAtrasados != 0)
         {
             ValorAtualizado = (1.05 * ValorPrestacao) + (ValorPrestacao * 0.09 * (DiasAtrasados / 30.0));
-            gotoxy(3, 16);
-            printf("                                                    ");
-            gotoxy(3, 16);
-            printf("O valor da prestação atualizado ........[R$ %.2f             ]", ValorAtualizado);
+            gotoxy(47, 16);
+            printf("%.2f", ValorAtualizado);
+            
         }
     else
         {
-            gotoxy(3, 16);
-            printf("                                                    ");
-            gotoxy(3, 16);
-            printf("O valor da prestação atualizado ........[R$ %.2f              ]", ValorPrestacao);
+            gotoxy(47, 16);
+            printf("%.2f", ValorPrestacao);
         }
 
     gotoxy(12, 23);
