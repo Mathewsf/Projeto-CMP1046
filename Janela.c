@@ -82,7 +82,7 @@ void Hipotenusa()
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
+    gotoxy(5, 23); printf("Opção [  ]");
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
@@ -366,13 +366,50 @@ void Losango()
 
 void CnsVeiculo()
 {
-    int DH, VelM, a , b , c, opcao, i;
+    int DH, VelM, a , b , c, opcao;
 
-    gotoxy(2,9);
-    for (i = 0; i < 88; i++)
-        printf("=");
+    int i;
+	int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
+
+    setlocale(LC_ALL, "Portuguese");
+    
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(esquerda, 11, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    //Desenha as linhas na vertical
+    for (i = vertical; i < altura; i++)
+        {
+            gotoxy(esquerda, i);
+            printf("=");
+            gotoxy(largura, i); 
+            printf("=");
+            
+        }
+
+    gotoxy(35, 2); printf("Projeto CMP1046");
+    
+    gotoxy(5, 21); printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23); printf("Opção [  ]");
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+
+    gotoxy(3,5);
+    printf("Digite a duraï¿½ï¿½o da viagem...........[   ]");
+
+    gotoxy(3,7);
+    printf("Digite a velocidade mï¿½dia............[   ]");
+
+    gotoxy(3,11);
+    printf("Preï¿½o gasolina carro A..: 	     [R$     ]");
 
     do
     {
@@ -403,19 +440,15 @@ void CnsVeiculo()
     gotoxy(12,23);
     printf("  ");
     
-    gotoxy(3,5);
-    printf("Digite a duraï¿½ï¿½o da viagem...........[   ]");
     gotoxy(41,5);
     scanf("%d", &DH);
     
-    gotoxy(3,7);
-    printf("Digite a velocidade mï¿½dia............[   ]");
     gotoxy(41,7);
     scanf("%d", &VelM);
 
     a = (DH*VelM)/8;
-    gotoxy(3,11);
-    printf("Preï¿½o gasolina carro A..: 	     [R$ %d  ]\n", a);
+    gotoxy(41,11);
+    printf("%d", a);
     a = a*1.04;
     gotoxy(3,12);
     printf("Preï¿½o etanol carro A....: 	     [R$ %d  ]\n", a);
