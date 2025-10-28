@@ -403,13 +403,28 @@ void CnsVeiculo()
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
     gotoxy(3,5);
-    printf("Digite a duraï¿½ï¿½o da viagem...........[   ]");
+    printf("Digite a duração da viagem...........[   ]");
 
     gotoxy(3,7);
-    printf("Digite a velocidade mï¿½dia............[   ]");
+    printf("Digite a velocidade média............[   ]");
 
     gotoxy(3,11);
-    printf("Preï¿½o gasolina carro A..: 	     [R$     ]");
+    printf("Preço gasolina carro A..: 	     [R$     ]");
+
+    gotoxy(3,12);
+    printf("Preço etanol carro A....: 	     [R$     ]");
+
+     gotoxy(3,13);
+    printf("Preço gasolina carro b..: 	     [R$     ]");
+
+    gotoxy(3,14);
+    printf("Preço etanol carro b....: 	     [R$     ]");
+
+     gotoxy(3,15);
+    printf("Preço gasolina carro c..: 	     [R$     ]");
+
+    gotoxy(3,16);
+    printf("Preço etanol carro c....:        [R$     ]");
 
     do
     {
@@ -449,24 +464,31 @@ void CnsVeiculo()
     a = (DH*VelM)/8;
     gotoxy(41,11);
     printf("%d", a);
+
     a = a*1.04;
-    gotoxy(3,12);
-    printf("Preï¿½o etanol carro A....: 	     [R$ %d  ]\n", a);
+
+    gotoxy(41,12);
+    printf("%d", a);
     
     b = (DH*VelM)/10;
-    gotoxy(3,13);
-    printf("Preï¿½o gasolina carro b..: 	     [R$ %d  ]\n", b);
+
+    gotoxy(41,13);
+    printf("%d", b);
+   
     b = b*1.04;
-    gotoxy(3,14);
-    printf("Preï¿½o etanol carro b....: 	     [R$ %d  ]\n", b);
+
+    gotoxy(41,14);
+    printf("%d", b);
     
     c = (DH*VelM)/12;
-    gotoxy(3,15);
-    printf("Preï¿½o gasolina carro c..: 	     [R$ %d  ]\n", c);
+
+    gotoxy(41,14);
+    printf("%d", c);
+   
     c = c*1.04;
-    gotoxy(3,16);
-    printf("Preï¿½o etanol carro c....:         [R$ %d  ]\n", c);
-    
+
+    gotoxy(41,15);
+    printf("%d", c);
     
     gotoxy(12, 23);
     scanf("%d", &opcao);
