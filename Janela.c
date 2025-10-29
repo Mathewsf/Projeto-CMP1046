@@ -547,7 +547,7 @@ void DesenharTela() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
+    gotoxy(5, 23); printf("Opção [  ]");
 }
 
 //funï¿½ï¿½o exercicio sequencial
@@ -561,8 +561,6 @@ void Prestacao() {
     int altura = 25;
 
     setlocale(LC_ALL,"portuguese");
-
-    setlocale(LC_ALL, "Portuguese");
     
     DesenharLinhaHorizontal(esquerda, 1, largura);
     DesenharLinhaHorizontal(esquerda, 3, largura);
@@ -586,18 +584,18 @@ void Prestacao() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
+    gotoxy(5, 23); printf("Opção [  ]");
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
     gotoxy(3, 5);
-    printf("Digite o valor da prestaï¿½ï¿½o.............[R$             ]");
+    printf("Digite o valor da prestação.............[R$             ]");
 
     gotoxy(3, 7);
     printf("Digite a quantidade de dias em atraso...[      ]");
 
     gotoxy(3, 16);
-    printf("O valor da prestaï¿½ï¿½o atualizado ........[R$                 ]");
+    printf("O valor da prestação atualizado ........[R$                 ]");
     
 do {
 
@@ -678,15 +676,15 @@ void TelaInicial() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
+    gotoxy(5, 23); printf("Opção [  ]");
 
     gotoxy(5, 8); printf("1 - Estrutura Sequencial");
 
     gotoxy(5, 10); printf("2 - Estrutura Condicional");
 
-    gotoxy(5, 12); printf("3 - Estrutura de Repetiï¿½ï¿½o");
+    gotoxy(5, 12); printf("3 - Estrutura de Repetição");
 
-    gotoxy(5, 14); printf("4 - Variï¿½veis compostas homogï¿½neas");
+    gotoxy(5, 14); printf("4 - Variáveis compostas homogêneas");
 
     gotoxy(5, 16); printf("5 - Encerrar");
 
@@ -722,11 +720,11 @@ Ler:
 // funï¿½ï¿½o menu sequencial
 void Sequencial() {
     int i, Opcao, X;
-    gotoxy(5, 8); printf("1 - Figuras Geomï¿½tricas");
+    gotoxy(5, 8); printf("1 - Figuras Geométricas");
 
-    gotoxy(5, 10); printf("2 - Consumo de Veï¿½culo");
+    gotoxy(5, 10); printf("2 - Consumo de Veículo");
 
-    gotoxy(5, 12); printf("3 - Atualizar Prestaï¿½ï¿½o de Veï¿½culo");
+    gotoxy(5, 12); printf("3 - Atualizar Prestação de Veículo");
 
     gotoxy(5, 14); printf("4 - Retornar ao Menu Principal");
 
@@ -768,11 +766,11 @@ void FigurasGeometricas()
     int i, Opcao, X;
     gotoxy(5, 7); printf("1 - Calcular Hipotenusa");
 
-    gotoxy(5, 9); printf("2 - Calcular Perï¿½metro e ï¿½rea de Cï¿½rculos");
+    gotoxy(5, 9); printf("2 - Calcular Perímetro e Área de Círculos");
 
-    gotoxy(5, 11); printf("3 - Calcular Perï¿½metro, ï¿½rea e Diagonal de Quadrados");
+    gotoxy(5, 11); printf("3 - Calcular Perímetro, Área e Diagonal de Quadrados");
 
-    gotoxy(5, 13); printf("4 - Calcular ï¿½rea de Losangos");
+    gotoxy(5, 13); printf("4 - Calcular Área de Losangos");
 
     gotoxy(5, 15); printf("5 - Retornar ao Menu Anterior");
 
