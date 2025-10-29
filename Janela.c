@@ -8,6 +8,8 @@ void Circulo();
 
 void CnsVeiculo(); 
 
+void Condicional();
+
 void DesenharLinhaHorizontal();
 
 void DesenharTela(); 
@@ -38,10 +40,13 @@ int main() {
     //Limpa a tela
     system("cls");
 
+    //acentos passam a aparecer corretamente
+    system("chcp 65001 > nul");
+
     //Limpa a sujeira das variaveis
     fflush(stdin); 
    
-    //chama a fun??o do menu principal
+    //chama a função do menu principal
     TelaInicial();
 
     gotoxy(1, 25);
@@ -57,8 +62,6 @@ void Hipotenusa()
     int vertical = 1;
     int largura = 90;
     int altura = 25;
-
-    setlocale(LC_ALL, "Portuguese");
     
     DesenharLinhaHorizontal(esquerda, 1, largura);
     DesenharLinhaHorizontal(esquerda, 3, largura);
@@ -124,8 +127,6 @@ void Hipotenusa()
 
 void Circulo()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     double raio, area, perimetro;
     int OpcaoR, i;
     int esquerda = 1;
@@ -202,8 +203,6 @@ void Circulo()
 
 void Quadrado()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     double ld, a, p, d;
     int OpcaoR, i;
     int esquerda = 1;
@@ -289,8 +288,6 @@ void Quadrado()
 
 void Losango()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     double dmaior, dmenor, a;
     int OpcaoR, i;
     int esquerda = 1;
@@ -317,7 +314,7 @@ void Losango()
 
     // tÃ­tulo
     gotoxy(28, 2);
-    printf("Projeto CMP1046 - CÃ¡lculo do Losango");
+    printf("Projeto CMP1046 - Cálculo do Losango");
 
     // instruÃ§Ãµes no rodapÃ©
     gotoxy(17, 23);
@@ -373,8 +370,6 @@ void CnsVeiculo()
     int vertical = 1;
     int largura = 90;
     int altura = 25;
-
-    setlocale(LC_ALL, "Portuguese");
     
     DesenharLinhaHorizontal(esquerda, 1, largura);
     DesenharLinhaHorizontal(esquerda, 3, largura);
@@ -559,8 +554,6 @@ void Prestacao() {
     int vertical = 1;
     int largura = 90;
     int altura = 25;
-
-    setlocale(LC_ALL,"portuguese");
     
     DesenharLinhaHorizontal(esquerda, 1, largura);
     DesenharLinhaHorizontal(esquerda, 3, largura);
@@ -707,6 +700,9 @@ Ler:
         Sequencial();
         break;
     case 2:
+        system("cls");
+        DesenharTela();
+        Condicional();
     case 3:
     case 4:
         gotoxy(12, 21); printf("Ainda em desenvolvimento... (Enter para continuar o programa)");
@@ -717,7 +713,7 @@ Ler:
     }
 }
 
-// funï¿½ï¿½o menu sequencial
+// função menu sequencial
 void Sequencial() {
     int i, Opcao, X;
     gotoxy(5, 8); printf("1 - Figuras Geométricas");
@@ -819,6 +815,57 @@ void FigurasGeometricas()
     }
 }
 
+void Condicional() {
+    int i, Opcao, X;
+    gotoxy(5, 7); printf("1 - Ordenar 3 números inteiros");
+
+    gotoxy(5, 8); printf("2 - Receber nome da capital de Goiás");
+
+    gotoxy(5, 9); printf("3 - Calculadora");
+
+    gotoxy(5, 10); printf("4 - Calcular quadrado e raiz quadrada");
+
+    gotoxy(5, 11); printf("5 - Margem de consignação");
+
+    gotoxy(5, 12); printf("6 - Média final e frequências");
+
+    gotoxy(5, 13); printf("7 - Alunos pelo nome");
+
+    gotoxy(5, 14); printf("8 - Peso ideal");
+
+    gotoxy(5, 15); printf("9 - Retornar menu principal");
+
+    for (X = 12; X <= 80; X++)
+        {
+            gotoxy(X, 21);
+            printf("   ");
+        }
+    gotoxy(12, 23);
+    scanf("%d", &Opcao);
+
+    switch (Opcao)
+    {
+    case 1:
+        system("cls");
+        break;
+    case 2:
+        system("cls");
+        break;
+    case 3:
+        system("cls");
+        break;
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+        system("cls");
+        DesenharTela();
+        TelaInicial();
+        break;
+    }
+}
     
 
 
