@@ -646,6 +646,8 @@ void TelaInicial() {
     int altura = 25;
     int i, Opcao, X;
 
+    while (1) {
+
     system("cls");
     DesenharLinhaHorizontal(esquerda, 2, largura);
     DesenharLinhaHorizontal(esquerda, 4, largura);
@@ -703,14 +705,17 @@ Ler:
         system("cls");
         DesenharTela();
         Condicional();
+        break;
     case 3:
     case 4:
         gotoxy(12, 21); printf("Ainda em desenvolvimento... (Enter para continuar o programa)");
         system("pause > null");
         goto Ler;
-    default:
         break;
+    default:
+        return;
     }
+}
 }
 
 // função menu sequencial
@@ -751,8 +756,7 @@ void Sequencial() {
         break;
     case 4:
         system("cls");
-        DesenharTela();
-        TelaInicial();
+        return;
         break;
     }
 }
@@ -861,8 +865,7 @@ void Condicional() {
     case 8:
     case 9:
         system("cls");
-        DesenharTela();
-        TelaInicial();
+        return;
         break;
     }
 }
