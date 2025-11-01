@@ -10,6 +10,8 @@ void CnsVeiculo();
 
 void Condicional();
 
+void Calculadora();
+
 void DesenharLinhaHorizontal();
 
 void DesenharTela(); 
@@ -857,6 +859,7 @@ void Condicional() {
         break;
     case 3:
         system("cls");
+        Calculadora();
         break;
     case 4:
     case 5:
@@ -868,6 +871,169 @@ void Condicional() {
         return;
         break;
     }
+}
+
+void Calculadora() {
+    int OpcaoR, i, Op, X;
+	int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
+    float Num1, Num2, total;
+    
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    //Desenha as linhas na vertical
+    for (i = vertical; i < altura; i++)
+        {
+            gotoxy(esquerda, i);
+            printf("=");
+            gotoxy(largura, i); 
+            printf("=");
+            
+        }
+
+    gotoxy(35, 2); printf("Projeto CMP1046 - Calculadora");
+    
+    gotoxy(5, 21); printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23); printf("Opção [  ]");
+
+    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+
+    gotoxy(3, 8);
+    printf("Digite o número da operação que deseja fazer:...[ ]");
+
+    gotoxy(17, 10);
+    printf("1 - Adição");
+
+    gotoxy(17, 12);
+    printf("2 - Subtração");
+
+    gotoxy(32, 10);
+    printf("3 - Multiplicação");
+
+    gotoxy(32, 12);
+    printf("4 - Divisão");
+
+    gotoxy(3, 14);
+    printf("Resultado:     [          ]  [          ] = [                ]");
+    
+do {
+
+    gotoxy(52,8);
+    printf(" ");
+
+    gotoxy(19,14);
+    printf("          ");
+
+    gotoxy(34,14);
+    printf("         ");
+
+    gotoxy(48,14);
+    printf("                ");
+
+    gotoxy(12,23);
+    printf("  ");
+
+    gotoxy(52, 8); 
+    scanf("%d", &Op);
+
+    switch(Op)
+    {
+        case 1:
+            gotoxy(29, 14);
+            printf("] + [");
+
+            gotoxy(19, 14);
+            scanf("%f", &Num1);
+
+            gotoxy(34, 14);
+            scanf("%f", &Num2);
+
+            total = Num1 + Num2;
+
+            gotoxy(48,14);
+            printf("%.2f", total);
+            break;
+        case 2:
+            gotoxy(29, 14);
+            printf("] - [");
+
+            gotoxy(19, 14);
+            scanf("%f", &Num1);
+
+            gotoxy(34, 14);
+            scanf("%f", &Num2);
+
+            total = Num1 - Num2;
+
+            gotoxy(48,14);
+            printf("%.2f", total);
+            break;
+        case 3:
+            gotoxy(29, 14);
+            printf("] x [");
+
+            gotoxy(19, 14);
+            scanf("%f", &Num1);
+
+            gotoxy(34, 14);
+            scanf("%f", &Num2);
+
+            total = Num1 * Num2;
+
+            gotoxy(48,14);
+            printf("%.2f", total);
+            break;
+        case 4:
+            gotoxy(29, 14);
+            printf("] / [");
+
+            gotoxy(19, 14);
+            scanf("%f", &Num1);
+
+            gotoxy(34, 14);
+            scanf("%f", &Num2);
+
+            while (Num2 == 0)
+            {
+                gotoxy(12,21);
+                printf("Impossível dividir por 0");
+                system("pause > null");
+
+                for (X = 12; X <= 80; X++)
+                    {
+                        gotoxy(X, 21);
+                        printf("   ");
+                    }
+
+                gotoxy(34,14);
+                printf("         ");
+
+                gotoxy(34, 14);
+                scanf("%f", &Num2);
+            }
+
+            total = Num1 / Num2;
+
+            gotoxy(48,14);
+            printf("%.2f", total);
+            break;
+    }
+
+    gotoxy(12, 23);
+    scanf("%d", &OpcaoR);
+} while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Condicional();
+
 }
     
 
