@@ -878,6 +878,9 @@ void Condicional() {
         CalcMediaAluno();
         break;
     case 7:
+        system("cls");
+        DeterminarSalaProva();
+        break;
     case 8:
     case 9:
         system("cls");
@@ -1380,3 +1383,110 @@ void CalcMediaAluno()
 }
 
 
+void DeterminarSalaProva() 
+{
+	char nome[50];
+    char primeiraLetra;
+    char sala[10];
+    int opcao;
+    int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
+    int i;
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(esquerda, 9, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    for (i = vertical; i < altura; i++)
+    {
+        gotoxy(esquerda, i);
+        printf("=");
+        gotoxy(largura, i);
+        printf("=");
+    }
+
+    gotoxy(28, 2);
+    printf("Projeto CMP1046 - Determinar Sala de Prova");
+
+    gotoxy(3, 21);
+    printf("Mens [                                                                               ]");
+    gotoxy(3, 23);
+    printf("Opção [ ]");
+    gotoxy(12, 23);
+    printf("1 - Repetir     2 - Sair");
+
+    gotoxy(3, 5);
+    printf("Digite o nome do aluno...............[                        ]");
+
+    gotoxy(3, 11);
+    printf("Primeira letra do nome.............: [ ]");
+    gotoxy(3, 12);
+    printf("Sala de Prova......................: [                   ]");
+
+    do
+    {
+    	
+    gotoxy(41, 5);
+    printf("                        ");
+
+    gotoxy(41, 11);
+    printf(" ");
+    
+	gotoxy(41, 12);
+    printf("                   ");
+
+    gotoxy(10, 21);
+    printf("                                                                             ");
+
+    gotoxy(10, 23);
+    printf(" ");
+
+    gotoxy(41, 5);
+	fflush(stdin);
+    gets(nome);
+
+    if (strlen(nome) > 0)
+    {
+        primeiraLetra = toupper(nome[0]);
+
+        if (primeiraLetra >= 'A' && primeiraLetra <= 'K')
+        {
+            strcpy(sala, "SALA 110");
+        }
+        else if (primeiraLetra >= 'L' && primeiraLetra <= 'N')
+        {
+            strcpy(sala, "SALA 120");
+        }
+        else if (primeiraLetra >= 'O' && primeiraLetra <= 'Z')
+        {
+            strcpy(sala, "SALA 130");
+        }
+        else
+        {
+            strcpy(sala, "N/A - Inválida");
+        }
+    }
+    else
+    {
+         primeiraLetra = ' ';
+         strcpy(sala, "N/A - Vazio");
+    }
+
+    gotoxy(41, 11);
+    printf("%c", primeiraLetra);
+    gotoxy(41, 12);
+    printf("%s", sala);
+
+    gotoxy(10, 23);
+    scanf("%d", &opcao);
+
+} while (opcao == 1);
+
+system("cls");
+DesenharTela();
+Condicional();
+}
