@@ -862,7 +862,13 @@ void Condicional() {
         Calculadora();
         break;
     case 4:
+        system("cls");
+        RaizQuadrada();
+        break;
     case 5:
+        system("cls");
+        Emprestimo();
+        break;
     case 6:
     case 7:
     case 8:
@@ -1050,6 +1056,204 @@ do {
     DesenharTela();
     Condicional();
 
+}
+
+void RaizQuadrada() {
+    int OpcaoR, i;
+	int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
+    int Num, Quadrado;
+    float Raiz;
+    
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    //Desenha as linhas na vertical
+    for (i = vertical; i < altura; i++)
+        {
+            gotoxy(esquerda, i);
+            printf("=");
+            gotoxy(largura, i); 
+            printf("=");
+            
+        }
+
+    gotoxy(25, 2); printf("Projeto CMP1046 - Quadrado e Raiz Quadrada");
+    
+    gotoxy(5, 21); printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23); printf("Opção [  ]");
+
+    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+
+    gotoxy(3, 8);
+    printf("Digite um número inteiro:...[             ]");
+    
+    gotoxy(3,10);
+    printf("Quadrado do número:.........[             ]");
+
+    gotoxy(3,12);
+    printf("Raiz quadrada do número:....[             ]");
+
+    gotoxy(3,14);
+    printf("É quadrado perfeito?........[             ]");
+
+do {
+    gotoxy(32,8);
+    printf("             ");
+
+    gotoxy(32,10);
+    printf("             ");
+
+    gotoxy(32,12);
+    printf("             ");
+
+    gotoxy(32,14);
+    printf("             ");
+
+    gotoxy(12,23);
+    printf("  ");
+
+    gotoxy(32,8);
+    scanf("%d", &Num);
+
+    fflush(stdin);
+
+    Quadrado = Num * Num;
+
+    gotoxy(32,10);
+    printf("%d", Quadrado);
+
+    Raiz = sqrt(Num);
+
+    gotoxy(32,12);
+    printf("%.2f", Raiz);
+
+    if (Raiz == (int)Raiz)
+    {
+        gotoxy(33,14);
+        printf("Sim");
+    }
+    else
+    {
+        gotoxy(33,14);
+        printf("Não");
+    }
+
+    gotoxy(12, 23);
+    scanf("%d", &OpcaoR);
+} while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Condicional();
+}
+
+void Emprestimo() {
+    int OpcaoR, i;
+    int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
+    float salario, emprestimo, parcelas, valorParcela, limite;
+
+    // Desenho padrão
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    for (i = vertical; i < altura; i++)
+    {
+        gotoxy(esquerda, i);
+        printf("=");
+        gotoxy(largura, i);
+        printf("=");
+    }
+
+    gotoxy(25, 2);
+    printf("Projeto CMP1046 - Empréstimo Consignado");
+
+    gotoxy(5, 21);
+    printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23);
+    printf("Opção [  ]");
+
+    gotoxy(17, 23);
+    printf("1 - Repetir    2 - Voltar ao menu");
+
+    // --- Campos de texto fixos ---
+    gotoxy(3, 8);
+    printf("Valor do salário mensal:...........[             ]");
+
+    gotoxy(3, 10);
+    printf("Valor do empréstimo pretendido:....[             ]");
+
+    gotoxy(3, 12);
+    printf("Quantidade de parcelas desejadas:..[             ]");
+
+    gotoxy(3, 14);
+    printf("Valor de cada parcela:.............[             ]");
+
+    gotoxy(3, 16);
+    printf("Empréstimo pode ser concedido?.....[             ]");
+
+    // --- Loop principal ---
+do {
+        // Limpa os campos antes de ler novamente
+        gotoxy(39,8);  printf("             ");
+        gotoxy(39,10); printf("             ");
+        gotoxy(39,12); printf("             ");
+        gotoxy(39,14); printf("             ");
+        gotoxy(39,16); printf("             ");
+        gotoxy(12,23); printf("  ");
+
+        // Leitura dos dados
+        gotoxy(39,8);
+        scanf("%f", &salario);
+
+        gotoxy(39,10);
+        scanf("%f", &emprestimo);
+
+        gotoxy(39,12);
+        scanf("%f", &parcelas);
+
+        // Cálculos
+        valorParcela = emprestimo / parcelas;
+        limite = salario * 0.3;
+
+        // Exibição do valor da parcela
+        gotoxy(39,14);
+        printf("%.2f", valorParcela);
+
+        // Verificação
+        if (valorParcela <= limite)
+        {
+            gotoxy(39,16);
+            printf("Sim");
+        }
+        else
+        {
+            gotoxy(39,16);
+            printf("Não");
+        }
+
+        // Repetição
+        gotoxy(12, 23);
+        scanf("%d", &OpcaoR);
+
+} while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Condicional();
 }
     
 
