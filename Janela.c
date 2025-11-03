@@ -874,6 +874,9 @@ void Condicional() {
         Emprestimo();
         break;
     case 6:
+        system("cls");
+        CalcMediaAluno();
+        break;
     case 7:
     case 8:
     case 9:
@@ -1260,5 +1263,120 @@ do {
     Condicional();
 }
     
+void CalcMediaAluno()
+{
+    char nome[50];
+    float n1, n2, n3, n4;
+    int aulas, faltas;
+    float media1, media2, mediaFinal, freq;
+    int opcao;
+
+    int i;
+    int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
+
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(esquerda, 13, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    for (i = vertical; i < altura; i++)
+    {
+        gotoxy(esquerda, i);
+        printf("=");
+        gotoxy(largura, i);
+        printf("=");
+    }
+
+    gotoxy(25, 2);
+    printf("Projeto CMP1046 - Calculo Media Aluno");
+
+    gotoxy(5, 21);
+    printf("Mens [                                                                         ]");
+    gotoxy(5, 23);
+    printf("Opção [  ]");
+    gotoxy(17, 23);
+    printf("1 - Repetir    2 - Sair");
+
+    gotoxy(3, 5);
+    printf("Digite o nome do aluno...............[                                         ]");
+    gotoxy(3, 7);
+    printf("Digite a nota 1......................[   ]");
+    gotoxy(3, 8);
+    printf("Digite a nota 2......................[   ]");
+    gotoxy(3, 9);
+    printf("Digite a nota 3......................[   ]");
+    gotoxy(3, 10);
+    printf("Digite a nota 4......................[   ]");
+    gotoxy(3, 11);
+    printf("Digite o número de aulas.............[   ]");
+    gotoxy(3, 12);
+    printf("Digite o número de faltas............[   ]");
+    gotoxy(3, 15);
+    printf("Média final..........................[      ]", mediaFinal);
+    gotoxy(3, 16);
+	printf("Frequência...........................[      ]", freq);
+	gotoxy(3, 18);
+	printf("Situação.............................[             ]");
+	
+    do
+    {
+        gotoxy(41, 5);  printf("                         ");
+        gotoxy(41, 7);  printf("   ");
+        gotoxy(41, 8);  printf("   ");
+        gotoxy(41, 9);  printf("   ");
+        gotoxy(41, 10); printf("   ");
+        gotoxy(41, 11); printf("   ");
+        gotoxy(41, 12); printf("   ");
+        gotoxy(41, 15); printf("      ");
+        gotoxy(41, 16); printf("      ");
+        gotoxy(41, 18); printf("             ");
+        gotoxy(12, 23); printf("  ");
+
+        gotoxy(41, 5);
+        fflush(stdin);
+        gets(nome);
+        gotoxy(41, 7);
+        scanf("%f", &n1);
+        gotoxy(41, 8);
+        scanf("%f", &n2);
+        gotoxy(41, 9);
+        scanf("%f", &n3);
+        gotoxy(41, 10);
+        scanf("%f", &n4);
+        gotoxy(41, 11);
+        scanf("%d", &aulas);
+        gotoxy(41, 12);
+        scanf("%d", &faltas);
+
+        media1 = (n1 + n2) / 2.0;
+        media2 = (n3 + n4) / 2.0;
+        mediaFinal = (media1 * 0.4) + (media2 * 0.6);
+        freq = ((aulas - faltas) * 100.0) / aulas;
+
+        gotoxy(41, 15);
+        printf("%.2f");
+        gotoxy(41, 16);
+        printf("%.2f");
+
+        gotoxy(41, 18);
+        if (mediaFinal >= 7.5 && freq >= 75)
+            printf("APROVADO");
+        else
+            printf("REPROVADO");
+
+        gotoxy(12, 23);
+        scanf("%d", &opcao);
+
+    } while (opcao == 1);
+
+    system("cls");
+    DesenharTela();
+    Condicional();
+}
 
 
