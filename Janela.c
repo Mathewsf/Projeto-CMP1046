@@ -12,9 +12,11 @@ void Condicional();
 
 void Calculadora();
 
-void DesenharLinhaHorizontal();
+void DesenharLinhaHorizontal(int x, int y, int largura);
 
 void DesenharTela(); 
+
+void Emprestimo();
 
 void FigurasGeometricas();
 
@@ -29,6 +31,8 @@ void Losango();
 void Prestacao();
 
 void Quadrado();
+
+void RaizQuadrada();
 
 void Sequencial();
 
