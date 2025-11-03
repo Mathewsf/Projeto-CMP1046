@@ -937,6 +937,9 @@ do {
     gotoxy(48,14);
     printf("                ");
 
+    gotoxy(30, 14);
+    printf("  ");
+
     gotoxy(12,23);
     printf("  ");
 
