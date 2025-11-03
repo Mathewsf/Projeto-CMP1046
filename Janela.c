@@ -943,6 +943,8 @@ do {
     gotoxy(52, 8); 
     scanf("%d", &Op);
 
+    fflush(stdin);
+
     switch(Op)
     {
         case 1:
@@ -952,9 +954,13 @@ do {
             gotoxy(19, 14);
             scanf("%f", &Num1);
 
+            fflush(stdin);
+
             gotoxy(34, 14);
             scanf("%f", &Num2);
 
+            fflush(stdin);
+            
             total = Num1 + Num2;
 
             gotoxy(48,14);
@@ -966,6 +972,8 @@ do {
 
             gotoxy(19, 14);
             scanf("%f", &Num1);
+
+            fflush(stdin);
 
             gotoxy(34, 14);
             scanf("%f", &Num2);
@@ -982,6 +990,8 @@ do {
             gotoxy(19, 14);
             scanf("%f", &Num1);
 
+            fflush(stdin);
+
             gotoxy(34, 14);
             scanf("%f", &Num2);
 
@@ -996,6 +1006,8 @@ do {
 
             gotoxy(19, 14);
             scanf("%f", &Num1);
+
+            fflush(stdin);
 
             gotoxy(34, 14);
             scanf("%f", &Num2);
@@ -1026,6 +1038,7 @@ do {
             break;
     }
 
+    fflush(stdin);
     gotoxy(12, 23);
     scanf("%d", &OpcaoR);
 } while (OpcaoR == 1);
