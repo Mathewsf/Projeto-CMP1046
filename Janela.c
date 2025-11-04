@@ -38,6 +38,10 @@ void Sequencial();
 
 void TelaInicial();
 
+void OrdemCrescente();
+
+void CapitalGoias(); 
+
 
 int main() {
     //Traduz pro portugues
@@ -52,7 +56,7 @@ int main() {
     //Limpa a sujeira das variaveis
     fflush(stdin); 
    
-    //chama a função do menu principal
+    //chama a funï¿½ï¿½o do menu principal
     TelaInicial();
 
     gotoxy(1, 25);
@@ -91,7 +95,7 @@ void Hipotenusa()
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
@@ -320,7 +324,7 @@ void Losango()
 
     // tÃ­tulo
     gotoxy(28, 2);
-    printf("Projeto CMP1046 - Cálculo do Losango");
+    printf("Projeto CMP1046 - Cï¿½lculo do Losango");
 
     // instruÃ§Ãµes no rodapÃ©
     gotoxy(17, 23);
@@ -399,33 +403,33 @@ void CnsVeiculo()
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
     gotoxy(3,5);
-    printf("Digite a duração da viagem...........[   ]");
+    printf("Digite a duraï¿½ï¿½o da viagem...........[   ]");
 
     gotoxy(3,7);
-    printf("Digite a velocidade média............[   ]");
+    printf("Digite a velocidade mï¿½dia............[   ]");
 
     gotoxy(3,11);
-    printf("Preço gasolina carro A..: 	     [R$     ]");
+    printf("Preï¿½o gasolina carro A..: 	     [R$     ]");
 
     gotoxy(3,12);
-    printf("Preço etanol carro A....: 	     [R$     ]");
+    printf("Preï¿½o etanol carro A....: 	     [R$     ]");
 
      gotoxy(3,13);
-    printf("Preço gasolina carro b..: 	     [R$     ]");
+    printf("Preï¿½o gasolina carro b..: 	     [R$     ]");
 
     gotoxy(3,14);
-    printf("Preço etanol carro b....: 	     [R$     ]");
+    printf("Preï¿½o etanol carro b....: 	     [R$     ]");
 
      gotoxy(3,15);
-    printf("Preço gasolina carro c..: 	     [R$     ]");
+    printf("Preï¿½o gasolina carro c..: 	     [R$     ]");
 
     gotoxy(3,16);
-    printf("Preço etanol carro c....:        [R$     ]");
+    printf("Preï¿½o etanol carro c....:        [R$     ]");
 
     do
     {
@@ -548,7 +552,7 @@ void DesenharTela() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
 }
 
 //funï¿½ï¿½o exercicio sequencial
@@ -583,18 +587,18 @@ void Prestacao() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
     gotoxy(3, 5);
-    printf("Digite o valor da prestação.............[R$             ]");
+    printf("Digite o valor da prestaï¿½ï¿½o.............[R$             ]");
 
     gotoxy(3, 7);
     printf("Digite a quantidade de dias em atraso...[      ]");
 
     gotoxy(3, 16);
-    printf("O valor da prestação atualizado ........[R$                 ]");
+    printf("O valor da prestaï¿½ï¿½o atualizado ........[R$                 ]");
     
 do {
 
@@ -677,15 +681,15 @@ void TelaInicial() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
 
     gotoxy(5, 8); printf("1 - Estrutura Sequencial");
 
     gotoxy(5, 10); printf("2 - Estrutura Condicional");
 
-    gotoxy(5, 12); printf("3 - Estrutura de Repetição");
+    gotoxy(5, 12); printf("3 - Estrutura de Repetiï¿½ï¿½o");
 
-    gotoxy(5, 14); printf("4 - Variáveis compostas homogêneas");
+    gotoxy(5, 14); printf("4 - Variï¿½veis compostas homogï¿½neas");
 
     gotoxy(5, 16); printf("5 - Encerrar");
 
@@ -724,14 +728,14 @@ Ler:
 }
 }
 
-// função menu sequencial
+// funï¿½ï¿½o menu sequencial
 void Sequencial() {
     int i, Opcao, X;
-    gotoxy(5, 8); printf("1 - Figuras Geométricas");
+    gotoxy(5, 8); printf("1 - Figuras Geomï¿½tricas");
 
-    gotoxy(5, 10); printf("2 - Consumo de Veículo");
+    gotoxy(5, 10); printf("2 - Consumo de Veï¿½culo");
 
-    gotoxy(5, 12); printf("3 - Atualizar Prestação de Veículo");
+    gotoxy(5, 12); printf("3 - Atualizar Prestaï¿½ï¿½o de Veï¿½culo");
 
     gotoxy(5, 14); printf("4 - Retornar ao Menu Principal");
 
@@ -772,11 +776,11 @@ void FigurasGeometricas()
     int i, Opcao, X;
     gotoxy(5, 7); printf("1 - Calcular Hipotenusa");
 
-    gotoxy(5, 9); printf("2 - Calcular Perímetro e Área de Círculos");
+    gotoxy(5, 9); printf("2 - Calcular Perï¿½metro e ï¿½rea de Cï¿½rculos");
 
-    gotoxy(5, 11); printf("3 - Calcular Perímetro, Área e Diagonal de Quadrados");
+    gotoxy(5, 11); printf("3 - Calcular Perï¿½metro, ï¿½rea e Diagonal de Quadrados");
 
-    gotoxy(5, 13); printf("4 - Calcular Área de Losangos");
+    gotoxy(5, 13); printf("4 - Calcular ï¿½rea de Losangos");
 
     gotoxy(5, 15); printf("5 - Retornar ao Menu Anterior");
 
@@ -827,17 +831,17 @@ void FigurasGeometricas()
 
 void Condicional() {
     int i, Opcao, X;
-    gotoxy(5, 7); printf("1 - Ordenar 3 números inteiros");
+    gotoxy(5, 7); printf("1 - Ordenar 3 nï¿½meros inteiros");
 
-    gotoxy(5, 8); printf("2 - Receber nome da capital de Goiás");
+    gotoxy(5, 8); printf("2 - Receber nome da capital de Goiï¿½s");
 
     gotoxy(5, 9); printf("3 - Calculadora");
 
     gotoxy(5, 10); printf("4 - Calcular quadrado e raiz quadrada");
 
-    gotoxy(5, 11); printf("5 - Margem de consignação");
+    gotoxy(5, 11); printf("5 - Margem de consignaï¿½ï¿½o");
 
-    gotoxy(5, 12); printf("6 - Média final e frequências");
+    gotoxy(5, 12); printf("6 - Mï¿½dia final e frequï¿½ncias");
 
     gotoxy(5, 13); printf("7 - Alunos pelo nome");
 
@@ -917,24 +921,24 @@ void Calculadora() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
     gotoxy(3, 8);
-    printf("Digite o número da operação que deseja fazer:...[ ]");
+    printf("Digite o nï¿½mero da operaï¿½ï¿½o que deseja fazer:...[ ]");
 
     gotoxy(17, 10);
-    printf("1 - Adição");
+    printf("1 - Adiï¿½ï¿½o");
 
     gotoxy(17, 12);
-    printf("2 - Subtração");
+    printf("2 - Subtraï¿½ï¿½o");
 
     gotoxy(32, 10);
-    printf("3 - Multiplicação");
+    printf("3 - Multiplicaï¿½ï¿½o");
 
     gotoxy(32, 12);
-    printf("4 - Divisão");
+    printf("4 - Divisï¿½o");
 
     gotoxy(3, 14);
     printf("Resultado:     [          ]  [          ] = [                ]");
@@ -1034,7 +1038,7 @@ do {
             while (Num2 == 0)
             {
                 gotoxy(12,21);
-                printf("Impossível dividir por 0");
+                printf("Impossï¿½vel dividir por 0");
                 system("pause > null");
 
                 for (X = 12; X <= 80; X++)
@@ -1097,21 +1101,21 @@ void RaizQuadrada() {
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
-    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(5, 23); printf("Opï¿½ï¿½o [  ]");
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
     gotoxy(3, 8);
-    printf("Digite um número inteiro:...[             ]");
+    printf("Digite um nï¿½mero inteiro:...[             ]");
     
     gotoxy(3,10);
-    printf("Quadrado do número:.........[             ]");
+    printf("Quadrado do nï¿½mero:.........[             ]");
 
     gotoxy(3,12);
-    printf("Raiz quadrada do número:....[             ]");
+    printf("Raiz quadrada do nï¿½mero:....[             ]");
 
     gotoxy(3,14);
-    printf("É quadrado perfeito?........[             ]");
+    printf("ï¿½ quadrado perfeito?........[             ]");
 
 do {
     gotoxy(32,8);
@@ -1152,7 +1156,7 @@ do {
     else
     {
         gotoxy(33,14);
-        printf("Não");
+        printf("Nï¿½o");
     }
 
     gotoxy(12, 23);
@@ -1172,7 +1176,7 @@ void Emprestimo() {
     int altura = 25;
     float salario, emprestimo, parcelas, valorParcela, limite;
 
-    // Desenho padrão
+    // Desenho padrï¿½o
     DesenharLinhaHorizontal(esquerda, 1, largura);
     DesenharLinhaHorizontal(esquerda, 3, largura);
     DesenharLinhaHorizontal(esquerda, 20, largura);
@@ -1188,23 +1192,23 @@ void Emprestimo() {
     }
 
     gotoxy(25, 2);
-    printf("Projeto CMP1046 - Empréstimo Consignado");
+    printf("Projeto CMP1046 - Emprï¿½stimo Consignado");
 
     gotoxy(5, 21);
     printf("Mens [                                                                         ]");
 
     gotoxy(5, 23);
-    printf("Opção [  ]");
+    printf("Opï¿½ï¿½o [  ]");
 
     gotoxy(17, 23);
     printf("1 - Repetir    2 - Voltar ao menu");
 
     // --- Campos de texto fixos ---
     gotoxy(3, 8);
-    printf("Valor do salário mensal:...........[             ]");
+    printf("Valor do salï¿½rio mensal:...........[             ]");
 
     gotoxy(3, 10);
-    printf("Valor do empréstimo pretendido:....[             ]");
+    printf("Valor do emprï¿½stimo pretendido:....[             ]");
 
     gotoxy(3, 12);
     printf("Quantidade de parcelas desejadas:..[             ]");
@@ -1213,7 +1217,7 @@ void Emprestimo() {
     printf("Valor de cada parcela:.............[             ]");
 
     gotoxy(3, 16);
-    printf("Empréstimo pode ser concedido?.....[             ]");
+    printf("Emprï¿½stimo pode ser concedido?.....[             ]");
 
     // --- Loop principal ---
 do {
@@ -1235,15 +1239,15 @@ do {
         gotoxy(39,12);
         scanf("%f", &parcelas);
 
-        // Cálculos
+        // Cï¿½lculos
         valorParcela = emprestimo / parcelas;
         limite = salario * 0.3;
 
-        // Exibição do valor da parcela
+        // Exibiï¿½ï¿½o do valor da parcela
         gotoxy(39,14);
         printf("%.2f", valorParcela);
 
-        // Verificação
+        // Verificaï¿½ï¿½o
         if (valorParcela <= limite)
         {
             gotoxy(39,16);
@@ -1252,10 +1256,10 @@ do {
         else
         {
             gotoxy(39,16);
-            printf("Não");
+            printf("Nï¿½o");
         }
 
-        // Repetição
+        // Repetiï¿½ï¿½o
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
 
@@ -1301,7 +1305,7 @@ void CalcMediaAluno()
     gotoxy(5, 21);
     printf("Mens [                                                                         ]");
     gotoxy(5, 23);
-    printf("Opção [  ]");
+    printf("Opï¿½ï¿½o [  ]");
     gotoxy(17, 23);
     printf("1 - Repetir    2 - Sair");
 
@@ -1316,15 +1320,15 @@ void CalcMediaAluno()
     gotoxy(3, 10);
     printf("Digite a nota 4......................[   ]");
     gotoxy(3, 11);
-    printf("Digite o número de aulas.............[   ]");
+    printf("Digite o nï¿½mero de aulas.............[   ]");
     gotoxy(3, 12);
-    printf("Digite o número de faltas............[   ]");
+    printf("Digite o nï¿½mero de faltas............[   ]");
     gotoxy(3, 15);
-    printf("Média final..........................[      ]", mediaFinal);
+    printf("Mï¿½dia final..........................[      ]", mediaFinal);
     gotoxy(3, 16);
-	printf("Frequência...........................[      ]", freq);
+	printf("Frequï¿½ncia...........................[      ]", freq);
 	gotoxy(3, 18);
-	printf("Situação.............................[             ]");
+	printf("Situaï¿½ï¿½o.............................[             ]");
 	
     do
     {
@@ -1415,7 +1419,7 @@ void DeterminarSalaProva()
     gotoxy(3, 21);
     printf("Mens [                                                                               ]");
     gotoxy(3, 23);
-    printf("Opção [ ]");
+    printf("Opï¿½ï¿½o [ ]");
     gotoxy(12, 23);
     printf("1 - Repetir     2 - Sair");
 
@@ -1467,7 +1471,7 @@ void DeterminarSalaProva()
         }
         else
         {
-            strcpy(sala, "N/A - Inválida");
+            strcpy(sala, "N/A - Invï¿½lida");
         }
     }
     else
@@ -1489,4 +1493,152 @@ void DeterminarSalaProva()
 system("cls");
 DesenharTela();
 Condicional();
+}
+void OrdemCrescente() {
+    int a, b, c, aux;
+    int OpcaoR, i;
+    int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
+
+    setlocale(LC_ALL, "Portuguese");
+
+    do {
+        // limpa apenas campos e resultado e mantem texto
+        gotoxy(41, 5); printf("   ");
+        gotoxy(41, 6); printf("   ");
+        gotoxy(41, 7); printf("   ");
+        gotoxy(28, 12); printf("                   "); 
+        gotoxy(8, 13); printf("   ");
+
+        // desenhar janela
+        DesenharLinhaHorizontal(esquerda, 1, largura);
+        DesenharLinhaHorizontal(esquerda, 3, largura);
+        DesenharLinhaHorizontal(esquerda, 14, largura); 
+        DesenharLinhaHorizontal(esquerda, 20, largura);
+        DesenharLinhaHorizontal(esquerda, 22, largura);
+        DesenharLinhaHorizontal(esquerda, 24, largura);
+
+        // linhas verticais
+        for (i = vertical; i < altura; i++) {
+            gotoxy(esquerda, i);
+            printf("=");
+            gotoxy(largura, i);
+            printf("=");
+        }
+
+        // tÃ­tulo
+        gotoxy(28, 2);
+        printf("Projeto CMP1046 - Ordem Crescente");
+
+        // entradas
+        gotoxy(3, 5);
+        printf("Digite o primeiro nÃºmero: ......[   ]");
+        gotoxy(41, 5);
+        scanf("%d", &a);
+
+        gotoxy(3, 6);
+        printf("Digite o segundo nÃºmero: .......[   ]");
+        gotoxy(41, 6);
+        scanf("%d", &b);
+
+        gotoxy(3, 7);
+        printf("Digite o terceiro nÃºmero: ......[   ]");
+        gotoxy(41, 7);
+        scanf("%d", &c);
+
+        if(a > b) 
+        {   
+            aux = a;
+            a = b; 
+            b = aux; 
+        }
+        if(b > c) 
+        {   
+            aux = b; 
+            b = c; 
+            c = aux; 
+        }
+        if(a > c) 
+        {
+            aux = a; 
+            a = c; 
+            c = aux; 
+        }
+
+        gotoxy(8, 12);
+        printf("Ordem crescente: [               ]");
+        gotoxy(28, 12);
+        printf("%d, %d, %d", a, b, c);
+
+        gotoxy(8, 13);
+        scanf("%d", &OpcaoR);
+
+    } while (OpcaoR == 1);
+}
+
+void CapitalGoias() 
+{
+    char capital[50];
+    int OpcaoR, i;
+    int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
+
+    setlocale(LC_ALL, "Portuguese");
+
+    do {
+        // limpa apenas campos e resultado
+        gotoxy(41, 5); printf("                                             ");
+        gotoxy(28, 12); printf("                   "); 
+        gotoxy(8, 13); printf("   ");
+
+        // desenhar janela
+        DesenharLinhaHorizontal(esquerda, 1, largura);
+        DesenharLinhaHorizontal(esquerda, 3, largura);
+        DesenharLinhaHorizontal(esquerda, 14, largura); 
+        DesenharLinhaHorizontal(esquerda, 20, largura);
+        DesenharLinhaHorizontal(esquerda, 22, largura);
+        DesenharLinhaHorizontal(esquerda, 24, largura);
+
+        // linhas verticais
+        for (i = vertical; i < altura; i++) {
+            gotoxy(esquerda, i);
+            printf("=");
+            gotoxy(largura, i);
+            printf("=");
+        }
+
+        // tÃ­tulo
+        gotoxy(28, 2);
+        printf("Projeto CMP1046 - Capital de GoiÃ¡s");
+
+        // entrada
+        gotoxy(3, 5);
+        printf("Digite o nome da capital de GoiÃ¡s: ......[                        ]");
+        gotoxy(41, 5);
+        scanf("%49s", capital);
+
+        gotoxy(8, 12);
+        printf("Resultado: [               ]");
+        gotoxy(28, 12);
+        if(strcmp(capital, "Goiania") == 0 || 
+           strcmp(capital, "GOIANIA") == 0 || 
+           strcmp(capital, "goiania") == 0) 
+        {
+            printf("Correto!");
+        } 
+        else 
+        {
+            printf("Incorreto!");
+        }
+
+        gotoxy(8, 13);
+        scanf("%d", &OpcaoR);
+
+    } while (OpcaoR == 1);
+
+    return;
 }
