@@ -384,7 +384,7 @@ void CnsVeiculo()
     DesenharLinhaHorizontal(esquerda, 1, largura);
     DesenharLinhaHorizontal(esquerda, 3, largura);
     //linha divisoria da entrada/saida
-    DesenharLinhaHorizontal(esquerda, 12, largura);
+    DesenharLinhaHorizontal(esquerda, 11, largura);
     DesenharLinhaHorizontal(esquerda, 20, largura);
     DesenharLinhaHorizontal(esquerda, 22, largura);
     DesenharLinhaHorizontal(esquerda, 24, largura);
