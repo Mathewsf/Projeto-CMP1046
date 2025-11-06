@@ -12,6 +12,12 @@ void Condicional();
 
 void Calculadora();
 
+void CapitalGoias();
+
+void CalcMediaAluno();
+
+void DeterminarSalaProva();
+
 void DesenharLinhaHorizontal(int x, int y, int largura);
 
 void DesenharTela(); 
@@ -28,6 +34,8 @@ void LimparTela();
 
 void Losango();
 
+void OrdemCrescente();
+
 void Prestacao();
 
 void Quadrado();
@@ -37,10 +45,6 @@ void RaizQuadrada();
 void Sequencial();
 
 void TelaInicial();
-
-void OrdemCrescente();
-
-void CapitalGoias(); 
 
 
 int main() {
@@ -718,6 +722,10 @@ Ler:
         Condicional();
         break;
     case 3:
+        system("cls");
+        DesenharTela();
+        Repeticao();
+        break;
     case 4:
         gotoxy(12, 21); printf("Ainda em desenvolvimento... (Enter para continuar o programa)");
         system("pause > null");
@@ -757,12 +765,10 @@ void Sequencial() {
         break;
     case 2:
         system("cls");
-        DesenharTela();
         CnsVeiculo();
         break;
     case 3:
         system("cls");
-        DesenharTela();
         Prestacao();
         break;
     case 4:
@@ -1645,4 +1651,50 @@ DesenharTela();
 Condicional();
 
     return;
+}
+
+void Repeticao() {
+    int i, Opcao, X;
+    gotoxy(5, 6); printf("1 - Soma de intervalo de números");
+
+    gotoxy(5, 8); printf("2 - Conversão de graus");
+
+    gotoxy(5, 10); printf("3 - Série de fetuccine");
+
+    gotoxy(5, 12); printf("4 - Tamanho de um nome");
+
+    gotoxy(5, 14); printf("5 - Tabuada");
+
+    gotoxy(5, 16); printf("6 - Retornar ao menu principal");
+
+    for (X = 12; X <= 80; X++)
+        {
+            gotoxy(X, 21);
+            printf("   ");
+        }
+    gotoxy(12, 23);
+    scanf("%d", &Opcao);
+
+    switch (Opcao)
+    {
+    case 1:
+        system("cls");
+        break;
+    case 2:
+        system("cls");
+        break;
+    case 3:
+        system("cls");
+        break;
+    case 4:
+        system("cls");
+        break;
+    case 5:
+        system("cls");
+        break;
+    case 6:
+        system("cls");
+        return;
+        break;
+    }
 }
