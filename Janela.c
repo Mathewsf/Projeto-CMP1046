@@ -1682,6 +1682,7 @@ void Repeticao() {
         break;
     case 2:
         system("cls");
+        ConversorGraus();
         break;
     case 3:
         system("cls");
@@ -1697,4 +1698,73 @@ void Repeticao() {
         return;
         break;
     }
+}
+
+void ConversorGraus() {
+    float Celsius, Fahrenheit;
+    int OpcaoR, i;
+	int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
+    
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(esquerda, 11, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    //Desenha as linhas na vertical
+    for (i = vertical; i < altura; i++)
+        {
+            gotoxy(esquerda, i);
+            printf("=");
+            gotoxy(largura, i); 
+            printf("=");
+            
+        }
+
+    gotoxy(25, 2); printf("Projeto CMP1046 - Quadrado e Raiz Quadrada");
+    
+    gotoxy(5, 21); printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23); printf("Opção [  ]");
+
+    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+
+    gotoxy(3, 7);
+    printf("Digite a temperatura em graus celsius:...[          °C ]");
+    
+    gotoxy(3,15);
+    printf("Temperatura em fahrenheits:..............[          °F ]");
+
+do {
+    gotoxy(45,7);
+    printf("         ");
+
+    gotoxy(45,15);
+    printf("         ");
+
+    gotoxy(12,23);
+    printf("  ");
+
+    gotoxy(46,7);
+    scanf("%f", &Celsius);
+
+    fflush(stdin);
+
+    Fahrenheit = Celsius * 9/5 + 32;
+
+    gotoxy(46, 15);
+    printf("%.0f", Fahrenheit);
+
+    gotoxy(12, 23);
+    scanf("%d", &OpcaoR);
+} while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Repeticao();
 }
