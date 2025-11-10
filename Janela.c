@@ -16,6 +16,8 @@ void CapitalGoias();
 
 void CalcMediaAluno();
 
+void ConversorGraus();
+
 void DeterminarSalaProva();
 
 void DesenharLinhaHorizontal(int x, int y, int largura);
@@ -23,6 +25,8 @@ void DesenharLinhaHorizontal(int x, int y, int largura);
 void DesenharTela(); 
 
 void Emprestimo();
+
+void Fetuccine();
 
 void FigurasGeometricas();
 
@@ -41,6 +45,8 @@ void Prestacao();
 void Quadrado();
 
 void RaizQuadrada();
+
+void Repeticao();
 
 void Sequencial();
 
