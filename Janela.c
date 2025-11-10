@@ -1686,6 +1686,7 @@ void Repeticao() {
         break;
     case 3:
         system("cls");
+        Fetuccine();
         break;
     case 4:
         system("cls");
@@ -1759,6 +1760,107 @@ do {
 
     gotoxy(46, 15);
     printf("%.0f", Fahrenheit);
+
+    gotoxy(12, 23);
+    scanf("%d", &OpcaoR);
+} while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Repeticao();
+}
+
+void Fetuccine() {
+    int OpcaoR, i;
+	int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int altura = 25;
+    int Qtd, j, linha, s1, s2, prox;
+    
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(esquerda, 11, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    //Desenha as linhas na vertical
+    for (i = vertical; i < altura; i++)
+        {
+            gotoxy(esquerda, i);
+            printf("=");
+            gotoxy(largura, i); 
+            printf("=");
+            
+        }
+
+    gotoxy(25, 2); printf("Projeto CMP1046 - Série de Fetuccine");
+    
+    gotoxy(5, 21); printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23); printf("Opção [  ]");
+
+    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+
+    gotoxy(3, 6);
+    printf("Digite quantos termos da série de Fetuccine voce quer imprimir...[    ]");
+
+    gotoxy(3, 8);
+    printf("Digite os dois primeiros números que vão começar a série.........[      ]    [      ]");
+
+    gotoxy(3, 15);
+    printf("Sequência: ");
+
+do {
+    gotoxy(69,6);
+    printf("   ");
+
+    gotoxy(69,8);
+    printf("    ");
+
+    gotoxy(81,8);
+    printf("    ");
+
+    for (i = 14; i <= 89; i++)
+    {
+        gotoxy(i, 15);
+        printf(" ");
+    }
+
+    gotoxy(12,23);
+    printf("  ");
+
+    gotoxy(69,6);
+    scanf("%d", &Qtd);
+
+    fflush(stdin);
+
+    gotoxy(69,8);
+    scanf("%d", &s1);
+
+    gotoxy(81,8);
+    scanf("%d", &s2);
+
+    gotoxy(14, 15);
+    printf("%d  %d ", s1, s2);
+
+    linha = 15;
+    for (i = 3, j = 20; i <= Qtd; i++, j = j + 3)
+    {
+            gotoxy(j, linha);
+            if (i % 2 == 1) {  // ímpar: soma
+                prox = s2 + s1;
+                printf("%d ", prox);
+            } else {           // par: subtrai
+                prox = s2 - s1;
+                printf("%d ", prox);
+            }
+
+            s1 = s2;
+            s2 = prox;
+    }
 
     gotoxy(12, 23);
     scanf("%d", &OpcaoR);
