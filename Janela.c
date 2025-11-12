@@ -733,7 +733,8 @@ Ler:
         Repeticao();
         break;
     case 4:
-        gotoxy(12, 21); printf("Ainda em desenvolvimento... (Enter para continuar o programa)");
+        gotoxy(12, 21); 
+		printf("Ainda em desenvolvimento... (Enter para continuar o programa)");
         system("pause > null");
         goto Ler;
         break;
@@ -874,6 +875,7 @@ void Condicional() {
     {
     case 1:
         system("cls");
+        OrdemCrescente();
         break;
     case 2:
         system("cls");
@@ -1092,8 +1094,8 @@ void RaizQuadrada() {
     int vertical = 1;
     int largura = 90;
     int altura = 25;
-    int Num, Quadrado;
-    float Raiz;
+    int Quadrado, X;
+    float Raiz, Num;
     
     DesenharLinhaHorizontal(esquerda, 1, largura);
     DesenharLinhaHorizontal(esquerda, 3, largura);
@@ -1148,9 +1150,25 @@ do {
     printf("  ");
 
     gotoxy(32,8);
-    scanf("%d", &Num);
+    scanf("%f", &Num);
 
     fflush(stdin);
+    
+    while (Num != (int)Num)
+    {
+    	gotoxy(12, 21);
+    	printf("Digite apenas número inteiro");
+    	system("pause > null");
+    	for (X = 12; X <= 80; X++)
+        {
+            gotoxy(X, 21);
+            printf("   ");
+        }
+        gotoxy(32,8);
+    	printf("             ");
+    	gotoxy(32,8);
+    	scanf("%f", &Num);
+	}
 
     Quadrado = Num * Num;
 
@@ -1508,7 +1526,9 @@ system("cls");
 DesenharTela();
 Condicional();
 }
-void OrdemCrescente() {
+
+void OrdemCrescente() 
+{
     int a, b, c, aux;
     int OpcaoR, i;
     int esquerda = 1;
@@ -1516,126 +1536,144 @@ void OrdemCrescente() {
     int largura = 90;
     int altura = 25;
 
-    setlocale(LC_ALL, "Portuguese");
+    // ==== DESENHA A ESTRUTURA PADRÃO DA TELA ====
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(esquerda, 14, largura); 
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
 
-    do {
-        // limpa apenas campos e resultado e mantem texto
-        gotoxy(41, 5); printf("   ");
-        gotoxy(41, 6); printf("   ");
-        gotoxy(41, 7); printf("   ");
-        gotoxy(28, 12); printf("                   "); 
-        gotoxy(8, 13); printf("   ");
+    for (i = vertical; i < altura; i++)
+    {
+        gotoxy(esquerda, i);
+        printf("=");
+        gotoxy(largura, i);
+        printf("=");
+    }
 
-        // desenhar janela
-        DesenharLinhaHorizontal(esquerda, 1, largura);
-        DesenharLinhaHorizontal(esquerda, 3, largura);
-        DesenharLinhaHorizontal(esquerda, 14, largura); 
-        DesenharLinhaHorizontal(esquerda, 20, largura);
-        DesenharLinhaHorizontal(esquerda, 22, largura);
-        DesenharLinhaHorizontal(esquerda, 24, largura);
+    gotoxy(28, 2);
+    printf("Projeto CMP1046 - Ordem Crescente");
 
-        // linhas verticais
-        for (i = vertical; i < altura; i++) {
-            gotoxy(esquerda, i);
-            printf("=");
-            gotoxy(largura, i);
-            printf("=");
-        }
+    gotoxy(17, 23);
+    printf("1 - Repetir    2 - Voltar ao menu");
 
-        // tÃ­tulo
-        gotoxy(28, 2);
-        printf("Projeto CMP1046 - Ordem Crescente");
+    gotoxy(5, 21);
+    printf("Mens [                                                                         ]");
 
-        // entradas
-        gotoxy(3, 5);
-        printf("Digite o primeiro nÃºmero: ......[   ]");
-        gotoxy(41, 5);
+    gotoxy(5, 23);
+    printf("Opção [  ]");
+
+    gotoxy(3, 6);
+    printf("Digite o primeiro número: ......[    ]");
+    gotoxy(3, 8);
+    printf("Digite o segundo número: .......[    ]");
+    gotoxy(3, 10);
+    printf("Digite o terceiro número: ......[    ]");
+    gotoxy(3, 16);
+    printf("Ordem crescente: [     ,     ,      ]");
+
+    do 
+    {
+        gotoxy(36, 6);  printf("    ");
+        gotoxy(36, 8);  printf("    ");
+        gotoxy(36, 10); printf("    ");
+        gotoxy(21, 16); printf("     ,     ,      "); // limpa antes de imprimir o novo resultado
+        gotoxy(12, 23); printf("  ");
+
+        gotoxy(36, 6);
         scanf("%d", &a);
 
-        gotoxy(3, 6);
-        printf("Digite o segundo nÃºmero: .......[   ]");
-        gotoxy(41, 6);
+        gotoxy(36, 8);
         scanf("%d", &b);
 
-        gotoxy(3, 7);
-        printf("Digite o terceiro nÃºmero: ......[   ]");
-        gotoxy(41, 7);
+        gotoxy(36, 10);
         scanf("%d", &c);
 
-        if(a > b) 
-        {   
-            aux = a;
-            a = b; 
-            b = aux; 
-        }
-        if(b > c) 
-        {   
-            aux = b; 
-            b = c; 
-            c = aux; 
-        }
-        if(a > c) 
-        {
-            aux = a; 
-            a = c; 
-            c = aux; 
-        }
+        if (a > b) { aux = a; a = b; b = aux; }
+        if (a > c) { aux = a; a = c; c = aux; }
+        if (b > c) { aux = b; b = c; c = aux; }
 
-        gotoxy(8, 12);
-        printf("Ordem crescente: [               ]");
-        gotoxy(28, 12);
-        printf("%d, %d, %d", a, b, c);
+        // ?? CORREÇÃO AQUI ??
+        gotoxy(21, 16);
+        printf("     ,     ,      "); // limpa o campo do resultado
+        gotoxy(21, 16);
+        printf("%d , %d , %d", a, b, c); // imprime no mesmo ponto
 
-        gotoxy(8, 13);
+        gotoxy(12, 23);
         scanf("%d", &OpcaoR);
 
     } while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Condicional();
 }
 
 void CapitalGoias() 
 {
     char capital[50];
     int OpcaoR, i;
-    int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
+    int esquerda = 1;   // margem esquerda da janela
+    int vertical = 1;   // início vertical
+    int largura = 90;   // largura total da tela
+    int altura = 25;    // altura total da tela
 
-    do {
-        // limpa apenas campos e resultado
-        gotoxy(41, 5); printf("                                             ");
-        gotoxy(28, 12); printf("                   "); 
-        gotoxy(8, 13); printf("   ");
+    // ==== DESENHA A ESTRUTURA PADRÃO DA TELA ====
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(esquerda, 11, largura); // linha que separa
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
 
-        // desenhar janela
-        DesenharLinhaHorizontal(esquerda, 1, largura);
-        DesenharLinhaHorizontal(esquerda, 3, largura);
-        DesenharLinhaHorizontal(esquerda, 14, largura); 
-        DesenharLinhaHorizontal(esquerda, 20, largura);
-        DesenharLinhaHorizontal(esquerda, 22, largura);
-        DesenharLinhaHorizontal(esquerda, 24, largura);
+    // ==== DESENHA AS LINHAS VERTICAIS ====
+    for (i = vertical; i < altura; i++)
+    {
+        gotoxy(esquerda, i);   // borda esquerda
+        printf("=");
+        gotoxy(largura, i);    // borda direita
+        printf("=");
+    }
 
-        // linhas verticais
-        for (i = vertical; i < altura; i++) {
-            gotoxy(esquerda, i);
-            printf("=");
-            gotoxy(largura, i);
-            printf("=");
-        }
+    // ==== TÍTULO DO EXERCÍCIO ====
+    gotoxy(28, 2);
+    printf("Projeto CMP1046 - Capital de Goiás");
 
-        // tÃ­tulo
-        gotoxy(28, 2);
-        printf("Projeto CMP1046 - Capital de Goiás");
+    // ==== INSTRUÇÕES NO RODAPÉ ====
+    gotoxy(17, 23);
+    printf("1 - Repetir    2 - Voltar ao menu"); // instrução de repetição e retorno
 
-        // entrada
-        gotoxy(3, 5);
-        printf("Digite o nome da capital de Goiás: ......[                        ]");
-        gotoxy(41, 5);
-        scanf("%49s", capital);
+    // ==== MENSAGEM PADRÃO ====
+    gotoxy(5, 21);
+    printf("Mens [                                                                         ]");
 
-        gotoxy(8, 12);
-        printf("Resultado: [               ]");
-        gotoxy(28, 12);
+    // ==== CAMPO DE OPÇÃO ====
+    gotoxy(5, 23);
+    printf("Opção [  ]");
+
+    // ==== CAMPOS DE ENTRADA E SAÍDA ====
+    gotoxy(3, 7);
+    printf("Digite a Capital de Goiás: [                         ]");
+
+    gotoxy(3, 15);
+    printf("Resultado: [             ]");
+
+    // ==== LOOP PRINCIPAL ====
+    do 
+    {
+        // --- LIMPA APENAS OS CAMPOS VARIÁVEIS ---
+        gotoxy(31, 7);  printf("                        ");   // limpa campo do nome
+        gotoxy(15, 15); printf("             ");              // limpa resultado
+        gotoxy(12, 23); printf("  ");                         // limpa campo da opção
+
+        // --- ENTRADA DO NOME ---
+        gotoxy(31, 7); // dentro dos colchetes do nome
+        fflush(stdin);
+        gets(capital);
+
+        // --- PROCESSAMENTO ---
+        gotoxy(15, 15); // dentro dos colchetes de Resultado
         if(strcmp(capital, "Goiania") == 0 || 
            strcmp(capital, "GOIANIA") == 0 || 
            strcmp(capital, "goiania") == 0) 
@@ -1647,16 +1685,16 @@ void CapitalGoias()
             printf("Incorreto!");
         }
 
-        gotoxy(8, 13);
+        // --- LEITURA DA OPÇÃO (1 REPETIR / 2 VOLTAR) ---
+        gotoxy(12, 23);
         scanf("%d", &OpcaoR);
 
     } while (OpcaoR == 1);
 
+    // --- VOLTA PARA O MENU CONDICIONAL ---
     system("cls");
-DesenharTela();
-Condicional();
-
-    return;
+    DesenharTela();
+    Condicional();
 }
 
 void Repeticao() {
@@ -1782,7 +1820,7 @@ void Fetuccine() {
     int vertical = 1;
     int largura = 90;
     int altura = 25;
-    int Qtd, j, linha, s1, s2, prox;
+    int Qtd, j, linha, s1 = 1, s2 = 2, prox;
     
     DesenharLinhaHorizontal(esquerda, 1, largura);
     DesenharLinhaHorizontal(esquerda, 3, largura);
@@ -1811,22 +1849,15 @@ void Fetuccine() {
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
     gotoxy(3, 6);
-    printf("Digite quantos termos da série de Fetuccine voce quer imprimir...[    ]");
-
-    gotoxy(3, 8);
-    printf("Digite os dois primeiros números que vão começar a série.........[      ]    [      ]");
+    printf("Número de termos...[     ]");
 
     gotoxy(3, 15);
     printf("Sequência: ");
 
 do {
-    gotoxy(69,6);
-    printf("   ");
-
-    gotoxy(69,8);
-    printf("    ");
-
-    gotoxy(81,8);
+	s1 = 1;
+	s2 = 2;
+    gotoxy(23,6);
     printf("    ");
 
     for (i = 14; i <= 89; i++)
@@ -1838,35 +1869,44 @@ do {
     gotoxy(12,23);
     printf("  ");
 
-    gotoxy(69,6);
+    gotoxy(23,6);
     scanf("%d", &Qtd);
 
     fflush(stdin);
 
-    gotoxy(69,8);
-    scanf("%d", &s1);
-
-    gotoxy(81,8);
-    scanf("%d", &s2);
-
-    gotoxy(14, 15);
-    printf("%d  %d ", s1, s2);
-
-    linha = 15;
-    for (i = 3, j = 20; i <= Qtd; i++, j = j + 3)
-    {
-            gotoxy(j, linha);
-            if (i % 2 == 1) {  // ímpar: soma
-                prox = s2 + s1;
-                printf("%d ", prox);
-            } else {           // par: subtrai
-                prox = s2 - s1;
-                printf("%d ", prox);
-            }
-
-            s1 = s2;
-            s2 = prox;
-    }
+	if  (Qtd == 1)
+		{
+			gotoxy(14, 15);
+	    	printf("%d ", s1);
+		}
+	else
+		{
+			if  (Qtd == 2)
+				{
+					gotoxy(14, 15);
+    				printf("%d  %d ", s1, s2);
+				}
+			else
+				{
+					gotoxy(14, 15);
+    				printf("%d  %d ", s1, s2);
+    				
+					linha = 15;
+				    for (i = 3, j = 20; i <= Qtd; i++, j = j + 3)
+				    {
+				            gotoxy(j, linha);
+				            if (i % 2 == 1) {  // ímpar: soma
+				                prox = s2 + s1;
+				                printf("%d ", prox);
+				            } else {           // par: subtrai
+				                prox = s2 - s1;
+				                printf("%d ", prox);
+				            }
+				            s1 = s2;
+				            s2 = prox;
+				    }
+				}
+		}
 
     gotoxy(12, 23);
     scanf("%d", &OpcaoR);
