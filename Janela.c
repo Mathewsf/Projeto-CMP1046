@@ -52,6 +52,8 @@ void Sequencial();
 
 void TelaInicial();
 
+void Vetores();
+
 
 int main() {
     //Traduz pro portugues
@@ -733,10 +735,9 @@ Ler:
         Repeticao();
         break;
     case 4:
-        gotoxy(12, 21); 
-		printf("Ainda em desenvolvimento... (Enter para continuar o programa)");
-        system("pause > null");
-        goto Ler;
+        system("cls");
+		DesenharTela();
+        Vetores();
         break;
     default:
         return;
@@ -1915,4 +1916,44 @@ do {
     system("cls");
     DesenharTela();
     Repeticao();
+}
+
+void Vetores() {
+    int Opcao, X;
+
+    gotoxy(5, 6);  printf("1 - Soma de intervalo de números");
+    gotoxy(5, 8);  printf("2 - Conversão de graus");
+    gotoxy(5, 10); printf("3 - Série de Fetuccine");
+    gotoxy(5, 12); printf("4 - Tamanho de um nome");
+    gotoxy(5, 14); printf("5 - Tabuada");
+    gotoxy(5, 16); printf("6 - Retornar ao menu principal");
+
+    gotoxy(12, 23); 
+    scanf("%d", &Opcao);
+
+    switch (Opcao) {
+        case 1:
+            system("cls");
+            //SomaIntervalo();
+            break;
+        case 2:
+            system("cls");
+            //ConversorGraus();
+            break;
+        case 3:
+            system("cls");
+            //Fetuccine();
+            break;
+        case 4:
+            system("cls");
+            //TamanhoNome();
+            break;
+        case 5:
+            system("cls");
+            //Tabuada();
+            break;
+        case 6:
+            system("cls");
+            return;
+    }
 }
