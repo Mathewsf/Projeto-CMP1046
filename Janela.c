@@ -1921,12 +1921,11 @@ do {
 void Vetores() {
     int Opcao, X;
 
-    gotoxy(5, 6);  printf("1 - Soma de intervalo de números");
-    gotoxy(5, 8);  printf("2 - Conversão de graus");
-    gotoxy(5, 10); printf("3 - Série de Fetuccine");
-    gotoxy(5, 12); printf("4 - Tamanho de um nome");
-    gotoxy(5, 14); printf("5 - Tabuada");
-    gotoxy(5, 16); printf("6 - Retornar ao menu principal");
+    gotoxy(5, 7);  printf("1 - Média de alunos");
+    gotoxy(5, 9);  printf("2 - Soma de vetores");
+    gotoxy(5, 11); printf("3 - Comparar elemento de vetores");
+    gotoxy(5, 13); printf("4 - Ordenação de vetores");
+    gotoxy(5, 15); printf("5 - Retornar ao menu principal");
 
     gotoxy(12, 23); 
     scanf("%d", &Opcao);
@@ -1950,10 +1949,6 @@ void Vetores() {
             break;
         case 5:
             system("cls");
-            //Tabuada();
-            break;
-        case 6:
-            system("cls");
-            return;
+            return;     
     }
 }
