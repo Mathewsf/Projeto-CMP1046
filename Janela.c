@@ -42,6 +42,8 @@ void OrdemCrescente();
 
 void Prestacao();
 
+void PesoIdeal();
+
 void Quadrado();
 
 void RaizQuadrada();
@@ -49,6 +51,8 @@ void RaizQuadrada();
 void Repeticao();
 
 void Sequencial();
+
+void TamanhoNome();
 
 void TelaInicial();
 
@@ -903,6 +907,9 @@ void Condicional() {
         DeterminarSalaProva();
         break;
     case 8:
+    	system("cls");
+        PesoIdeal();
+        break;
     case 9:
         system("cls");
         return;
@@ -1735,6 +1742,7 @@ void Repeticao() {
         break;
     case 4:
         system("cls");
+        TamanhoNome();
         break;
     case 5:
         system("cls");
@@ -1917,6 +1925,170 @@ do {
     DesenharTela();
     Repeticao();
 }
+void PesoIdeal() {
+
+    double altura, pesoIdeal;
+    char sexo;
+    
+    int OpcaoR, i;
+	int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int Altura = 25;
+    
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(esquerda, 12, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    //Desenha as linhas na vertical
+    for (i = vertical; i < Altura; i++)
+        {
+            gotoxy(esquerda, i);
+            printf("=");
+            gotoxy(largura, i); 
+            printf("=");
+            
+        }
+
+    gotoxy(25, 2); printf("Projeto CMP1046 - Peso ideal");
+    
+    gotoxy(5, 21); printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23); printf("Opção [  ]");
+
+    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+	
+	gotoxy(3, 7);  printf("Digite a altura em metros..............[     ]");
+    gotoxy(3, 9);  printf("Digite o sexo (M/F)..................[ ]");
+    gotoxy(3, 16); printf("Peso ideal........[              Kg]");
+    
+    do {
+	
+
+        // limpar campos
+        gotoxy(43, 7); printf("     ");
+        gotoxy(41, 9); printf(" ");
+        gotoxy(25, 16); printf("          ");
+        gotoxy(12,23);
+   		printf("  ");
+
+        // entrada
+        gotoxy(43, 7); scanf("%lf", &altura);
+        gotoxy(41, 9); scanf(" %c", &sexo);
+
+        if (sexo == 'M' || sexo == 'm')
+            pesoIdeal = altura * 72.7 - 58;
+        else if (sexo == 'F' || sexo == 'f')
+            pesoIdeal = altura * 62.1 - 44.7;
+        else {
+            gotoxy(11, 21);
+            printf("Sexo inválido!");
+            pesoIdeal = 0;
+        }
+
+        gotoxy(25, 16);
+        printf("%.2lf", pesoIdeal);
+
+        // repetir?
+        gotoxy(12, 23);
+        scanf("%d", &OpcaoR);
+
+    } while (OpcaoR == 1);
+    system("cls");
+    DesenharTela();
+    Condicional();
+}
+
+
+void TamanhoNome() {
+
+    char nome[200];
+    int OpcaoR, i;
+	int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int Altura = 25;
+    
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(esquerda, 12, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    //Desenha as linhas na vertical
+    for (i = vertical; i < Altura; i++)
+        {
+            gotoxy(esquerda, i);
+            printf("=");
+            gotoxy(largura, i); 
+            printf("=");
+            
+        }
+
+    gotoxy(25, 2); printf("Projeto CMP1046 - Peso ideal");
+    
+    gotoxy(5, 21); printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23); printf("Opção [  ]");
+
+    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+	
+
+
+	 gotoxy(3, 7);
+        printf("Digite o nome completo.......[                                            ]");
+
+        gotoxy(3, 16);
+        printf("O nome digitado é:[                                              ]");
+        
+        gotoxy(3,18);
+        printf("Qtd de caracteres:[    ]");
+        
+        
+    do {
+
+       
+
+        // limpar campos
+        gotoxy(36, 7); printf("                                       ");
+        gotoxy(22,18); printf("    ");
+        gotoxy(22, 16); printf("                                       ");
+        gotoxy(12,23);
+    	printf("  ");
+
+        // entrada
+        gotoxy(36, 7);
+        fflush(stdin);
+        fgets(nome, sizeof(nome), stdin);
+
+        // limpar \n
+        size_t len = strlen(nome);
+        if (len > 0 && nome[len - 1] == '\n')
+            nome[len - 1] = '\0';
+
+        int tamanho = strlen(nome);
+
+        gotoxy(23, 16);
+        printf("%s", nome);
+        
+        gotoxy(22, 18);
+        printf("%d", tamanho);
+
+        gotoxy(12, 23);
+        scanf("%d", &OpcaoR);
+
+    } while (OpcaoR == 1);
+    system("cls");
+    DesenharTela();
+    Repeticao();
+}
+
 
 void Vetores() {
     int Opcao, X;
