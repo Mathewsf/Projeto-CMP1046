@@ -1364,9 +1364,9 @@ void CalcMediaAluno()
     gotoxy(3, 12);
     printf("Digite o número de faltas............[   ]");
     gotoxy(3, 15);
-    printf("Média final..........................[      ]", mediaFinal);
+    printf("Média final..........................[      ]");
     gotoxy(3, 16);
-	printf("Frequência...........................[      ]", freq);
+	printf("Frequência...........................[      ]");
 	gotoxy(3, 18);
 	printf("Situação.............................[             ]");
 	
@@ -1406,9 +1406,9 @@ void CalcMediaAluno()
         freq = ((aulas - faltas) * 100.0) / aulas;
 
         gotoxy(41, 15);
-        printf("%.2f");
+        printf("%.2f", mediaFinal);
         gotoxy(41, 16);
-        printf("%.2f");
+        printf("%.2f", freq);
 
         gotoxy(41, 18);
         if (mediaFinal >= 7.5 && freq >= 75)
@@ -1930,6 +1930,7 @@ void PesoIdeal() {
 
     double altura, pesoIdeal;
     char sexo;
+    int X;
     
     int OpcaoR, i;
 	int esquerda = 1;
@@ -1969,7 +1970,7 @@ void PesoIdeal() {
     
     do {
 	
-
+again:
         // limpar campos
         gotoxy(43, 7); printf("     ");
         gotoxy(41, 9); printf(" ");
@@ -1988,6 +1989,13 @@ void PesoIdeal() {
         else {
             gotoxy(11, 21);
             printf("Sexo inválido!");
+            system("pause > null");
+                    for (X = 11; X <= 80; X++)
+                    {
+                        gotoxy(X, 21);
+                        printf("   ");
+                    }
+                    goto again;
             pesoIdeal = 0;
         }
 
@@ -2091,7 +2099,7 @@ void TamanhoNome() {
 }
 
 void Tabuada() {
-    int OpcaoR, i, j, k, y, num;
+    int OpcaoR, i, j, k, y, X, num;
     char operacao;
     int esquerda = 1;
     int vertical = 1;
@@ -2122,29 +2130,48 @@ void Tabuada() {
     gotoxy(3, 7);  printf("Digite um número de 1 a 10............[   ]");
     gotoxy(3, 9);  printf("Digite a operação (+, -, *, /)........[   ]");
 
-    gotoxy(3, 15); printf("Resultado:");
+    gotoxy(3, 14); printf("Resultado:");
     
     do {
+        again:
         // limpar campos
-        gotoxy(36, 7); printf("   ");
-        gotoxy(36, 9); printf("   ");
+        gotoxy(42, 7); printf("   ");
+        gotoxy(42, 9); printf("   ");
         gotoxy(12, 23); printf("  ");
-        for ( k = 0; k < 10; k++) {
-            gotoxy(15, 15 + k);
-            printf("                          ");
+        for ( k = 0, j = 0; k < 10; k++) {
+            if (k <= 5)
+            {
+                gotoxy(14, 14 + k);
+            }
+            else
+            {
+                gotoxy(14, 14 + j);
+                j++;
+            }
+            
+            printf("                              ");
         }
 
         // entrada
-        gotoxy(36, 7);
+        gotoxy(42, 7);
         scanf("%d", &num);
 
-        gotoxy(36, 9);
+        gotoxy(42, 9);
         fflush(stdin);
         scanf(" %c", &operacao);
 
         // gerar tabuada
-        for (j = 1; j <= 10; j++) {
-            gotoxy(15, 14 + j);
+        for (j = 1, k = 1; j <= 10; j++) {
+            if (j <= 5)
+            {
+                gotoxy(15, 13 + j);
+            }
+            else
+            {
+                gotoxy(30, 13 + k);
+                k++;
+            }
+            
             switch (operacao) {
                 case '+':
                     printf("%d + %d = %d", num, j, num + j);
@@ -2162,6 +2189,13 @@ void Tabuada() {
                 default:
                     gotoxy(12, 21);
                     printf("Operação inválida! Use +, -, * ou /");
+                    system("pause > null");
+                    for (X = 12; X <= 80; X++)
+                    {
+                        gotoxy(X, 21);
+                        printf("   ");
+                    }
+                    goto again;
                     break;
             }
         }
@@ -2171,18 +2205,9 @@ void Tabuada() {
 
     } while (OpcaoR == 1);
 
-    // retorno ao menu principal
-    printf("\n");
-    gotoxy(1, 1); printf("");
-    // substitui system("cls");
-    for (y = 1; y <= 25; y++) {
-        gotoxy(1, y);
-        printf("                                                                                           ");
-    }
-
-    // retorno
-    //DesenharTela();
-    //Repeticao();
+    system("cls");
+    DesenharTela();
+    Repeticao();
 }
 
 void Vetores() {
