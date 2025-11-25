@@ -58,6 +58,10 @@ void TelaInicial();
 
 void Vetores();
 
+int Esquerda = 1;
+int Vertical = 1;
+int Largura = 90;
+int Altura = 25;
 
 int main() {
     //Traduz pro portugues
@@ -84,25 +88,21 @@ void Hipotenusa()
 {	
 	double ctt1, ctt2, hipotenusa;
 	int OpcaoR, i;
-	int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
     
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
     //linha divisoria da entrada/saida
-    DesenharLinhaHorizontal(esquerda, 11, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 11, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     //Desenha as linhas na vertical
-    for (i = vertical; i < altura; i++)
+    for (i = Vertical; i < Altura; i++)
         {
-            gotoxy(esquerda, i);
+            gotoxy(Esquerda, i);
             printf("=");
-            gotoxy(largura, i); 
+            gotoxy(Largura, i); 
             printf("=");
             
         }
@@ -155,27 +155,24 @@ void Circulo()
 {
     double raio, area, perimetro;
     int OpcaoR, i;
-    int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
 
-    // Desenhar linhas horizontais
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 11, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(Esquerda, 11, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
-    // Desenhar linhas verticais
-    for (i = vertical; i < altura; i++)
-    {
-        gotoxy(esquerda, i);
-        printf("=");
-        gotoxy(largura, i);
-        printf("=");
-    }
+    //Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+            gotoxy(Largura, i); 
+            printf("=");
+            
+        }
 
     // tÃ­tulo
     gotoxy(28, 2);
@@ -231,37 +228,34 @@ void Quadrado()
 {
     double ld, a, p, d;
     int OpcaoR, i;
-    int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
 
-    // Desenhar linhas horizontais
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 11, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(Esquerda, 11, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
-    // Desenhar linhas verticais
-    for (i = vertical; i < altura; i++)
-    {
-        gotoxy(esquerda, i);
-        printf("=");
-        gotoxy(largura, i);
-        printf("=");
-    }
+    //Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+            gotoxy(Largura, i); 
+            printf("=");
+            
+        }
 
-    // tÃ­tulo
+    // tí­tulo
     gotoxy(28, 2);
     printf("Projeto CMP1046 - Cálculo do Quadrado");
 
-    // instruÃ§Ãµes no rodapÃ©
+    // instruções no rodapé
     gotoxy(17, 23);
     printf("1 - Repetir    2 - Voltar ao menu");
 
-    // mensagens fixas de entrada e saÃ­da
+    // mensagens fixas de entrada e saí­da
     gotoxy(3, 7);
     printf("Digite o valor do lado do quadrado:...[     ]");
 
@@ -277,10 +271,10 @@ void Quadrado()
     do {
         // limpar apenas campos
         gotoxy(42, 7);  printf("     ");       // campo do lado
-        gotoxy(28, 13); printf("         ");   // campo da Ã¡rea
+        gotoxy(28, 13); printf("         ");   // campo da Área
         gotoxy(28, 15); printf("         ");   // campo do Perímetro
         gotoxy(28, 17); printf("         ");   // campo da diagonal
-        gotoxy(12, 23); printf("  ");          // campo da opÃ§Ã£o
+        gotoxy(12, 23); printf("  ");          // campo da opção
 
         // entrada do lado
         gotoxy(42, 7);
@@ -316,27 +310,24 @@ void Losango()
 {
     double dmaior, dmenor, a;
     int OpcaoR, i;
-    int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
 
-    // Desenhar linhas horizontais
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 11, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(Esquerda, 11, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
-    // Desenhar linhas verticais
-    for (i = vertical; i < altura; i++)
-    {
-        gotoxy(esquerda, i);
-        printf("=");
-        gotoxy(largura, i);
-        printf("=");
-    }
+    //Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+            gotoxy(Largura, i); 
+            printf("=");
+            
+        }
 
     // tÃ­tulo
     gotoxy(28, 2);
@@ -393,25 +384,20 @@ void CnsVeiculo()
     int opcao;
     int i;
 
-	int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
-    
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
+	DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
     //linha divisoria da entrada/saida
-    DesenharLinhaHorizontal(esquerda, 10, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 10, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     //Desenha as linhas na vertical
-    for (i = vertical; i < altura; i++)
+    for (i = Vertical; i < Altura; i++)
         {
-            gotoxy(esquerda, i);
+            gotoxy(Esquerda, i);
             printf("=");
-            gotoxy(largura, i); 
+            gotoxy(Largura, i); 
             printf("=");
             
         }
@@ -542,25 +528,20 @@ void DesenharLinhaHorizontal(int x, int y, int largura) {
 }
 
 void DesenharTela() {
-    int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
     int i;
 
-    
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     //Desenha as linhas na vertical
-    for (i = vertical; i < altura; i++)
+    for (i = Vertical; i < Altura; i++)
         {
-            gotoxy(esquerda, i);
+            gotoxy(Esquerda, i);
             printf("=");
-            gotoxy(largura, i); 
+            gotoxy(Largura, i); 
             printf("=");
             
         }
@@ -577,25 +558,21 @@ void Prestacao() {
     int DiasAtrasados, Meses;
     float ValorPrestacao, ValorAtualizado, Juros = 0;
     int OpcaoR, i;
-	int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
-    
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
+
+	DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
     //linha divisoria da entrada/saida
-    DesenharLinhaHorizontal(esquerda, 11, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 11, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     //Desenha as linhas na vertical
-    for (i = vertical; i < altura; i++)
+    for (i = Vertical; i < Altura; i++)
         {
-            gotoxy(esquerda, i);
+            gotoxy(Esquerda, i);
             printf("=");
-            gotoxy(largura, i); 
+            gotoxy(Largura, i); 
             printf("=");
             
         }
@@ -667,27 +644,23 @@ do {
 
 //função da primeira tela quando come?a o programa
 void TelaInicial() {
-    int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
     int i, Opcao, X;
 
     while (1) {
 
     system("cls");
-    DesenharLinhaHorizontal(esquerda, 2, largura);
-    DesenharLinhaHorizontal(esquerda, 4, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 2, Largura);
+    DesenharLinhaHorizontal(Esquerda, 4, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     //Desenha as linhas na vertical
-    for (i = vertical; i < altura; i++)
+    for (i = Vertical; i < Altura; i++)
         {
-            gotoxy(esquerda, i);
+            gotoxy(Esquerda, i);
             printf("=");
-            gotoxy(largura, i); 
+            gotoxy(Largura, i); 
             printf("=");
             
         }
@@ -752,6 +725,7 @@ Ler:
 // função menu sequencial
 void Sequencial() {
     int i, Opcao, X;
+
     gotoxy(5, 8); printf("1 - Figuras Geométricas");
 
     gotoxy(5, 10); printf("2 - Consumo de Veículo");
@@ -850,6 +824,7 @@ void FigurasGeometricas()
 
 void Condicional() {
     int i, Opcao, X;
+
     gotoxy(5, 7); printf("1 - Ordenar 3 números inteiros");
 
     gotoxy(5, 8); printf("2 - Receber nome da capital de Goiás");
@@ -919,24 +894,20 @@ void Condicional() {
 
 void Calculadora() {
     int OpcaoR, i, Op, X;
-	int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
     float Num1, Num2, total;
     
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     //Desenha as linhas na vertical
-    for (i = vertical; i < altura; i++)
+    for (i = Vertical; i < Altura; i++)
         {
-            gotoxy(esquerda, i);
+            gotoxy(Esquerda, i);
             printf("=");
-            gotoxy(largura, i); 
+            gotoxy(Largura, i); 
             printf("=");
             
         }
@@ -1098,25 +1069,21 @@ do {
 
 void RaizQuadrada() {
     int OpcaoR, i;
-	int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
     int Quadrado, X;
     float Raiz, Num;
     
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     //Desenha as linhas na vertical
-    for (i = vertical; i < altura; i++)
+    for (i = Vertical; i < Altura; i++)
         {
-            gotoxy(esquerda, i);
+            gotoxy(Esquerda, i);
             printf("=");
-            gotoxy(largura, i); 
+            gotoxy(Largura, i); 
             printf("=");
             
         }
@@ -1210,26 +1177,23 @@ do {
 
 void Emprestimo() {
     int OpcaoR, i;
-    int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
     float salario, emprestimo, parcelas, valorParcela, limite;
 
-    // Desenho padrï¿½o
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
-    for (i = vertical; i < altura; i++)
-    {
-        gotoxy(esquerda, i);
-        printf("=");
-        gotoxy(largura, i);
-        printf("=");
-    }
+    //Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+            gotoxy(Largura, i); 
+            printf("=");
+            
+        }
 
     gotoxy(25, 2);
     printf("Projeto CMP1046 - Empréstimo Consignado");
@@ -1319,25 +1283,24 @@ void CalcMediaAluno()
     int opcao;
 
     int i;
-    int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
 
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 13, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(Esquerda, 13, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
-    for (i = vertical; i < altura; i++)
-    {
-        gotoxy(esquerda, i);
-        printf("=");
-        gotoxy(largura, i);
-        printf("=");
-    }
+    //Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+            gotoxy(Largura, i); 
+            printf("=");
+            
+        }
 
     gotoxy(25, 2);
     printf("Projeto CMP1046 - Calculo Media Aluno");
@@ -1433,25 +1396,25 @@ void DeterminarSalaProva()
     char primeiraLetra;
     char sala[10];
     int opcao;
-    int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
     int i;
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 9, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(Esquerda, 9, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
-    for (i = vertical; i < altura; i++)
-    {
-        gotoxy(esquerda, i);
-        printf("=");
-        gotoxy(largura, i);
-        printf("=");
-    }
+    //Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+            gotoxy(Largura, i); 
+            printf("=");
+            
+        }
 
     gotoxy(28, 2);
     printf("Projeto CMP1046 - Determinar Sala de Prova");
@@ -1539,26 +1502,25 @@ void OrdemCrescente()
 {
     int a, b, c, aux;
     int OpcaoR, i;
-    int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
 
     // ==== DESENHA A ESTRUTURA PADRÃO DA TELA ====
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 14, largura); 
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(Esquerda, 14, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
-    for (i = vertical; i < altura; i++)
-    {
-        gotoxy(esquerda, i);
-        printf("=");
-        gotoxy(largura, i);
-        printf("=");
-    }
+    //Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+            gotoxy(Largura, i); 
+            printf("=");
+            
+        }
 
     gotoxy(28, 2);
     printf("Projeto CMP1046 - Ordem Crescente");
@@ -1622,27 +1584,25 @@ void CapitalGoias()
 {
     char capital[50];
     int OpcaoR, i;
-    int esquerda = 1;   // margem esquerda da janela
-    int vertical = 1;   // início vertical
-    int largura = 90;   // largura total da tela
-    int altura = 25;    // altura total da tela
 
     // ==== DESENHA A ESTRUTURA PADRÃO DA TELA ====
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 11, largura); // linha que separa
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(Esquerda, 11, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
-    // ==== DESENHA AS LINHAS VERTICAIS ====
-    for (i = vertical; i < altura; i++)
-    {
-        gotoxy(esquerda, i);   // borda esquerda
-        printf("=");
-        gotoxy(largura, i);    // borda direita
-        printf("=");
-    }
+    //Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+            gotoxy(Largura, i); 
+            printf("=");
+            
+        }
 
     // ==== TÍTULO DO EXERCÍCIO ====
     gotoxy(28, 2);
@@ -1758,25 +1718,21 @@ void Repeticao() {
 void ConversorGraus() {
     float Celsius, Fahrenheit;
     int OpcaoR, i;
-	int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
     
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
     //linha divisoria da entrada/saida
-    DesenharLinhaHorizontal(esquerda, 11, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 11, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     //Desenha as linhas na vertical
-    for (i = vertical; i < altura; i++)
+    for (i = Vertical; i < Altura; i++)
         {
-            gotoxy(esquerda, i);
+            gotoxy(Esquerda, i);
             printf("=");
-            gotoxy(largura, i); 
+            gotoxy(Largura, i); 
             printf("=");
             
         }
@@ -1826,26 +1782,22 @@ do {
 
 void Fetuccine() {
     int OpcaoR, i;
-	int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int altura = 25;
     int Qtd, j, linha, s1 = 1, s2 = 2, prox;
     
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
     //linha divisoria da entrada/saida
-    DesenharLinhaHorizontal(esquerda, 11, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 11, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     //Desenha as linhas na vertical
-    for (i = vertical; i < altura; i++)
+    for (i = Vertical; i < Altura; i++)
         {
-            gotoxy(esquerda, i);
+            gotoxy(Esquerda, i);
             printf("=");
-            gotoxy(largura, i); 
+            gotoxy(Largura, i); 
             printf("=");
             
         }
@@ -1931,27 +1883,22 @@ void PesoIdeal() {
     double altura, pesoIdeal;
     char sexo;
     int X;
-    
     int OpcaoR, i;
-	int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int Altura = 25;
     
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
     //linha divisoria da entrada/saida
-    DesenharLinhaHorizontal(esquerda, 12, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 12, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     //Desenha as linhas na vertical
-    for (i = vertical; i < Altura; i++)
+    for (i = Vertical; i < Altura; i++)
         {
-            gotoxy(esquerda, i);
+            gotoxy(Esquerda, i);
             printf("=");
-            gotoxy(largura, i); 
+            gotoxy(Largura, i); 
             printf("=");
             
         }
@@ -2017,25 +1964,21 @@ void TamanhoNome() {
 
     char nome[200];
     int OpcaoR, i;
-	int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int Altura = 25;
     
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
     //linha divisoria da entrada/saida
-    DesenharLinhaHorizontal(esquerda, 12, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 12, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     //Desenha as linhas na vertical
-    for (i = vertical; i < Altura; i++)
+    for (i = Vertical; i < Altura; i++)
         {
-            gotoxy(esquerda, i);
+            gotoxy(Esquerda, i);
             printf("=");
-            gotoxy(largura, i); 
+            gotoxy(Largura, i); 
             printf("=");
             
         }
@@ -2101,25 +2044,25 @@ void TamanhoNome() {
 void Tabuada() {
     int OpcaoR, i, j, k, y, X, num;
     char operacao;
-    int esquerda = 1;
-    int vertical = 1;
-    int largura = 90;
-    int Altura = 25;
 
     // Desenhar moldura
-    DesenharLinhaHorizontal(esquerda, 1, largura);
-    DesenharLinhaHorizontal(esquerda, 3, largura);
-    DesenharLinhaHorizontal(esquerda, 12, largura);
-    DesenharLinhaHorizontal(esquerda, 20, largura);
-    DesenharLinhaHorizontal(esquerda, 22, largura);
-    DesenharLinhaHorizontal(esquerda, 24, largura);
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(Esquerda, 12, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
-    for (i = vertical; i < Altura; i++) {
-        gotoxy(esquerda, i);
-        printf("=");
-        gotoxy(largura, i);
-        printf("=");
-    }
+    //Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+            gotoxy(Largura, i); 
+            printf("=");
+            
+        }
 
     gotoxy(25, 2); printf("Projeto CMP1046 - Tabuada");
 
