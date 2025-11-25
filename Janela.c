@@ -1746,6 +1746,7 @@ void Repeticao() {
         break;
     case 5:
         system("cls");
+        Tabuada();
         break;
     case 6:
         system("cls");
@@ -2089,6 +2090,100 @@ void TamanhoNome() {
     Repeticao();
 }
 
+void Tabuada() {
+    int OpcaoR, i, j, k, y, num;
+    char operacao;
+    int esquerda = 1;
+    int vertical = 1;
+    int largura = 90;
+    int Altura = 25;
+
+    // Desenhar moldura
+    DesenharLinhaHorizontal(esquerda, 1, largura);
+    DesenharLinhaHorizontal(esquerda, 3, largura);
+    DesenharLinhaHorizontal(esquerda, 12, largura);
+    DesenharLinhaHorizontal(esquerda, 20, largura);
+    DesenharLinhaHorizontal(esquerda, 22, largura);
+    DesenharLinhaHorizontal(esquerda, 24, largura);
+
+    for (i = vertical; i < Altura; i++) {
+        gotoxy(esquerda, i);
+        printf("=");
+        gotoxy(largura, i);
+        printf("=");
+    }
+
+    gotoxy(25, 2); printf("Projeto CMP1046 - Tabuada");
+
+    gotoxy(5, 21); printf("Mens [                                                                         ]");
+    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+
+    gotoxy(3, 7);  printf("Digite um número de 1 a 10............[   ]");
+    gotoxy(3, 9);  printf("Digite a operação (+, -, *, /)........[   ]");
+
+    gotoxy(3, 15); printf("Resultado:");
+    
+    do {
+        // limpar campos
+        gotoxy(36, 7); printf("   ");
+        gotoxy(36, 9); printf("   ");
+        gotoxy(12, 23); printf("  ");
+        for ( k = 0; k < 10; k++) {
+            gotoxy(15, 15 + k);
+            printf("                          ");
+        }
+
+        // entrada
+        gotoxy(36, 7);
+        scanf("%d", &num);
+
+        gotoxy(36, 9);
+        fflush(stdin);
+        scanf(" %c", &operacao);
+
+        // gerar tabuada
+        for (j = 1; j <= 10; j++) {
+            gotoxy(15, 14 + j);
+            switch (operacao) {
+                case '+':
+                    printf("%d + %d = %d", num, j, num + j);
+                    break;
+                case '-':
+                    printf("%d - %d = %d", num, j, num - j);
+                    break;
+                case '*':
+                    printf("%d * %d = %d", num, j, num * j);
+                    break;
+                case '/':
+                    if (j != 0)
+                        printf("%d / %d = %.2f", num, j, (float)num / j);
+                    break;
+                default:
+                    gotoxy(12, 21);
+                    printf("Operação inválida! Use +, -, * ou /");
+                    break;
+            }
+        }
+
+        gotoxy(12, 23);
+        scanf("%d", &OpcaoR);
+
+    } while (OpcaoR == 1);
+
+    // retorno ao menu principal
+    printf("\n");
+    gotoxy(1, 1); printf("");
+    // substitui system("cls");
+    for (y = 1; y <= 25; y++) {
+        gotoxy(1, y);
+        printf("                                                                                           ");
+    }
+
+    // retorno
+    //DesenharTela();
+    //Repeticao();
+}
 
 void Vetores() {
     int Opcao, X;
