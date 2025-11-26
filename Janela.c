@@ -18,6 +18,8 @@ void CalcMediaAluno();
 
 void ConversorGraus();
 
+void CompVetores();
+
 void DeterminarSalaProva();
 
 void DesenharLinhaHorizontal(int x, int y, int largura);
@@ -38,6 +40,8 @@ void LimparTela();
 
 void Losango();
 
+void MediaNotas();
+
 void OrdemCrescente();
 
 void Prestacao();
@@ -53,6 +57,8 @@ void Repeticao();
 void Sequencial();
 
 void TamanhoNome();
+
+void Tabuada();
 
 void TelaInicial();
 
@@ -2168,7 +2174,7 @@ void Vetores() {
     switch (Opcao) {
         case 1:
             system("cls");
-            //SomaIntervalo();
+            MediaNotas();
             break;
         case 2:
             system("cls");
@@ -2176,7 +2182,7 @@ void Vetores() {
             break;
         case 3:
             system("cls");
-            //Fetuccine();
+            CompVetores();
             break;
         case 4:
             system("cls");
@@ -2186,4 +2192,209 @@ void Vetores() {
             system("cls");
             return;     
     }
+}
+
+void MediaNotas() {
+
+    double notas[9];
+    double medias[3];
+    double mediaFinal;
+    int OpcaoR, i;
+
+    // ----------------- JANELA FIXA (ANTES DO LOOP) -----------------
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    //linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
+
+    //Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+            gotoxy(Largura, i); 
+            printf("=");
+            
+        }
+    // título
+    gotoxy(28, 2);
+    printf("Projeto CMP1046 - Médias das Notas");
+    gotoxy(5, 21); printf("Mens [                                                                         ]");
+    gotoxy(5, 23); printf("Opção [  ]");
+    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    
+    // labels das 9 notas
+    gotoxy(3, 5);  printf("Nota 1:....................[      ]");
+    gotoxy(3, 6);  printf("Nota 2:....................[      ]");
+    gotoxy(3, 7);  printf("Nota 3:....................[      ]");
+    gotoxy(3, 8);  printf("Nota 4:....................[      ]");
+    gotoxy(3, 9);  printf("Nota 5:....................[      ]");
+    gotoxy(3, 10); printf("Nota 6:....................[      ]");
+    gotoxy(3, 11); printf("Nota 7:....................[      ]");
+    gotoxy(3, 12); printf("Nota 8:....................[      ]");
+    gotoxy(3, 13); printf("Nota 9:....................[      ]");
+
+    // labels das médias
+    gotoxy(3, 15); printf("Média 1 (notas 1-3):.......[      ]");
+    gotoxy(3, 16); printf("Média 2 (notas 4-6):.......[      ]");
+    gotoxy(3, 17); printf("Média 3 (notas 7-9):.......[      ]");
+
+    // label média final
+    gotoxy(3, 19); printf("Média Final:...............[      ]");
+
+    // ----------------- LOOP -----------------
+    do {
+
+        // limpar todas as áreas entre colchetes
+        gotoxy(12, 23); printf("  ");
+        for (i = 5; i <= 14; i++) {
+            gotoxy(32, i);
+            printf("     ");
+        }
+
+        for (i = 15; i <= 17; i++) {
+            gotoxy(32, i);
+            printf("     ");
+        }
+
+        gotoxy(32, 19);
+        printf("     ");
+
+        // ---------- leitura das 9 notas ----------
+        gotoxy(33, 5);  scanf("%lf", &notas[0]);
+        gotoxy(33, 6);  scanf("%lf", &notas[1]);
+        gotoxy(33, 7);  scanf("%lf", &notas[2]);
+        gotoxy(33, 8);  scanf("%lf", &notas[3]);
+        gotoxy(33, 9); scanf("%lf", &notas[4]);
+        gotoxy(33, 10); scanf("%lf", &notas[5]);
+        gotoxy(33, 11); scanf("%lf", &notas[6]);
+        gotoxy(33, 12); scanf("%lf", &notas[7]);
+        gotoxy(33, 13); scanf("%lf", &notas[8]);
+
+        // ---------- cálculos ----------
+        medias[0] = (notas[0] + notas[1] + notas[2]) / 3.0;
+        medias[1] = (notas[3] + notas[4] + notas[5]) / 3.0;
+        medias[2] = (notas[6] + notas[7] + notas[8]) / 3.0;
+
+        mediaFinal = (medias[0] + medias[1] + medias[2]) / 3.0;
+
+        // ---------- impressão dos resultados ----------
+        gotoxy(32, 15);
+        printf("%.2lf", medias[0]);
+
+        gotoxy(32, 16);
+        printf("%.2lf", medias[1]);
+
+        gotoxy(32, 17);
+        printf("%.2lf", medias[2]);
+
+        gotoxy(32, 19);
+        printf("%.2lf", mediaFinal);
+
+        // opção no rodapé
+        gotoxy(12, 23);
+        scanf("%d", &OpcaoR);
+
+    } while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Vetores();
+}
+
+void CompVetores()
+{
+    int OpcaoR, i, j;
+    int VetA[10], VetB[10];
+
+    // Desenhar moldura
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    // linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(Esquerda, 12, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
+
+    // Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+    {
+        gotoxy(Esquerda, i);
+        printf("=");
+        gotoxy(Largura, i);
+        printf("=");
+    }
+
+    gotoxy(25, 2);
+    printf("Projeto CMP1046 - Comp Vetores");
+
+    gotoxy(5, 21);
+    printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23);
+    printf("Opção [  ]");
+
+    gotoxy(17, 23);
+    printf("1 - Repetir    2 - Voltar ao menu");
+
+    gotoxy(3, 6);
+    printf("Vet-A: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+
+    gotoxy(3, 8);
+    printf("Vet-B: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+
+    gotoxy(3, 15); 
+    printf("Num Comuns: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+
+    gotoxy(3,17);
+    printf("Posição:    [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+
+    do {
+        gotoxy(3, 6);
+        printf("Vet-A: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+
+        gotoxy(3, 8);
+        printf("Vet-B: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+
+        gotoxy(3, 15); 
+        printf("Num Comuns: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+
+        gotoxy(3,17);
+        printf("Posição:    [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+
+        gotoxy(12, 23); printf("  ");
+
+        for (i = 11, j = 0; i <= 65; i = i + 6, j++) 
+        {
+            gotoxy(i, 6);
+            scanf("%d", &VetA[j]);
+        }
+
+        for (i = 11, j = 0; i <= 65; i = i + 6, j++) 
+        {
+            gotoxy(i, 8);
+            scanf("%d", &VetB[j]);
+        }
+
+        for (i = 0, j = 16; i <= 10; i++)
+        {
+            if (VetA[i] == VetB[i])
+            {
+                gotoxy(j, 15);
+                printf("%d", VetA[i]);
+                gotoxy(j, 17);
+                printf("%d", i);
+                j = j + 6;
+            }
+        }
+
+        gotoxy(12, 23);
+        scanf("%d", &OpcaoR);
+    } while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Vetores();
 }
