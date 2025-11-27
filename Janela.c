@@ -20,6 +20,8 @@ void ConversorGraus();
 
 void CompVetores();
 
+void SomaIntervalos();
+
 void DeterminarSalaProva();
 
 void DesenharLinhaHorizontal(int x, int y, int largura);
@@ -43,6 +45,8 @@ void Losango();
 void MediaNotas();
 
 void OrdemCrescente();
+
+void OrdemVetor();
 
 void Prestacao();
 
@@ -1697,6 +1701,7 @@ void Repeticao() {
     {
     case 1:
         system("cls");
+        SomaIntervalos();
         break;
     case 2:
         system("cls");
@@ -1719,6 +1724,142 @@ void Repeticao() {
         return;
         break;
     }
+}
+
+void SomaIntervalos() 
+{
+    int N1 = 0;
+    int N2 = 0;
+    int OpcaoR = 1;
+    int i;
+    int soma = 0;
+    int qtd = 0;
+    int contPar = 0;
+    double media = 0.0;
+
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    DesenharLinhaHorizontal(Esquerda, 11, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
+
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+
+            gotoxy(Largura, i);
+            printf("=");
+        }
+
+    gotoxy(20, 2);
+    printf("Projeto CMP1046 - Soma/Intervalos e Contagem de Pares");
+
+    gotoxy(5, 21);
+    printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23);
+    printf("Opção [  ]");
+
+    gotoxy(17, 23);
+    printf("1 - Repetir    2 - Voltar ao menu");
+
+    gotoxy(3, 7);
+    printf("1º numero inteiro positivo:.............[          ]");
+
+    gotoxy(3, 9);
+    printf("2º numero inteiro positivo:.............[          ]");
+
+    gotoxy(3, 15);
+    printf("Resultado:..............................[                      ]");
+
+do {
+    /* Reimprime rótulos para restaurar os colchetes */
+    gotoxy(3, 7);
+    printf("1º numero inteiro positivo:.............[          ]");
+
+    gotoxy(3, 9);
+    printf("2º numero inteiro positivo:.............[          ]");
+
+    gotoxy(3, 15);
+    printf("Resultado:..............................[                      ]");
+
+    /* Limpa campo da opção */
+    gotoxy(12,23);
+    printf("  ");
+
+    /* LIMPA APENAS dentro dos colchetes do resultado (coluna 44 em diante) */
+    gotoxy(46,15);
+    printf("                    ");
+
+    /* Leitura do 1º número */
+    gotoxy(44,7);   /* alinhado */
+    printf("          ");
+    gotoxy(44,7);
+    scanf("%d", &N1);
+    fflush(stdin);
+
+    /* Leitura do 2º número */
+    gotoxy(44,9);   /* alinhado */
+    printf("          ");
+    gotoxy(44,9);
+    scanf("%d", &N2);
+    fflush(stdin);
+
+    soma = 0;
+    qtd = 0;
+    contPar = 0;
+    media = 0.0;
+
+    /* Igual */
+    if (N1 == N2)
+    {
+        gotoxy(44,15);   /* alinhado igual aos outros */
+        printf("Numeros iguais");
+    }
+    else
+    {
+        if (N1 < N2)
+        {
+            i = N1;
+            while (i <= N2)
+            {
+                soma = soma + i;
+                qtd = qtd + 1;
+                i = i + 1;
+            }
+
+            media = soma * 1.0 / qtd;
+
+            gotoxy(44,15);   /* alinhado */
+            printf("%.2f", media);
+        }
+        else
+        {
+            i = N1;
+            while (i >= N2)
+            {
+                if ((i % 2) == 0)
+                {
+                    contPar = contPar + 1;
+                }
+                i = i - 1;
+            }
+
+            gotoxy(44,15);   /* alinhado */
+            printf("%d", contPar);
+        }
+    }
+
+    gotoxy(12,23);
+    scanf("%d", &OpcaoR);
+
+} while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Repeticao();
 }
 
 void ConversorGraus() {
@@ -2186,7 +2327,7 @@ void Vetores() {
             break;
         case 4:
             system("cls");
-            //TamanhoNome();
+            OrdemVetor();
             break;
         case 5:
             system("cls");
@@ -2390,6 +2531,86 @@ void CompVetores()
             }
         }
 
+        gotoxy(12, 23);
+        scanf("%d", &OpcaoR);
+    } while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Vetores();
+}
+
+void OrdemVetor() {
+	int OpcaoR, i, j;
+    int VetA[10], VetB[10];
+    int Aux;
+
+    // Desenhar moldura
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    // linha divisoria da entrada/saida
+    DesenharLinhaHorizontal(Esquerda, 12, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
+
+    // Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+    {
+        gotoxy(Esquerda, i);
+        printf("=");
+        gotoxy(Largura, i);
+        printf("=");
+    }
+
+    gotoxy(25, 2);
+    printf("Projeto CMP1046 - Ordem Vetor");
+
+    gotoxy(5, 21);
+    printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23);
+    printf("Opção [  ]");
+
+    gotoxy(17, 23);
+    printf("1 - Repetir    2 - Voltar ao menu");
+
+    gotoxy(3, 7);
+    printf("Vet-A: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+    
+    gotoxy(3, 16); 
+    printf("Ordem Crescente: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+    
+    do {
+        gotoxy(3, 7);
+        printf("Vet-A: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+
+        gotoxy(3, 16); 
+        printf("Ordem Crescente: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
+
+        gotoxy(12, 23); printf("  ");
+
+        for (i = 11, j = 0; i <= 65; i = i + 6, j++) 
+        {
+            gotoxy(i, 7);
+            scanf("%d", &VetA[j]);
+        }
+        
+        for (i = 0; i < 9; i++) {
+            for (j = i + 1; j < 10; j++) {
+                if (VetA[i] > VetA[j]) {
+                    Aux = VetA[i];
+                    VetA[i] = VetA[j];
+                    VetA[j] = Aux;
+                }
+            }
+        }
+        
+        for (i = 0, j = 21; i < 10; j = j + 6, i++) {
+            gotoxy(j,16);
+            printf("%d", VetA[i]);
+        }
+        
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
     } while (OpcaoR == 1);
