@@ -68,6 +68,8 @@ void TelaInicial();
 
 void Vetores();
 
+void VetorC();
+
 int Esquerda = 1;
 int Vertical = 1;
 int Largura = 90;
@@ -117,7 +119,7 @@ void Hipotenusa()
             
         }
 
-    gotoxy(35, 2); printf("Projeto CMP1046");
+    gotoxy(28, 2); printf("Projeto CMP1046 - Calcular hipotenusa");
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
@@ -194,19 +196,19 @@ void Circulo()
 
     // mensagens fixas de entrada e saÃ­da
     gotoxy(3, 7);
-    printf("Digite o valor do raio do círculo:...[     ]");
+    printf("Digite o valor do raio do círculo:...[      ]");
 
     gotoxy(3, 14);
-    printf("Área do círculo:       [         ]");
+    printf("Área do círculo:.......[            ]");
 
     gotoxy(3, 16);
-    printf("Perímetro do círculo:  [         ]");
+    printf("Perímetro do círculo:..[            ]");
 
     do {
         // limpar apenas os campos numÃ©ricos dentro dos colchetes
         gotoxy(42, 7);  printf("     ");       // campo do raio
-        gotoxy(28, 14); printf("         ");   // campo da Ã¡rea
-        gotoxy(28, 16); printf("         ");   // campo do Perímetro
+        gotoxy(28, 14); printf("          ");   // campo da Ã¡rea
+        gotoxy(28, 16); printf("          ");   // campo do Perímetro
         gotoxy(12, 23); printf("  ");          // campo da opÃ§Ã£o
 
         // entrada do raio
@@ -270,20 +272,20 @@ void Quadrado()
     printf("Digite o valor do lado do quadrado:...[     ]");
 
     gotoxy(3, 13);
-    printf("Área do quadrado:......[         ]");
+    printf("Área do quadrado:......[              ]");
 
     gotoxy(3, 15);
-    printf("Perímetro do quadrado:.[         ]");
+    printf("Perímetro do quadrado:.[              ]");
 
     gotoxy(3, 17);
-    printf("Diagonal do quadrado:..[         ]");
+    printf("Diagonal do quadrado:..[              ]");
 
     do {
         // limpar apenas campos
         gotoxy(42, 7);  printf("     ");       // campo do lado
-        gotoxy(28, 13); printf("         ");   // campo da Área
-        gotoxy(28, 15); printf("         ");   // campo do Perímetro
-        gotoxy(28, 17); printf("         ");   // campo da diagonal
+        gotoxy(28, 13); printf("           ");   // campo da Área
+        gotoxy(28, 15); printf("           ");   // campo do Perímetro
+        gotoxy(28, 17); printf("           ");   // campo da diagonal
         gotoxy(12, 23); printf("  ");          // campo da opção
 
         // entrada do lado
@@ -355,13 +357,13 @@ void Losango()
     printf("Digite o valor da diagonal menor:...[     ]");
 
     gotoxy(3, 15);
-    printf("Área do losango: [         ]");
+    printf("Área do losango: [              ]");
 
     do {
         // limpar apenas os 
         gotoxy(40, 5);  printf("     ");   // campo da diagonal maior
         gotoxy(40, 8);  printf("     ");   // campo da diagonal menor
-        gotoxy(25, 15); printf("         "); // campo da Área
+        gotoxy(25, 15); printf("          "); // campo da Área
         gotoxy(12, 23); printf("  ");      // campo da opção
 
         // entrada das diagonais
@@ -412,7 +414,7 @@ void CnsVeiculo()
             
         }
 
-    gotoxy(35, 2); printf("Projeto CMP1046");
+    gotoxy(27, 2); printf("Projeto CMP1046 - Consumo de veículo");
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
@@ -426,22 +428,22 @@ void CnsVeiculo()
     gotoxy(3,7);
     printf("Digite a velocidade média............[   ]");
 
-    gotoxy(3,11);
+    gotoxy(3,12);
     printf("Preço gasolina carro A..: 	     [R$         ]");
 
-    gotoxy(3,12);
+    gotoxy(3,13);
     printf("Preço etanol carro A....: 	     [R$         ]");
 
-     gotoxy(3,13);
+     gotoxy(3,14);
     printf("Preço gasolina carro b..: 	     [R$         ]");
 
-    gotoxy(3,14);
+    gotoxy(3,15);
     printf("Preço etanol carro b....: 	     [R$         ]");
 
-     gotoxy(3,15);
+     gotoxy(3,16);
     printf("Preço gasolina carro c..: 	     [R$         ]");
 
-    gotoxy(3,16);
+    gotoxy(3,17);
     printf("Preço etanol carro c....:         [R$         ]");
 
     do
@@ -452,9 +454,6 @@ void CnsVeiculo()
     gotoxy(41, 7);
     printf("   ");
     
-    gotoxy(40,11);
-    printf("        ");
-
     gotoxy(40,12);
     printf("        ");
 
@@ -470,6 +469,9 @@ void CnsVeiculo()
     gotoxy(40,16);
     printf("        ");
 
+    gotoxy(40,17);
+    printf("        ");
+
     gotoxy(12,23);
     printf("  ");
     
@@ -480,32 +482,32 @@ void CnsVeiculo()
     scanf("%f", &VelM);
 
     a = (DH*VelM)/8;
-    gotoxy(41,11);
+    gotoxy(41,12);
     printf("%.2f", a);
 
     a = a*1.04;
 
-    gotoxy(41,12);
+    gotoxy(41,13);
     printf("%.2f", a);
     
     b = (DH*VelM)/10;
 
-    gotoxy(41,13);
+    gotoxy(41,14);
     printf("%.2f", b);
    
     b = b*1.04;
 
-    gotoxy(41,14);
+    gotoxy(41,15);
     printf("%.2f", b);
     
     c = (DH*VelM)/12;
 
-    gotoxy(41,15);
+    gotoxy(41,16);
     printf("%.2f", c);
    
     c = c*1.04;
 
-    gotoxy(41,16);
+    gotoxy(41,17);
     printf("%.2f", c);
     
     gotoxy(12, 23);
@@ -587,7 +589,7 @@ void Prestacao() {
             
         }
 
-    gotoxy(35, 2); printf("Projeto CMP1046");
+    gotoxy(27, 2); printf("Projeto CMP1046 - Prestação de Veículo");
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
@@ -595,10 +597,10 @@ void Prestacao() {
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
-    gotoxy(3, 5);
+    gotoxy(3, 6);
     printf("Digite o valor da prestação.............[R$             ]");
 
-    gotoxy(3, 7);
+    gotoxy(3, 8);
     printf("Digite a quantidade de dias em atraso...[      ]");
 
     gotoxy(3, 16);
@@ -606,10 +608,10 @@ void Prestacao() {
     
 do {
 
-    gotoxy(47,5);
+    gotoxy(47,6);
     printf("          ");
 
-    gotoxy(45,7);
+    gotoxy(45,8);
     printf("     ");
 
     gotoxy(47,16);
@@ -622,12 +624,12 @@ do {
     printf("  ");
     
     
-    gotoxy(47, 5);
+    gotoxy(47, 6);
     scanf("%f", &ValorPrestacao);
     fflush(stdin);
     // ou usar isso: while (getchar() != '\n');
     
-    gotoxy(45, 7);
+    gotoxy(45, 8);
     scanf("%d", &DiasAtrasados);
 
     if  (DiasAtrasados != 0)
@@ -1433,27 +1435,30 @@ void DeterminarSalaProva()
     printf("Mens [                                                                               ]");
     gotoxy(3, 23);
     printf("Opção [ ]");
-    gotoxy(12, 23);
-    printf("1 - Repetir     2 - Sair");
+    gotoxy(17, 23);
+    printf("1 - Repetir    2 - Sair");
 
-    gotoxy(3, 5);
-    printf("Digite o nome do aluno...............[                        ]");
+    gotoxy(3, 6);
+    printf("Digite o nome do aluno...............[                                 ]");
 
-    gotoxy(3, 11);
+    
+	
+	
+	gotoxy(3, 13);
     printf("Primeira letra do nome.............: [ ]");
-    gotoxy(3, 12);
+    gotoxy(3, 15);
     printf("Sala de Prova......................: [                   ]");
 
     do
     {
     	
-    gotoxy(41, 5);
-    printf("                        ");
+    gotoxy(41, 6);
+    printf("                                 ");
 
-    gotoxy(41, 11);
+    gotoxy(41, 13);
     printf(" ");
     
-	gotoxy(41, 12);
+	gotoxy(41, 15);
     printf("                   ");
 
     gotoxy(10, 21);
@@ -1462,7 +1467,7 @@ void DeterminarSalaProva()
     gotoxy(10, 23);
     printf(" ");
 
-    gotoxy(41, 5);
+    gotoxy(41, 6);
 	fflush(stdin);
     gets(nome);
 
@@ -1493,9 +1498,9 @@ void DeterminarSalaProva()
          strcpy(sala, "N/A - Vazio");
     }
 
-    gotoxy(41, 11);
+    gotoxy(41, 13);
     printf("%c", primeiraLetra);
-    gotoxy(41, 12);
+    gotoxy(41, 15);
     printf("%s", sala);
 
     gotoxy(10, 23);
@@ -1517,7 +1522,7 @@ void OrdemCrescente()
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
     //linha divisoria da entrada/saida
-    DesenharLinhaHorizontal(Esquerda, 14, Largura);
+    DesenharLinhaHorizontal(Esquerda, 13, Largura);
     DesenharLinhaHorizontal(Esquerda, 20, Largura);
     DesenharLinhaHorizontal(Esquerda, 22, Largura);
     DesenharLinhaHorizontal(Esquerda, 24, Largura);
@@ -1745,117 +1750,146 @@ void SomaIntervalos()
     DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
     for (i = Vertical; i < Altura; i++)
-        {
-            gotoxy(Esquerda, i);
-            printf("=");
+    {
+        gotoxy(Esquerda, i);
+        printf("=");
 
-            gotoxy(Largura, i);
-            printf("=");
-        }
+        gotoxy(Largura, i);
+        printf("=");
+    }
 
     gotoxy(20, 2);
-    printf("Projeto CMP1046 - Soma/Intervalos e Contagem de Pares");
+    printf("PROJETO CMP1046 - SOMA DE INTERVALO DE NÚMEROS");
 
-    gotoxy(5, 21);
-    printf("Mens [                                                                         ]");
+    gotoxy(3, 6);
+    printf(" valor inteiro positivo [          ]");
 
-    gotoxy(5, 23);
-    printf("Opção [  ]");
+    gotoxy(3, 8);
+    printf(" valor inteiro positivo [          ]");
 
-    gotoxy(17, 23);
-    printf("1 - Repetir    2 - Voltar ao menu");
-
-    gotoxy(3, 7);
-    printf("1º numero inteiro positivo:.............[          ]");
-
-    gotoxy(3, 9);
-    printf("2º numero inteiro positivo:.............[          ]");
+    gotoxy(3, 13);
+    printf(" A media dos numeros do intervalo ........[    ]");
 
     gotoxy(3, 15);
-    printf("Resultado:..............................[                      ]");
+    printf(" Quantidade de numeros pares no intervalo.[    ]");
 
-do {
-    /* Reimprime rótulos para restaurar os colchetes */
-    gotoxy(3, 7);
-    printf("1º numero inteiro positivo:.............[          ]");
+    gotoxy(3, 17);
+    printf(" Números digitados são iguais ...........[    ]");
 
-    gotoxy(3, 9);
-    printf("2º numero inteiro positivo:.............[          ]");
+    gotoxy(3, 21);
+    printf(" Mensagem [                                                                         ]");
 
-    gotoxy(3, 15);
-    printf("Resultado:..............................[                      ]");
+    gotoxy(3, 23);
+    printf(" Opção [  ]  1 - Repetir    2 - Menu Anterior    3 - Menu Principal");
 
-    /* Limpa campo da opção */
-    gotoxy(12,23);
-    printf("  ");
-
-    /* LIMPA APENAS dentro dos colchetes do resultado (coluna 44 em diante) */
-    gotoxy(46,15);
-    printf("                    ");
-
-    /* Leitura do 1º número */
-    gotoxy(44,7);   /* alinhado */
-    printf("          ");
-    gotoxy(44,7);
-    scanf("%d", &N1);
-    fflush(stdin);
-
-    /* Leitura do 2º número */
-    gotoxy(44,9);   /* alinhado */
-    printf("          ");
-    gotoxy(44,9);
-    scanf("%d", &N2);
-    fflush(stdin);
-
-    soma = 0;
-    qtd = 0;
-    contPar = 0;
-    media = 0.0;
-
-    /* Igual */
-    if (N1 == N2)
+    do
     {
-        gotoxy(44,15);   /* alinhado igual aos outros */
-        printf("Numeros iguais");
-    }
-    else
-    {
-        if (N1 < N2)
+        gotoxy(3, 6);
+        printf(" valor inteiro positivos [          ]");
+
+        gotoxy(3, 8);
+        printf(" valor inteiro positivos [          ]");
+
+        gotoxy(3, 13);
+        printf(" A media dos numeros do intervalo ........[       ]");
+
+        gotoxy(3, 15);
+        printf(" Quantidade de numeros pares no intervalo.[       ]");
+
+        gotoxy(3, 17);
+        printf(" Números digitados são iguais ...........[    ]");
+
+        gotoxy(11, 23);
+        printf("  ");
+
+        gotoxy(44, 7);   printf("          ");
+        gotoxy(44, 9);   printf("          ");
+
+        gotoxy(46, 13);  printf("      ");
+        gotoxy(46, 15);  printf("      ");
+        gotoxy(46, 17);  printf("   ");
+
+        gotoxy(29, 6);
+        scanf("%d", &N1);
+        fflush(stdin);
+
+        gotoxy(29, 8);
+        scanf("%d", &N2);
+        fflush(stdin);
+
+        soma = 0;
+        qtd = 0;
+        contPar = 0;
+        media = 0.0;
+
+        if (N1 == N2)
         {
-            i = N1;
-            while (i <= N2)
-            {
-                soma = soma + i;
-                qtd = qtd + 1;
-                i = i + 1;
-            }
-
-            media = soma * 1.0 / qtd;
-
-            gotoxy(44,15);   /* alinhado */
-            printf("%.2f", media);
+            gotoxy(46, 17); 
+            printf("Sim");
         }
         else
         {
-            i = N1;
-            while (i >= N2)
+            if (N1 < N2)
             {
-                if ((i % 2) == 0)
+                i = N1;
+                while (i <= N2)
                 {
-                    contPar = contPar + 1;
+                    soma = soma + i;
+                    qtd = qtd + 1;
+
+                    if ((i % 2) == 0)
+                    {
+                        contPar = contPar + 1;
+                    }
+
+                    i = i + 1;
                 }
-                i = i - 1;
+
+                media = soma * 1.0 / qtd;
+
+                gotoxy(46, 13);   
+                printf("%.2f", media);
+
+                gotoxy(46, 15);   
+                printf("%d", contPar);
+
+                gotoxy(46, 17);   
+                printf("Nao");
             }
+            else
+            {
+                i = N1;
+                while (i >= N2)
+                {
+                    soma = soma + i;
+                    qtd = qtd + 1;
 
-            gotoxy(44,15);   /* alinhado */
-            printf("%d", contPar);
+                    if ((i % 2) == 0)
+                    {
+                        contPar = contPar + 1;
+                    }
+
+                    i = i - 1;
+                }
+
+                media = soma * 1.0 / qtd;
+
+                gotoxy(46, 13);   
+                printf("%.2f", media);
+
+                gotoxy(46, 15);  
+                printf("%d", contPar);
+
+                gotoxy(46, 17);   
+                printf("Nao");
+            }
         }
-    }
 
-    gotoxy(12,23);
-    scanf("%d", &OpcaoR);
+        gotoxy(11, 23);
+        scanf("%d", &OpcaoR);
+        fflush(stdin);
 
-} while (OpcaoR == 1);
+    } while (OpcaoR == 1);
 
     system("cls");
     DesenharTela();
@@ -1957,7 +1991,7 @@ void Fetuccine() {
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 
-    gotoxy(3, 6);
+    gotoxy(3, 7);
     printf("Número de termos...[     ]");
 
     gotoxy(3, 15);
@@ -1966,7 +2000,7 @@ void Fetuccine() {
 do {
 	s1 = 1;
 	s2 = 2;
-    gotoxy(23,6);
+    gotoxy(23,7);
     printf("    ");
 
     for (i = 14; i <= 89; i++)
@@ -1978,7 +2012,7 @@ do {
     gotoxy(12,23);
     printf("  ");
 
-    gotoxy(23,6);
+    gotoxy(23,7);
     scanf("%d", &Qtd);
 
     fflush(stdin);
@@ -2130,7 +2164,7 @@ void TamanhoNome() {
             
         }
 
-    gotoxy(25, 2); printf("Projeto CMP1046 - Peso ideal");
+    gotoxy(28, 2); printf("Projeto CMP1046 - Tamanho de um nome");
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
@@ -2143,10 +2177,10 @@ void TamanhoNome() {
 	 gotoxy(3, 7);
         printf("Digite o nome completo.......[                                            ]");
 
-        gotoxy(3, 16);
+        gotoxy(3, 15);
         printf("O nome digitado é:[                                              ]");
         
-        gotoxy(3,18);
+        gotoxy(3,17);
         printf("Qtd de caracteres:[    ]");
         
         
@@ -2156,8 +2190,8 @@ void TamanhoNome() {
 
         // limpar campos
         gotoxy(36, 7); printf("                                       ");
-        gotoxy(22,18); printf("    ");
-        gotoxy(22, 16); printf("                                       ");
+        gotoxy(22,17); printf("    ");
+        gotoxy(22, 15); printf("                                       ");
         gotoxy(12,23);
     	printf("  ");
 
@@ -2173,10 +2207,10 @@ void TamanhoNome() {
 
         int tamanho = strlen(nome);
 
-        gotoxy(23, 16);
+        gotoxy(23, 15);
         printf("%s", nome);
         
-        gotoxy(22, 18);
+        gotoxy(22, 17);
         printf("%d", tamanho);
 
         gotoxy(12, 23);
@@ -2319,7 +2353,7 @@ void Vetores() {
             break;
         case 2:
             system("cls");
-            //ConversorGraus();
+            VetorC();
             break;
         case 3:
             system("cls");
@@ -2619,3 +2653,106 @@ void OrdemVetor() {
     DesenharTela();
     Vetores();
 }
+
+void VetorC()
+{
+    int OpcaoR = 1;
+    int i;
+    int A[10], B[10], C[10];
+
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
+
+    for (i = Vertical; i < Altura; i++)
+    {
+        gotoxy(Esquerda, i); printf("=");
+        gotoxy(Largura, i);  printf("=");
+    }
+
+    gotoxy(28, 2);
+    printf("Projeto CMP1046 - Vetor C");
+
+    gotoxy(5, 23);
+    printf("Mens [                                                         ]");
+
+    gotoxy(5, 25);
+    printf("Opção [  ]   1 - Repetir   2 - Voltar   3 - Principal");
+
+    gotoxy(8, 5);  printf("A");
+    gotoxy(18, 5); printf("+");
+    gotoxy(28, 5); printf("B");
+    gotoxy(38, 5); printf("=");
+    gotoxy(48, 5); printf("C");
+
+    do
+    {
+        gotoxy(12, 25); printf("  ");
+
+        for (i = 0; i < 10; i++)
+        {
+            gotoxy(8, 6 + i);  printf("[   ]");
+            gotoxy(18, 6 + i); printf("+");
+            gotoxy(28, 6 + i); printf("[   ]");
+            gotoxy(38, 6 + i); printf("=");
+            gotoxy(48, 6 + i); printf("[   ]");
+        }
+
+        for (i = 0; i < 10; i++)
+        {
+            gotoxy(9, 6 + i);
+            scanf("%d", &A[i]);
+            fflush(stdin);
+
+            while (A[i] < 0 || A[i] >= 100)
+            {
+                gotoxy(5, 23); printf("Mens [A invalido]");
+                gotoxy(9, 6 + i); printf("   ");
+                gotoxy(9, 6 + i);
+                scanf("%d", &A[i]);
+                fflush(stdin);
+            }
+        }
+
+        for (i = 0; i < 10; i++)
+        {
+            gotoxy(29, 6 + i);
+            scanf("%d", &B[i]);
+            fflush(stdin);
+
+            while (B[i] < 0 || B[i] >= 100)
+            {
+                gotoxy(5, 23); printf("Mens [B invalido]");
+                gotoxy(29, 6 + i); printf("   ");
+                gotoxy(29, 6 + i);
+                scanf("%d", &B[i]);
+                fflush(stdin);
+            }
+        }
+
+        for (i = 0; i < 10; i++)
+        {
+            C[i] = A[i] + B[i];
+        }
+
+        for (i = 0; i < 10; i++)
+        {
+            gotoxy(49, 6 + i);
+            printf("%3d", C[i]);
+        }
+
+        gotoxy(12, 25);
+        scanf("%d", &OpcaoR);
+        fflush(stdin);
+
+    } while (OpcaoR == 1);
+
+    system("cls");
+    DesenharTela();
+    Vetores();
+}
+
+
+
+
