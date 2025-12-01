@@ -1918,7 +1918,7 @@ void ConversorGraus() {
             
         }
 
-    gotoxy(25, 2); printf("Projeto CMP1046 - Quadrado e Raiz Quadrada");
+    gotoxy(25, 2); printf("Projeto CMP1046 - Conversão de graus");
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
@@ -2245,7 +2245,7 @@ void Tabuada() {
             
         }
 
-    gotoxy(25, 2); printf("Projeto CMP1046 - Tabuada");
+    gotoxy(32, 2); printf("Projeto CMP1046 - Tabuada");
 
     gotoxy(5, 21); printf("Mens [                                                                         ]");
     gotoxy(5, 23); printf("Opção [  ]");
