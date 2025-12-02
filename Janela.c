@@ -399,7 +399,7 @@ void CnsVeiculo()
 	DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
     //linha divisoria da entrada/saida
-    DesenharLinhaHorizontal(Esquerda, 10, Largura);
+    DesenharLinhaHorizontal(Esquerda, 9, Largura);
     DesenharLinhaHorizontal(Esquerda, 20, Largura);
     DesenharLinhaHorizontal(Esquerda, 22, Largura);
     DesenharLinhaHorizontal(Esquerda, 24, Largura);
@@ -2084,7 +2084,7 @@ void PesoIdeal() {
             
         }
 
-    gotoxy(25, 2); printf("Projeto CMP1046 - Peso ideal");
+    gotoxy(32, 2); printf("Projeto CMP1046 - Peso ideal");
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
@@ -2092,7 +2092,7 @@ void PesoIdeal() {
 
     gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
 	
-	gotoxy(3, 7);  printf("Digite a altura em metros..............[     ]");
+	gotoxy(3, 6);  printf("Digite a altura em metros..............[     ]");
     gotoxy(3, 9);  printf("Digite o sexo (M/F)..................[ ]");
     gotoxy(3, 16); printf("Peso ideal........[              Kg]");
     
@@ -2100,14 +2100,14 @@ void PesoIdeal() {
 	
 again:
         // limpar campos
-        gotoxy(43, 7); printf("     ");
+        gotoxy(43, 6); printf("     ");
         gotoxy(41, 9); printf(" ");
         gotoxy(25, 16); printf("          ");
         gotoxy(12,23);
    		printf("  ");
 
         // entrada
-        gotoxy(43, 7); scanf("%lf", &altura);
+        gotoxy(43, 6); scanf("%lf", &altura);
         gotoxy(41, 9); scanf(" %c", &sexo);
 
         if (sexo == 'M' || sexo == 'm')
@@ -2481,7 +2481,7 @@ void MediaNotas() {
 
 void CompVetores()
 {
-    int OpcaoR, i, j;
+    int OpcaoR, i, j, lin, Achou;
     int VetA[10], VetB[10];
 
     // Desenhar moldura
@@ -2552,17 +2552,22 @@ void CompVetores()
             gotoxy(i, 8);
             scanf("%d", &VetB[j]);
         }
-
-        for (i = 0, j = 16; i <= 10; i++)
+		
+        for (i = 0, lin = 16; i <= 10; i++)
         {
-            if (VetA[i] == VetB[i])
-            {
-                gotoxy(j, 15);
-                printf("%d", VetA[i]);
-                gotoxy(j, 17);
-                printf("%d", i);
-                j = j + 6;
-            }
+        	Achou = 1;
+        	for (j = 0; j <= 10 && Achou; j++)
+        	{
+        		if (VetA[i] == VetB[j])
+	            {
+	                gotoxy(lin, 15);
+	                printf("%d", VetA[i]);
+	                gotoxy(lin, 17);
+	                printf("%d", i);
+	                lin = lin + 6;
+	                Achou = 0;
+	            }
+			}
         }
 
         gotoxy(12, 23);
