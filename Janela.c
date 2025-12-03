@@ -844,46 +844,57 @@ void TelaInicial() {
 
     gotoxy(5, 16); printf("5 - Encerrar");
 
-Ler:
-    gotoxy(12,23);
-    printf("  ");
-    for (X = 12; X <= 80; X++)
-        {
-            gotoxy(X, 21);
-            printf("   ");
-        }
-    gotoxy(12, 23);
-    scanf("%d", &Opcao);
+    Ler:
+        gotoxy(12,23);
+        printf("  ");
+        for (X = 12; X <= 80; X++)
+            {
+                gotoxy(X, 21);
+                printf("   ");
+            }
+        gotoxy(12, 23);
+        scanf("%d", &Opcao);
 
-    switch (Opcao)
-    {
-    case 1:
-        system("cls");
-        DesenharTela();
-        Sequencial();
-        break;
-    case 2:
-        system("cls");
-        DesenharTela();
-        Condicional();
-        break;
-    case 3:
-        system("cls");
-        DesenharTela();
-        Repeticao();
-        break;
-    case 4:
-        system("cls");
-		DesenharTela();
-        Vetores();
-        break;
-    case 5:
-        system("cls");
-        printf("Encerrando o programa...\n");
-        exit(0);
-        break;
+        switch (Opcao)
+        {
+        case 1:
+            system("cls");
+            DesenharTela();
+            Sequencial();
+            break;
+        case 2:
+            system("cls");
+            DesenharTela();
+            Condicional();
+            break;
+        case 3:
+            system("cls");
+            DesenharTela();
+            Repeticao();
+            break;
+        case 4:
+            system("cls");
+            DesenharTela();
+            Vetores();
+            break;
+        case 5:
+            system("cls");
+            printf("Encerrando o programa...\n");
+            exit(0);
+            break;
+        default:
+            gotoxy(11, 21);
+            printf("Opção inválida!");
+            system("pause > null");
+                    for (i = 11; i <= 80; i++)
+                    {
+                        gotoxy(i, 21);
+                        printf("   ");
+                    }
+            goto Ler;
+            break;
+        }
     }
-}
 }
 
 // função menu sequencial
