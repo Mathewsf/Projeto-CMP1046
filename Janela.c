@@ -74,6 +74,7 @@ int Esquerda = 1;
 int Vertical = 1;
 int Largura = 90;
 int Altura = 25;
+int X;
 
 int main() {
     //Traduz pro portugues
@@ -99,7 +100,7 @@ int main() {
 void Hipotenusa()
 {	
 	double ctt1, ctt2, hipotenusa;
-	int OpcaoR, i;
+	int OpcaoR, i, X;
     
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
@@ -125,7 +126,7 @@ void Hipotenusa()
 
     gotoxy(5, 23); printf("Opção [  ]");
 
-    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    gotoxy(17, 23); printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3, 5);
 	printf("Digite o valor do primeiro cateto:...[     ]");
@@ -140,7 +141,7 @@ void Hipotenusa()
         // limpar apenas o conteudo numerico dentro dos colchetes
 	    gotoxy(41, 5); printf("     ");
 	    gotoxy(40, 8); printf("     ");
-	    gotoxy(25, 16); printf("         "); // limpa so dentro dos colchetes do resultado
+	    gotoxy(25, 16); printf("         ");
 	    gotoxy(12, 23); printf("  ");
 
         gotoxy(41, 5);
@@ -158,9 +159,34 @@ void Hipotenusa()
 	    scanf("%d", &OpcaoR);
     } while (OpcaoR == 1);
 	
-	system("cls");
-    DesenharTela();
-	FigurasGeometricas();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                FigurasGeometricas();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void Circulo()
@@ -192,7 +218,7 @@ void Circulo()
 
     // instruÃ§Ãµes no rodapÃ©
     gotoxy(17, 23);
-    printf("1 - Repetir    2 - Voltar ao menu");
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     // mensagens fixas de entrada e saÃ­da
     gotoxy(3, 7);
@@ -231,9 +257,34 @@ void Circulo()
 
     } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    FigurasGeometricas();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                FigurasGeometricas();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void Quadrado()
@@ -265,7 +316,7 @@ void Quadrado()
 
     // instruções no rodapé
     gotoxy(17, 23);
-    printf("1 - Repetir    2 - Voltar ao menu");
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     // mensagens fixas de entrada e saí­da
     gotoxy(3, 7);
@@ -313,9 +364,34 @@ void Quadrado()
 
     } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    FigurasGeometricas();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                FigurasGeometricas();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void Losango()
@@ -347,7 +423,7 @@ void Losango()
 
     // instruÃ§Ãµes no rodapÃ©
     gotoxy(17, 23);
-    printf("1 - Repetir    2 - Voltar ao menu");
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     // mensagens fixas de entrada e saÃ­da
     gotoxy(3, 5);
@@ -385,15 +461,40 @@ void Losango()
 
     } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    FigurasGeometricas();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                FigurasGeometricas();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void CnsVeiculo()
 {
     float DH, VelM, a , b , c;
-    int opcao;
+    int Opcao;
     int i;
 
 	DesenharLinhaHorizontal(Esquerda, 1, Largura);
@@ -420,7 +521,7 @@ void CnsVeiculo()
 
     gotoxy(5, 23); printf("Opção [  ]");
 
-    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    gotoxy(17, 23); printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3,5);
     printf("Digite a duração da viagem...........[   ]");
@@ -511,13 +612,36 @@ void CnsVeiculo()
     printf("%.2f", c);
     
     gotoxy(12, 23);
-    scanf("%d", &opcao);
-}   while (opcao == 1);
+    scanf("%d", &Opcao);
+}   while (Opcao == 1);
 
-    system("cls");
-    DesenharTela();
-    Sequencial();
-	
+    while (1) {
+        switch (Opcao) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Sequencial();
+                return; 
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return; 
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                for (i = 11; i <= 80; i++) {
+                    gotoxy(i, 21);
+                    printf("   ");
+                }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &Opcao);
+                break;
+        }
+    }
 }
 
 // função apenas pra usar gotoxy
@@ -595,7 +719,7 @@ void Prestacao() {
 
     gotoxy(5, 23); printf("Opção [  ]");
 
-    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    gotoxy(17, 23); printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3, 6);
     printf("Digite o valor da prestação.............[R$             ]");
@@ -606,52 +730,77 @@ void Prestacao() {
     gotoxy(3, 16);
     printf("O valor da prestação atualizado ........[R$                 ]");
     
-do {
+    do {
 
-    gotoxy(47,6);
-    printf("          ");
+        gotoxy(47,6);
+        printf("          ");
 
-    gotoxy(45,8);
-    printf("     ");
+        gotoxy(45,8);
+        printf("     ");
 
-    gotoxy(47,16);
-    printf("                ");
+        gotoxy(47,16);
+        printf("                ");
 
-    gotoxy(47,16);
-    printf("               ");
+        gotoxy(47,16);
+        printf("               ");
 
-    gotoxy(12,23);
-    printf("  ");
-    
-    
-    gotoxy(47, 6);
-    scanf("%f", &ValorPrestacao);
-    fflush(stdin);
-    // ou usar isso: while (getchar() != '\n');
-    
-    gotoxy(45, 8);
-    scanf("%d", &DiasAtrasados);
+        gotoxy(12,23);
+        printf("  ");
+        
+        
+        gotoxy(47, 6);
+        scanf("%f", &ValorPrestacao);
+        fflush(stdin);
+        // ou usar isso: while (getchar() != '\n');
+        
+        gotoxy(45, 8);
+        scanf("%d", &DiasAtrasados);
 
-    if  (DiasAtrasados != 0)
-        {
-            ValorAtualizado = (1.05 * ValorPrestacao) + (ValorPrestacao * 0.09 * (DiasAtrasados / 30.0));
-            gotoxy(47, 16);
-            printf("%.2f", ValorAtualizado);
-            
+        if  (DiasAtrasados != 0)
+            {
+                ValorAtualizado = (1.05 * ValorPrestacao) + (ValorPrestacao * 0.09 * (DiasAtrasados / 30.0));
+                gotoxy(47, 16);
+                printf("%.2f", ValorAtualizado);
+                
+            }
+        else
+            {
+                gotoxy(47, 16);
+                printf("%.2f", ValorPrestacao);
+            }
+
+        gotoxy(12, 23);
+        scanf("%d", &OpcaoR);
+    } while (OpcaoR == 1);
+
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Sequencial();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
         }
-    else
-        {
-            gotoxy(47, 16);
-            printf("%.2f", ValorPrestacao);
-        }
-
-    gotoxy(12, 23);
-    scanf("%d", &OpcaoR);
-} while (OpcaoR == 1);
-
-    system("cls");
-    DesenharTela();
-    Sequencial();
+    }
 }
 
 //função da primeira tela quando come?a o programa
@@ -728,8 +877,11 @@ Ler:
 		DesenharTela();
         Vetores();
         break;
-    default:
-        return;
+    case 5:
+        system("cls");
+        printf("Encerrando o programa...\n");
+        exit(0);
+        break;
     }
 }
 }
@@ -930,7 +1082,7 @@ void Calculadora() {
 
     gotoxy(5, 23); printf("Opção [  ]");
 
-    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    gotoxy(17, 23); printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3, 8);
     printf("Digite o número da operação que deseja fazer:...[ ]");
@@ -1073,10 +1225,34 @@ do {
     scanf("%d", &OpcaoR);
 } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Condicional();
-
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Condicional();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void RaizQuadrada() {
@@ -1106,7 +1282,7 @@ void RaizQuadrada() {
 
     gotoxy(5, 23); printf("Opção [  ]");
 
-    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    gotoxy(17, 23); printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3, 8);
     printf("Digite um número inteiro:...[             ]");
@@ -1182,9 +1358,34 @@ do {
     scanf("%d", &OpcaoR);
 } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Condicional();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Condicional();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void Emprestimo() {
@@ -1217,7 +1418,7 @@ void Emprestimo() {
     printf("Opção [  ]");
 
     gotoxy(17, 23);
-    printf("1 - Repetir    2 - Voltar ao menu");
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     // --- Campos de texto fixos ---
     gotoxy(3, 8);
@@ -1281,9 +1482,34 @@ do {
 
 } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Condicional();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Condicional();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
     
 void CalcMediaAluno()
@@ -1292,7 +1518,7 @@ void CalcMediaAluno()
     float n1, n2, n3, n4;
     int aulas, faltas;
     float media1, media2, mediaFinal, freq;
-    int opcao;
+    int Opcao;
 
     int i;
 
@@ -1392,13 +1618,38 @@ void CalcMediaAluno()
             printf("REPROVADO");
 
         gotoxy(12, 23);
-        scanf("%d", &opcao);
+        scanf("%d", &Opcao);
 
-    } while (opcao == 1);
+    } while (Opcao == 1);
 
-    system("cls");
-    DesenharTela();
-    Condicional();
+    while(1) {
+        switch(Opcao) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Condicional();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &Opcao);
+                break;
+        }
+    }
 }
 
 
@@ -1407,7 +1658,7 @@ void DeterminarSalaProva()
 	char nome[50];
     char primeiraLetra;
     char sala[10];
-    int opcao;
+    int Opcao;
     int i;
     
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
@@ -1449,68 +1700,91 @@ void DeterminarSalaProva()
     gotoxy(3, 15);
     printf("Sala de Prova......................: [                   ]");
 
-    do
-    {
-    	
-    gotoxy(41, 6);
-    printf("                                 ");
+    do {    
+        gotoxy(41, 6);
+        printf("                                 ");
 
-    gotoxy(41, 13);
-    printf(" ");
-    
-	gotoxy(41, 15);
-    printf("                   ");
+        gotoxy(41, 13);
+        printf(" ");
+        
+        gotoxy(41, 15);
+        printf("                   ");
 
-    gotoxy(10, 21);
-    printf("                                                                             ");
+        gotoxy(10, 21);
+        printf("                                                                             ");
 
-    gotoxy(10, 23);
-    printf(" ");
+        gotoxy(10, 23);
+        printf(" ");
 
-    gotoxy(41, 6);
-	fflush(stdin);
-    gets(nome);
+        gotoxy(41, 6);
+        fflush(stdin);
+        gets(nome);
 
-    if (strlen(nome) > 0)
-    {
-        primeiraLetra = toupper(nome[0]);
-
-        if (primeiraLetra >= 'A' && primeiraLetra <= 'K')
+        if (strlen(nome) > 0)
         {
-            strcpy(sala, "SALA 110");
-        }
-        else if (primeiraLetra >= 'L' && primeiraLetra <= 'N')
-        {
-            strcpy(sala, "SALA 120");
-        }
-        else if (primeiraLetra >= 'O' && primeiraLetra <= 'Z')
-        {
-            strcpy(sala, "SALA 130");
+            primeiraLetra = toupper(nome[0]);
+
+            if (primeiraLetra >= 'A' && primeiraLetra <= 'K')
+            {
+                strcpy(sala, "SALA 110");
+            }
+            else if (primeiraLetra >= 'L' && primeiraLetra <= 'N')
+            {
+                strcpy(sala, "SALA 120");
+            }
+            else if (primeiraLetra >= 'O' && primeiraLetra <= 'Z')
+            {
+                strcpy(sala, "SALA 130");
+            }
+            else
+            {
+                strcpy(sala, "N/A - Inválida");
+            }
         }
         else
         {
-            strcpy(sala, "N/A - Inválida");
+            primeiraLetra = ' ';
+            strcpy(sala, "N/A - Vazio");
+        }
+
+        gotoxy(41, 13);
+        printf("%c", primeiraLetra);
+        gotoxy(41, 15);
+        printf("%s", sala);
+
+        gotoxy(10, 23);
+        scanf("%d", &Opcao);
+
+    } while (Opcao == 1);
+
+    while(1) {
+        switch(Opcao) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Condicional();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &Opcao);
+                break;
         }
     }
-    else
-    {
-         primeiraLetra = ' ';
-         strcpy(sala, "N/A - Vazio");
-    }
-
-    gotoxy(41, 13);
-    printf("%c", primeiraLetra);
-    gotoxy(41, 15);
-    printf("%s", sala);
-
-    gotoxy(10, 23);
-    scanf("%d", &opcao);
-
-} while (opcao == 1);
-
-system("cls");
-DesenharTela();
-Condicional();
 }
 
 void OrdemCrescente() 
@@ -1541,7 +1815,7 @@ void OrdemCrescente()
     printf("Projeto CMP1046 - Ordem Crescente");
 
     gotoxy(17, 23);
-    printf("1 - Repetir    2 - Voltar ao menu");
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(5, 21);
     printf("Mens [                                                                         ]");
@@ -1590,9 +1864,34 @@ void OrdemCrescente()
 
     } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Condicional();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Condicional();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void CapitalGoias() 
@@ -1625,7 +1924,7 @@ void CapitalGoias()
 
     // ==== INSTRUÇÕES NO RODAPÉ ====
     gotoxy(17, 23);
-    printf("1 - Repetir    2 - Voltar ao menu"); // instrução de repetição e retorno
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal"); // instrução de repetição e retorno
 
     // ==== MENSAGEM PADRÃO ====
     gotoxy(5, 21);
@@ -1675,9 +1974,34 @@ void CapitalGoias()
     } while (OpcaoR == 1);
 
     // --- VOLTA PARA O MENU CONDICIONAL ---
-    system("cls");
-    DesenharTela();
-    Condicional();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Condicional();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void Repeticao() {
@@ -1891,9 +2215,34 @@ void SomaIntervalos()
 
     } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Repeticao();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Repeticao();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void ConversorGraus() {
@@ -1924,7 +2273,7 @@ void ConversorGraus() {
 
     gotoxy(5, 23); printf("Opção [  ]");
 
-    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    gotoxy(17, 23); printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3, 7);
     printf("Digite a temperatura em graus celsius:...[          °C ]");
@@ -1956,9 +2305,34 @@ do {
     scanf("%d", &OpcaoR);
 } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Repeticao();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Repeticao();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void Fetuccine() {
@@ -1989,7 +2363,7 @@ void Fetuccine() {
 
     gotoxy(5, 23); printf("Opção [  ]");
 
-    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    gotoxy(17, 23); printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3, 7);
     printf("Número de termos...[     ]");
@@ -2055,9 +2429,34 @@ do {
     scanf("%d", &OpcaoR);
 } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Repeticao();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Repeticao();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 void PesoIdeal() {
 
@@ -2090,7 +2489,7 @@ void PesoIdeal() {
 
     gotoxy(5, 23); printf("Opção [  ]");
 
-    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    gotoxy(17, 23); printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 	
 	gotoxy(3, 6);  printf("Digite a altura em metros..............[     ]");
     gotoxy(3, 9);  printf("Digite o sexo (M/F)..................[ ]");
@@ -2135,9 +2534,35 @@ again:
         scanf("%d", &OpcaoR);
 
     } while (OpcaoR == 1);
-    system("cls");
-    DesenharTela();
-    Condicional();
+    
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Condicional();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 
@@ -2170,7 +2595,7 @@ void TamanhoNome() {
 
     gotoxy(5, 23); printf("Opção [  ]");
 
-    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    gotoxy(17, 23); printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 	
 
 
@@ -2217,9 +2642,35 @@ void TamanhoNome() {
         scanf("%d", &OpcaoR);
 
     } while (OpcaoR == 1);
-    system("cls");
-    DesenharTela();
-    Repeticao();
+    
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Repeticao();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void Tabuada() {
@@ -2249,7 +2700,7 @@ void Tabuada() {
 
     gotoxy(5, 21); printf("Mens [                                                                         ]");
     gotoxy(5, 23); printf("Opção [  ]");
-    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    gotoxy(17, 23); printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3, 7);  printf("Digite um número de 1 a 10............[   ]");
     gotoxy(3, 9);  printf("Digite a operação (+, -, *, /)........[   ]");
@@ -2329,9 +2780,34 @@ void Tabuada() {
 
     } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Repeticao();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Repeticao();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void Vetores() {
@@ -2398,7 +2874,7 @@ void MediaNotas() {
     printf("Projeto CMP1046 - Médias das Notas");
     gotoxy(5, 21); printf("Mens [                                                                         ]");
     gotoxy(5, 23); printf("Opção [  ]");
-    gotoxy(17, 23); printf("1 - Repetir    2 - Voltar ao menu");
+    gotoxy(17, 23); printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
     
     // labels das 9 notas
     gotoxy(3, 5);  printf("Nota 1:....................[      ]");
@@ -2474,9 +2950,34 @@ void MediaNotas() {
 
     } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Vetores();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Vetores();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void CompVetores()
@@ -2512,7 +3013,7 @@ void CompVetores()
     printf("Opção [  ]");
 
     gotoxy(17, 23);
-    printf("1 - Repetir    2 - Voltar ao menu");
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3, 6);
     printf("Vet-A: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
@@ -2574,9 +3075,34 @@ void CompVetores()
         scanf("%d", &OpcaoR);
     } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Vetores();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Vetores();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void OrdemVetor() {
@@ -2612,7 +3138,7 @@ void OrdemVetor() {
     printf("Opção [  ]");
 
     gotoxy(17, 23);
-    printf("1 - Repetir    2 - Voltar ao menu");
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3, 7);
     printf("Vet-A: [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ] [   ]");
@@ -2654,19 +3180,46 @@ void OrdemVetor() {
         scanf("%d", &OpcaoR);
     } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Vetores();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Vetores();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
 
 void VetorC()
 {
     int OpcaoR = 1;
-    int i;
+    int Primeira = 1; /* flag: 1 = primeira vez, 0 = repetir */
+    int i, X;
     int A[10], B[10], C[10];
 
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
     DesenharLinhaHorizontal(Esquerda, 22, Largura);
     DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
@@ -2677,13 +3230,16 @@ void VetorC()
     }
 
     gotoxy(28, 2);
-    printf("Projeto CMP1046 - Vetor C");
+    printf("Projeto CMP1046 - Soma de vetores");
+
+    gotoxy(5, 21);
+    printf("Mens [                                                                         ]");
 
     gotoxy(5, 23);
-    printf("Mens [                                                         ]");
+    printf("Opção [  ]");
 
-    gotoxy(5, 25);
-    printf("Opção [  ]   1 - Repetir   2 - Voltar   3 - Principal");
+    gotoxy(17, 23);
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(8, 5);  printf("A");
     gotoxy(18, 5); printf("+");
@@ -2693,17 +3249,78 @@ void VetorC()
 
     do
     {
-        gotoxy(12, 25); printf("  ");
+        gotoxy(12, 23); printf("  ");
 
-        for (i = 0; i < 10; i++)
+        /* Se for a primeira execução, desenha totalmente os colchetes (vertical e horizontal).
+           Se for repetição, apenas limpa os números (mantendo colchetes e rótulos). */
+        if (Primeira == 1)
         {
-            gotoxy(8, 6 + i);  printf("[   ]");
-            gotoxy(18, 6 + i); printf("+");
-            gotoxy(28, 6 + i); printf("[   ]");
-            gotoxy(38, 6 + i); printf("=");
-            gotoxy(48, 6 + i); printf("[   ]");
+            /* desenha os colchetes verticais vazios (somente 1x) */
+            for (i = 0; i < 10; i++)
+            {
+                gotoxy(8, 6 + i);  printf("[   ]");
+                gotoxy(18, 6 + i); printf("+");
+                gotoxy(28, 6 + i); printf("[   ]");
+                gotoxy(38, 6 + i); printf("=");
+                gotoxy(48, 6 + i); printf("[   ]");
+            }
+
+            /* desenha a área horizontal (mantendo colchetes) */
+            gotoxy(8, 17);  printf("A: ");
+            for (i = 0; i < 10; i++)
+            {
+                printf("[   ] ");
+            }
+
+            gotoxy(8, 18);  printf("B: ");
+            for (i = 0; i < 10; i++)
+            {
+                printf("[   ] ");
+            }
+
+            gotoxy(8, 19);  printf("C: ");
+            for (i = 0; i < 10; i++)
+            {
+                printf("[   ] ");
+            }
+        }
+        else
+        {
+            /* repetição: limpar apenas os números dentro dos colchetes (verticais e horizontais) */
+            for (i = 0; i < 10; i++)
+            {
+                /* limpa A vertical */
+                gotoxy(9, 6 + i); printf("   ");
+                /* limpa B vertical */
+                gotoxy(29, 6 + i); printf("   ");
+                /* limpa C vertical */
+                gotoxy(49, 6 + i); printf("   ");
+            }
+
+            /* limpa números horizontais (mantendo colchetes) */
+            gotoxy(8, 17);  printf("A: ");
+            for (i = 0; i < 10; i++)
+            {
+                printf("[   ] ");
+            }
+
+            gotoxy(8, 18);  printf("B: ");
+            for (i = 0; i < 10; i++)
+            {
+                printf("[   ] ");
+            }
+
+            gotoxy(8, 19);  printf("C: ");
+            for (i = 0; i < 10; i++)
+            {
+                printf("[   ] ");
+            }
+
+            /* também limpa mensagens eventuais */
+            gotoxy(5, 21); printf("Mens [                                                                         ]");
         }
 
+        /* leitura A */
         for (i = 0; i < 10; i++)
         {
             gotoxy(9, 6 + i);
@@ -2712,14 +3329,23 @@ void VetorC()
 
             while (A[i] < 0 || A[i] >= 100)
             {
-                gotoxy(5, 23); printf("Mens [A invalido]");
-                gotoxy(9, 6 + i); printf("   ");
+                gotoxy(11, 21); printf("A invalido");
+                system("pause > null");
+                    for (X = 11; X <= 80; X++)
+                    {
+                        gotoxy(X, 21);
+                        printf("   ");
+                    }
+                    
+                gotoxy(9, 6 + i);
+                printf("   ");
                 gotoxy(9, 6 + i);
                 scanf("%d", &A[i]);
                 fflush(stdin);
             }
         }
 
+        /* leitura B */
         for (i = 0; i < 10; i++)
         {
             gotoxy(29, 6 + i);
@@ -2728,36 +3354,95 @@ void VetorC()
 
             while (B[i] < 0 || B[i] >= 100)
             {
-                gotoxy(5, 23); printf("Mens [B invalido]");
-                gotoxy(29, 6 + i); printf("   ");
+                gotoxy(11, 21); printf("B invalido");
+                system("pause > null");
+                    for (X = 11; X <= 80; X++)
+                    {
+                        gotoxy(X, 21);
+                        printf("   ");
+                    }
+                gotoxy(29, 6 + i); 
+                printf("   ");
                 gotoxy(29, 6 + i);
                 scanf("%d", &B[i]);
                 fflush(stdin);
             }
         }
 
+        /* calcula C */
         for (i = 0; i < 10; i++)
         {
             C[i] = A[i] + B[i];
         }
 
+        /* imprime verticalmente C (substitui apenas o número dentro do colchete) */
         for (i = 0; i < 10; i++)
         {
             gotoxy(49, 6 + i);
             printf("%3d", C[i]);
         }
 
-        gotoxy(12, 25);
+        /* imprime horizontal (mantendo colchetes) no formato pedido [ 5 ] */
+        /* vamos posicionar o cursor no início da linha e sobrescrever apenas o conteúdo após os colchetes */
+        gotoxy(8, 17);
+        printf("A: ");
+        for (i = 0; i < 10; i++)
+        {
+            printf("[%3d] ", A[i]); /* formato [ 5 ] ou [ 12 ] conforme pedido */
+        }
+
+        gotoxy(8, 18);
+        printf("B: ");
+        for (i = 0; i < 10; i++)
+        {
+            printf("[%3d] ", B[i]);
+        }
+
+        gotoxy(8, 19);
+        printf("C: ");
+        for (i = 0; i < 10; i++)
+        {
+            printf("[%3d] ", C[i]);
+        }
+
+        /* após a primeira execução, marque como não-primera para que nas repetições apenas números sejam limpos */
+        Primeira = 0;
+
+        gotoxy(12, 23);
         scanf("%d", &OpcaoR);
         fflush(stdin);
 
     } while (OpcaoR == 1);
 
-    system("cls");
-    DesenharTela();
-    Vetores();
+    while(1) {
+        switch(OpcaoR) {
+            case 2:
+                system("cls");
+                DesenharTela();
+                Vetores();
+                return;
+            case 3:
+                system("cls");
+                DesenharTela();
+                TelaInicial();
+                return;
+            default:
+                gotoxy(11, 21);
+                printf("Opção inválida!");
+                system("pause > null");
+                        for (i = 11; i <= 80; i++)
+                        {
+                            gotoxy(i, 21);
+                            printf("   ");
+                        }
+                gotoxy(12, 23); 
+                printf("  ");
+                gotoxy(12, 23);
+                scanf("%d", &OpcaoR);
+                break;
+        }
+    }
 }
-
 
 
 
