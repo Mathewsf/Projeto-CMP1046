@@ -358,7 +358,6 @@ void Quadrado()
         gotoxy(28, 17);
         printf("%.2lf", d);
 
-        // leitura da opção (1 para repetir, sem mensagem adicional)
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
 
@@ -1803,16 +1802,13 @@ void OrdemCrescente()
     int a, b, c, aux;
     int OpcaoR, i;
 
-    // ==== DESENHA A ESTRUTURA PADRÃO DA TELA ====
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
-    //linha divisoria da entrada/saida
     DesenharLinhaHorizontal(Esquerda, 13, Largura);
     DesenharLinhaHorizontal(Esquerda, 20, Largura);
     DesenharLinhaHorizontal(Esquerda, 22, Largura);
     DesenharLinhaHorizontal(Esquerda, 24, Largura);
 
-    //Desenha as linhas na vertical
     for (i = Vertical; i < Altura; i++)
         {
             gotoxy(Esquerda, i);
@@ -1848,7 +1844,7 @@ void OrdemCrescente()
         gotoxy(36, 6);  printf("    ");
         gotoxy(36, 8);  printf("    ");
         gotoxy(36, 10); printf("    ");
-        gotoxy(21, 16); printf("     ,     ,      "); // limpa antes de imprimir o novo resultado
+        gotoxy(21, 16); printf("     ,     ,      ");
         gotoxy(12, 23); printf("  ");
 
         gotoxy(36, 6);
@@ -1864,7 +1860,6 @@ void OrdemCrescente()
         if (a > c) { aux = a; a = c; c = aux; }
         if (b > c) { aux = b; b = c; c = aux; }
 
-        // ?? CORREÇÃO AQUI ??
         gotoxy(21, 16);
         printf("     ,     ,      "); // limpa o campo do resultado
         gotoxy(21, 16);
@@ -1910,7 +1905,6 @@ void CapitalGoias()
     char capital[50];
     int OpcaoR, i;
 
-    // ==== DESENHA A ESTRUTURA PADRÃO DA TELA ====
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
     //linha divisoria da entrada/saida
@@ -1929,44 +1923,37 @@ void CapitalGoias()
             
         }
 
-    // ==== TÍTULO DO EXERCÍCIO ====
     gotoxy(28, 2);
     printf("Projeto CMP1046 - Capital de Goiás");
 
-    // ==== INSTRUÇÕES NO RODAPÉ ====
     gotoxy(17, 23);
-    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal"); // instrução de repetição e retorno
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal"); 
 
-    // ==== MENSAGEM PADRÃO ====
     gotoxy(5, 21);
     printf("Mens [                                                                         ]");
 
-    // ==== CAMPO DE OPÇÃO ====
     gotoxy(5, 23);
     printf("Opção [  ]");
 
-    // ==== CAMPOS DE ENTRADA E SAÍDA ====
     gotoxy(3, 7);
     printf("Digite a Capital de Goiás: [                         ]");
 
     gotoxy(3, 15);
     printf("Resultado: [             ]");
 
-    // ==== LOOP PRINCIPAL ====
     do 
     {
-        // --- LIMPA APENAS OS CAMPOS VARIÁVEIS ---
+        // LIMPA APENAS OS CAMPOS VARIÁVEIS
         gotoxy(31, 7);  printf("                        ");   // limpa campo do nome
         gotoxy(15, 15); printf("             ");              // limpa resultado
-        gotoxy(12, 23); printf("  ");                         // limpa campo da opção
+        gotoxy(12, 23); printf("  ");                         
 
-        // --- ENTRADA DO NOME ---
-        gotoxy(31, 7); // dentro dos colchetes do nome
+        // ENTRADA DO NOME
+        gotoxy(31, 7); 
         fflush(stdin);
         gets(capital);
 
-        // --- PROCESSAMENTO ---
-        gotoxy(15, 15); // dentro dos colchetes de Resultado
+        gotoxy(15, 15); 
         if(strcmp(capital, "Goiania") == 0 || 
            strcmp(capital, "GOIANIA") == 0 || 
            strcmp(capital, "goiania") == 0) 
@@ -1978,13 +1965,11 @@ void CapitalGoias()
             printf("Incorreto!");
         }
 
-        // --- LEITURA DA OPÇÃO (1 REPETIR / 2 VOLTAR) ---
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
 
     } while (OpcaoR == 1);
 
-    // --- VOLTA PARA O MENU CONDICIONAL ---
     while(1) {
         switch(OpcaoR) {
             case 2:
@@ -3224,7 +3209,7 @@ void OrdemVetor() {
 void VetorC()
 {
     int OpcaoR = 1;
-    int Primeira = 1; /* flag: 1 = primeira vez, 0 = repetir */
+    int Primeira = 1; // flag
     int i, X;
     int A[10], B[10], C[10];
 
@@ -3262,11 +3247,9 @@ void VetorC()
     {
         gotoxy(12, 23); printf("  ");
 
-        /* Se for a primeira execução, desenha totalmente os colchetes (vertical e horizontal).
-           Se for repetição, apenas limpa os números (mantendo colchetes e rótulos). */
         if (Primeira == 1)
         {
-            /* desenha os colchetes verticais vazios (somente 1x) */
+            // desenha os colchetes verticais vazios  
             for (i = 0; i < 10; i++)
             {
                 gotoxy(8, 6 + i);  printf("[   ]");
@@ -3276,7 +3259,7 @@ void VetorC()
                 gotoxy(48, 6 + i); printf("[   ]");
             }
 
-            /* desenha a área horizontal (mantendo colchetes) */
+            // desenha os colchetes horizontais
             gotoxy(8, 17);  printf("A: ");
             for (i = 0; i < 10; i++)
             {
@@ -3297,18 +3280,18 @@ void VetorC()
         }
         else
         {
-            /* repetição: limpar apenas os números dentro dos colchetes (verticais e horizontais) */
+            // laço que limpa apenas os números dentro dos colchetes 
             for (i = 0; i < 10; i++)
             {
-                /* limpa A vertical */
+                // limpa A 
                 gotoxy(9, 6 + i); printf("   ");
-                /* limpa B vertical */
+                // limpa B 
                 gotoxy(29, 6 + i); printf("   ");
-                /* limpa C vertical */
+                // limpa C 
                 gotoxy(49, 6 + i); printf("   ");
             }
 
-            /* limpa números horizontais (mantendo colchetes) */
+            // limpa números horizontais 
             gotoxy(8, 17);  printf("A: ");
             for (i = 0; i < 10; i++)
             {
@@ -3327,11 +3310,10 @@ void VetorC()
                 printf("[   ] ");
             }
 
-            /* também limpa mensagens eventuais */
             gotoxy(5, 21); printf("Mens [                                                                         ]");
         }
 
-        /* leitura A */
+        // leitura A 
         for (i = 0; i < 10; i++)
         {
             gotoxy(9, 6 + i);
@@ -3356,7 +3338,7 @@ void VetorC()
             }
         }
 
-        /* leitura B */
+        // leitura B 
         for (i = 0; i < 10; i++)
         {
             gotoxy(29, 6 + i);
@@ -3380,26 +3362,25 @@ void VetorC()
             }
         }
 
-        /* calcula C */
+        // calcula C 
         for (i = 0; i < 10; i++)
         {
             C[i] = A[i] + B[i];
         }
 
-        /* imprime verticalmente C (substitui apenas o número dentro do colchete) */
+        // imprime verticalmente C (substitui apenas o número dentro do colchete)
         for (i = 0; i < 10; i++)
         {
             gotoxy(49, 6 + i);
             printf("%3d", C[i]);
         }
 
-        /* imprime horizontal (mantendo colchetes) no formato pedido [ 5 ] */
-        /* vamos posicionar o cursor no início da linha e sobrescrever apenas o conteúdo após os colchetes */
+        // imprime horizontal (mantendo colchetes)
         gotoxy(8, 17);
         printf("A: ");
         for (i = 0; i < 10; i++)
         {
-            printf("[%3d] ", A[i]); /* formato [ 5 ] ou [ 12 ] conforme pedido */
+            printf("[%3d] ", A[i]);
         }
 
         gotoxy(8, 18);
@@ -3416,7 +3397,6 @@ void VetorC()
             printf("[%3d] ", C[i]);
         }
 
-        /* após a primeira execução, marque como não-primera para que nas repetições apenas números sejam limpos */
         Primeira = 0;
 
         gotoxy(12, 23);
