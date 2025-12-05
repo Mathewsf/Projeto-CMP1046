@@ -22,6 +22,8 @@ void CompVetores();
 
 void SomaIntervalos();
 
+void SomaVet();
+
 void DeterminarSalaProva();
 
 void DesenharLinhaHorizontal(int x, int y, int largura);
@@ -68,13 +70,10 @@ void TelaInicial();
 
 void Vetores();
 
-void VetorC();
-
 int Esquerda = 1;
 int Vertical = 1;
 int Largura = 90;
 int Altura = 25;
-int X;
 
 int main() {
     //Traduz pro portugues
@@ -913,6 +912,10 @@ void Sequencial() {
             gotoxy(X, 21);
             printf("   ");
         }
+Ler:
+    gotoxy(12,23);
+    printf("  ");
+
     gotoxy(12, 23);
     scanf("%d", &Opcao);
 
@@ -934,6 +937,17 @@ void Sequencial() {
     case 4:
         system("cls");
         return;
+        break;
+    default:
+        gotoxy(11, 21);
+        printf("Opção inválida!");
+        system("pause > null");
+                for (i = 11; i <= 80; i++)
+                {
+                    gotoxy(i, 21);
+                    printf("   ");
+                }
+        goto Ler;
         break;
     }
 }
@@ -958,6 +972,11 @@ void FigurasGeometricas()
             gotoxy(X, 21);
             printf("   ");
         }
+
+Ler:
+    gotoxy(12,23);
+    printf("  ");
+
     gotoxy(12, 23);
     scanf("%d", &Opcao);
 
@@ -993,6 +1012,17 @@ void FigurasGeometricas()
     case 6:
         TelaInicial();
         break;
+    default:
+        gotoxy(11, 21);
+        printf("Opção inválida!");
+        system("pause > null");
+                for (i = 11; i <= 80; i++)
+                {
+                    gotoxy(i, 21);
+                    printf("   ");
+                }
+        goto Ler;
+        break;
     }
 }
 
@@ -1022,6 +1052,10 @@ void Condicional() {
             gotoxy(X, 21);
             printf("   ");
         }
+Ler:
+    gotoxy(12,23);
+    printf("  ");
+
     gotoxy(12, 23);
     scanf("%d", &Opcao);
 
@@ -1062,6 +1096,17 @@ void Condicional() {
     case 9:
         system("cls");
         return;
+        break;
+    default:
+        gotoxy(11, 21);
+        printf("Opção inválida!");
+        system("pause > null");
+                for (i = 11; i <= 80; i++)
+                {
+                    gotoxy(i, 21);
+                    printf("   ");
+                }
+        goto Ler;
         break;
     }
 }
@@ -2019,6 +2064,11 @@ void Repeticao() {
             gotoxy(X, 21);
             printf("   ");
         }
+
+Ler:
+    gotoxy(12,23);
+    printf("  ");
+
     gotoxy(12, 23);
     scanf("%d", &Opcao);
 
@@ -2047,6 +2097,17 @@ void Repeticao() {
     case 6:
         system("cls");
         return;
+        break;
+    default:
+        gotoxy(11, 21);
+        printf("Opção inválida!");
+        system("pause > null");
+                for (i = 11; i <= 80; i++)
+                {
+                    gotoxy(i, 21);
+                    printf("   ");
+                }
+        goto Ler;
         break;
     }
 }
@@ -2096,11 +2157,11 @@ void SomaIntervalos()
     gotoxy(3, 17);
     printf(" Números digitados são iguais ...........[    ]");
 
-    gotoxy(3, 21);
-    printf(" Mensagem [                                                                         ]");
+    gotoxy(5, 21);
+    printf("Mensagem [                                                                         ]");
 
-    gotoxy(3, 23);
-    printf(" Opção [  ]  1 - Repetir    2 - Menu Anterior    3 - Menu Principal");
+    gotoxy(5, 23);
+    printf("Opção [  ]  1 - Repetir    2 - Menu Anterior    3 - Menu Principal");
 
     do
     {
@@ -2119,7 +2180,7 @@ void SomaIntervalos()
         gotoxy(3, 17);
         printf(" Números digitados são iguais ...........[    ]");
 
-        gotoxy(11, 23);
+        gotoxy(12, 23);
         printf("  ");
 
         gotoxy(44, 7);   printf("          ");
@@ -2205,7 +2266,7 @@ void SomaIntervalos()
             }
         }
 
-        gotoxy(11, 23);
+        gotoxy(12, 23);
         scanf("%d", &OpcaoR);
         fflush(stdin);
 
@@ -2224,10 +2285,10 @@ void SomaIntervalos()
                 TelaInicial();
                 return;
             default:
-                gotoxy(11, 21);
+                gotoxy(15, 21);
                 printf("Opção inválida!");
                 system("pause > null");
-                        for (i = 11; i <= 80; i++)
+                        for (i = 15; i <= 80; i++)
                         {
                             gotoxy(i, 21);
                             printf("   ");
@@ -2807,13 +2868,17 @@ void Tabuada() {
 }
 
 void Vetores() {
-    int Opcao, X;
+    int Opcao, X, i;
 
     gotoxy(5, 7);  printf("1 - Média de alunos");
     gotoxy(5, 9);  printf("2 - Soma de vetores");
     gotoxy(5, 11); printf("3 - Comparar elemento de vetores");
     gotoxy(5, 13); printf("4 - Ordenação de vetores");
     gotoxy(5, 15); printf("5 - Retornar ao menu principal");
+
+Ler:
+    gotoxy(12,23);
+    printf("  ");
 
     gotoxy(12, 23); 
     scanf("%d", &Opcao);
@@ -2825,7 +2890,7 @@ void Vetores() {
             break;
         case 2:
             system("cls");
-            VetorC();
+            SomaVet();
             break;
         case 3:
             system("cls");
@@ -2837,7 +2902,18 @@ void Vetores() {
             break;
         case 5:
             system("cls");
-            return;     
+            return;
+        default:
+        gotoxy(11, 21);
+        printf("Opção inválida!");
+        system("pause > null");
+                for (i = 11; i <= 80; i++)
+                {
+                    gotoxy(i, 21);
+                    printf("   ");
+                }
+        goto Ler;
+        break;
     }
 }
 
@@ -3206,7 +3282,7 @@ void OrdemVetor() {
     }
 }
 
-void VetorC()
+void SomaVet()
 {
     int OpcaoR = 1;
     int Primeira = 1; // flag
