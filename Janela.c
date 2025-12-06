@@ -230,11 +230,11 @@ void Circulo()
     printf("Perímetro do círculo:..[            ]");
 
     do {
-        // limpar apenas os campos numÃ©ricos dentro dos colchetes
+        // limpar apenas os campos numéricos dentro dos colchetes
         gotoxy(42, 7);  printf("     ");       // campo do raio
-        gotoxy(28, 14); printf("          ");   // campo da Ã¡rea
+        gotoxy(28, 14); printf("          ");   // campo da área
         gotoxy(28, 16); printf("          ");   // campo do Perímetro
-        gotoxy(12, 23); printf("  ");          // campo da opÃ§Ã£o
+        gotoxy(12, 23); printf("  ");          // campo da opção
 
         // entrada do raio
         gotoxy(42, 7);
@@ -1475,7 +1475,6 @@ void Emprestimo() {
     gotoxy(17, 23);
     printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
-    // --- Campos de texto fixos ---
     gotoxy(3, 8);
     printf("Valor do salário mensal:...........[             ]");
 
@@ -1491,7 +1490,6 @@ void Emprestimo() {
     gotoxy(3, 16);
     printf("Empréstimo pode ser concedido?.....[             ]");
 
-    // --- Loop principal ---
 do {
         // Limpa os campos antes de ler novamente
         gotoxy(39,8);  printf("             ");
