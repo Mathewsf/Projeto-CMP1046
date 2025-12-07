@@ -98,7 +98,7 @@ int main() {
 
 void Hipotenusa()
 {	
-	double ctt1, ctt2, hipotenusa;
+	double Cat1, Cat2, Hipotenusa;
 	int OpcaoR, i, X;
     
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
@@ -144,15 +144,15 @@ void Hipotenusa()
 	    gotoxy(12, 23); printf("  ");
 
         gotoxy(41, 5);
-	    scanf("%lf", &ctt1);
+	    scanf("%lf", &Cat1);
 
         gotoxy(40, 8);
-	    scanf("%lf", &ctt2);
+	    scanf("%lf", &Cat2);
 
-        hipotenusa = sqrt((ctt1 * ctt1) + (ctt2 * ctt2));
+        Hipotenusa = sqrt((Cat1 * Cat1) + (Cat2 * Cat2));
 
         gotoxy(25, 16);
-	    printf("%.2lf", hipotenusa);
+	    printf("%.2lf", Hipotenusa);
 
         gotoxy(12, 23);
 	    scanf("%d", &OpcaoR);
@@ -190,7 +190,7 @@ void Hipotenusa()
 
 void Circulo()
 {
-    double raio, area, perimetro;
+    double Raio, Area, Perimetro;
     int OpcaoR, i;
 
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
@@ -211,15 +211,15 @@ void Circulo()
             
         }
 
-    // tÃ­tulo
+    // tí­tulo
     gotoxy(28, 2);
     printf("Projeto CMP1046 - Cálculo do Círculo");
 
-    // instruÃ§Ãµes no rodapÃ©
+    // instruções no rodapé
     gotoxy(17, 23);
     printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
-    // mensagens fixas de entrada e saÃ­da
+    // mensagens fixas de entrada e saí­da
     gotoxy(3, 7);
     printf("Digite o valor do raio do círculo:...[      ]");
 
@@ -238,18 +238,18 @@ void Circulo()
 
         // entrada do raio
         gotoxy(42, 7);
-        scanf("%lf", &raio);
+        scanf("%lf", &Raio);
 
         // Cálculos
-        area = 3.1416 * (raio * raio);
-        perimetro = 2 * 3.1416 * raio;
+        Area = 3.1416 * (Raio * Raio);
+        Perimetro = 2 * 3.1416 * Raio;
 
         // resultados
         gotoxy(28, 14);
-        printf("%.2lf", area);
+        printf("%.2lf", Area);
 
         gotoxy(28, 16);
-        printf("%.2lf", perimetro);
+        printf("%.2lf", Perimetro);
 
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
@@ -288,7 +288,7 @@ void Circulo()
 
 void Quadrado()
 {
-    double ld, a, p, d;
+    double Lado, Area, Perimetro, Diagonal;
     int OpcaoR, i;
 
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
@@ -331,7 +331,7 @@ void Quadrado()
     printf("Diagonal do quadrado:..[              ]");
 
     do {
-        // limpar apenas campos
+        // entrada do lado
         gotoxy(42, 7);  printf("     ");       // campo do lado
         gotoxy(28, 13); printf("           ");   // campo da Área
         gotoxy(28, 15); printf("           ");   // campo do Perímetro
@@ -340,22 +340,22 @@ void Quadrado()
 
         // entrada do lado
         gotoxy(42, 7);
-        scanf("%lf", &ld);
+        scanf("%lf", &Lado);
 
         // Cálculos
-        a = ld * ld;
-        p = ld * 4;
-        d = ld * sqrt(2);
+        Area = Lado * Lado;
+        Perimetro = Lado * 4;
+        Diagonal = Lado * sqrt(2);
 
         // resultados
         gotoxy(28, 13);
-        printf("%.2lf", a);
+        printf("%.2lf", Area);
 
         gotoxy(28, 15);
-        printf("%.2lf", p);
+        printf("%.2lf", Perimetro);
 
         gotoxy(28, 17);
-        printf("%.2lf", d);
+        printf("%.2lf", Diagonal);
 
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
@@ -394,7 +394,7 @@ void Quadrado()
 
 void Losango()
 {
-    double dmaior, dmenor, a;
+    double DiagonalMaior, DiagonalMenor, Area;
     int OpcaoR, i;
 
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
@@ -415,15 +415,15 @@ void Losango()
             
         }
 
-    // tÃ­tulo
+    // tí­tulo
     gotoxy(28, 2);
     printf("Projeto CMP1046 - Cálculo do Losango");
 
-    // instruÃ§Ãµes no rodapÃ©
+    // instruções no rodapé
     gotoxy(17, 23);
     printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
-    // mensagens fixas de entrada e saÃ­da
+    // mensagens fixas de entrada e saí­da
     gotoxy(3, 5);
     printf("Digite o valor da diagonal maior:...[     ]");
 
@@ -442,17 +442,17 @@ void Losango()
 
         // entrada das diagonais
         gotoxy(40, 5);
-        scanf("%lf", &dmaior);
+        scanf("%lf", &DiagonalMaior);
 
         gotoxy(40, 8);
-        scanf("%lf", &dmenor);
+        scanf("%lf", &DiagonalMenor);
 
         // Cálculo da Área
-        a = (dmaior * dmenor) / 2;
+        Area = (DiagonalMaior * DiagonalMenor) / 2;
 
         // resultado
         gotoxy(25, 15);
-        printf("%.2lf", a);
+        printf("%.2lf", Area);
 
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
@@ -491,7 +491,7 @@ void Losango()
 
 void CnsVeiculo()
 {
-    float DH, VelM, a , b , c;
+    float DistanciaHorizontal, VelocidadeMedia, ResultadoA, ResultadoB, ResultadoC;
     int Opcao;
     int i;
 
@@ -547,70 +547,66 @@ void CnsVeiculo()
 
     do
     {
-    gotoxy(41, 5);
-    printf("   ");
-    
-    gotoxy(41, 7);
-    printf("   ");
-    
-    gotoxy(40,12);
-    printf("        ");
+        gotoxy(41, 5);
+        printf("   ");
 
-    gotoxy(40,13);
-    printf("        ");
+        gotoxy(41, 7);
+        printf("   ");
 
-    gotoxy(40,14);
-    printf("        ");
+        gotoxy(40,12);
+        printf("        ");
 
-    gotoxy(40,15);
-    printf("        ");
+        gotoxy(40,13);
+        printf("        ");
 
-    gotoxy(40,16);
-    printf("        ");
+        gotoxy(40,14);
+        printf("        ");
 
-    gotoxy(40,17);
-    printf("        ");
+        gotoxy(40,15);
+        printf("        ");
 
-    gotoxy(12,23);
-    printf("  ");
-    
-    gotoxy(41,5);
-    scanf("%f", &DH);
-    
-    gotoxy(41,7);
-    scanf("%f", &VelM);
+        gotoxy(40,16);
+        printf("        ");
 
-    a = (DH*VelM)/8;
-    gotoxy(41,12);
-    printf("%.2f", a);
+        gotoxy(40,17);
+        printf("        ");
 
-    a = a*1.04;
+        gotoxy(12,23);
+        printf("  ");
 
-    gotoxy(41,13);
-    printf("%.2f", a);
-    
-    b = (DH*VelM)/10;
+        gotoxy(41,5);
+        scanf("%f", &DistanciaHorizontal);
 
-    gotoxy(41,14);
-    printf("%.2f", b);
-   
-    b = b*1.04;
+        gotoxy(41,7);
+        scanf("%f", &VelocidadeMedia);
 
-    gotoxy(41,15);
-    printf("%.2f", b);
-    
-    c = (DH*VelM)/12;
+        ResultadoA = (DistanciaHorizontal * VelocidadeMedia) / 8;
+        gotoxy(41,12);
+        printf("%.2f", ResultadoA);
 
-    gotoxy(41,16);
-    printf("%.2f", c);
-   
-    c = c*1.04;
+        ResultadoA = ResultadoA * 1.04;
+        gotoxy(41,13);
+        printf("%.2f", ResultadoA);
 
-    gotoxy(41,17);
-    printf("%.2f", c);
-    
-    gotoxy(12, 23);
-    scanf("%d", &Opcao);
+        ResultadoB = (DistanciaHorizontal * VelocidadeMedia) / 10;
+        gotoxy(41,14);
+        printf("%.2f", ResultadoB);
+
+        ResultadoB = ResultadoB * 1.04;
+        gotoxy(41,15);
+        printf("%.2f", ResultadoB);
+
+        ResultadoC = (DistanciaHorizontal * VelocidadeMedia) / 12;
+        gotoxy(41,16);
+        printf("%.2f", ResultadoC);
+
+        ResultadoC = ResultadoC * 1.04;
+        gotoxy(41,17);
+        printf("%.2f", ResultadoC);
+
+        gotoxy(12, 23);
+        scanf("%d", &Opcao);
+
 }   while (Opcao == 1);
 
     while (1) {
@@ -1112,8 +1108,8 @@ Ler:
 }
 
 void Calculadora() {
-    int OpcaoR, i, Op, X;
-    float Num1, Num2, total;
+    int OpcaoR, i, Operacao, X;
+    float Num1, Num2, Total;
     
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
@@ -1178,11 +1174,11 @@ do {
     printf("  ");
 
     gotoxy(52, 8); 
-    scanf("%d", &Op);
+    scanf("%d", &Operacao);
 
     fflush(stdin);
 
-    switch(Op)
+    switch(Operacao)
     {
         case 1:
             gotoxy(29, 14);
@@ -1198,10 +1194,10 @@ do {
 
             fflush(stdin);
             
-            total = Num1 + Num2;
+            Total = Num1 + Num2;
 
             gotoxy(48,14);
-            printf("%.2f", total);
+            printf("%.2f", Total);
             break;
         case 2:
             gotoxy(29, 14);
@@ -1215,10 +1211,10 @@ do {
             gotoxy(34, 14);
             scanf("%f", &Num2);
 
-            total = Num1 - Num2;
+            Total = Num1 - Num2;
 
             gotoxy(48,14);
-            printf("%.2f", total);
+            printf("%.2f", Total);
             break;
         case 3:
             gotoxy(29, 14);
@@ -1232,10 +1228,10 @@ do {
             gotoxy(34, 14);
             scanf("%f", &Num2);
 
-            total = Num1 * Num2;
+            Total = Num1 * Num2;
 
             gotoxy(48,14);
-            printf("%.2f", total);
+            printf("%.2f", Total);
             break;
         case 4:
             gotoxy(29, 14);
@@ -1268,16 +1264,17 @@ do {
                 scanf("%f", &Num2);
             }
 
-            total = Num1 / Num2;
+            Total = Num1 / Num2;
 
             gotoxy(48,14);
-            printf("%.2f", total);
+            printf("%.2f", Total);
             break;
     }
 
     fflush(stdin);
     gotoxy(12, 23);
     scanf("%d", &OpcaoR);
+
 } while (OpcaoR == 1);
 
     while(1) {
@@ -1445,7 +1442,7 @@ do {
 
 void Emprestimo() {
     int OpcaoR, i;
-    float salario, emprestimo, parcelas, valorParcela, limite;
+    float Salario, Emprestimo, Parcelas, ValorParcela, Limite;
 
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
@@ -1501,24 +1498,24 @@ do {
 
         // Leitura dos dados
         gotoxy(39,8);
-        scanf("%f", &salario);
+        scanf("%f", &Salario);
 
         gotoxy(39,10);
-        scanf("%f", &emprestimo);
+        scanf("%f", &Emprestimo);
 
         gotoxy(39,12);
-        scanf("%f", &parcelas);
+        scanf("%f", &Parcelas);
 
         // Cálculos
-        valorParcela = emprestimo / parcelas;
-        limite = salario * 0.3;
+        ValorParcela = Emprestimo / Parcelas;
+        Limite = Salario * 0.3;
 
         // Exibição do valor da parcela
         gotoxy(39,14);
-        printf("%.2f", valorParcela);
+        printf("%.2f", ValorParcela);
 
         // Verificação
-        if (valorParcela <= limite)
+        if (ValorParcela <= Limite)
         {
             gotoxy(39,16);
             printf("Sim");
@@ -1567,13 +1564,11 @@ do {
     
 void CalcMediaAluno()
 {
-    char nome[50];
-    float n1, n2, n3, n4;
-    int aulas, faltas;
-    float media1, media2, mediaFinal, freq;
-    int Opcao;
-
-    int i;
+    char NomeAluno[50]; 
+    float Nota1, Nota2, Nota3, Nota4; 
+    int TotalAulas, Faltas; 
+    float MediaParcial1, MediaParcial2, MediaFinal, Frequencia;
+    int Opcao, i;
 
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
@@ -1640,38 +1635,46 @@ void CalcMediaAluno()
 
         gotoxy(41, 5);
         fflush(stdin);
-        gets(nome);
-        gotoxy(41, 7);
-        scanf("%f", &n1);
-        gotoxy(41, 8);
-        scanf("%f", &n2);
-        gotoxy(41, 9);
-        scanf("%f", &n3);
-        gotoxy(41, 10);
-        scanf("%f", &n4);
-        gotoxy(41, 11);
-        scanf("%d", &aulas);
-        gotoxy(41, 12);
-        scanf("%d", &faltas);
+        gets(NomeAluno);
 
-        media1 = (n1 + n2) / 2.0;
-        media2 = (n3 + n4) / 2.0;
-        mediaFinal = (media1 * 0.4) + (media2 * 0.6);
-        freq = ((aulas - faltas) * 100.0) / aulas;
+        gotoxy(41, 7);
+        scanf("%f", &Nota1);
+
+        gotoxy(41, 8);
+        scanf("%f", &Nota2);
+
+        gotoxy(41, 9);
+        scanf("%f", &Nota3);
+
+        gotoxy(41, 10);
+        scanf("%f", &Nota4);
+
+        gotoxy(41, 11);
+        scanf("%d", &TotalAulas);
+
+        gotoxy(41, 12);
+        scanf("%d", &Faltas);
+
+        MediaParcial1 = (Nota1 + Nota2) / 2.0;
+        MediaParcial2 = (Nota3 + Nota4) / 2.0;
+        MediaFinal = (MediaParcial1 * 0.4) + (MediaParcial2 * 0.6);
+        Frequencia = ((TotalAulas - Faltas) * 100.0) / TotalAulas;
 
         gotoxy(41, 15);
-        printf("%.2f", mediaFinal);
+        printf("%.2f", MediaFinal);
+
         gotoxy(41, 16);
-        printf("%.2f", freq);
+        printf("%.2f", Frequencia);
 
         gotoxy(41, 18);
-        if (mediaFinal >= 7.5 && freq >= 75)
+        if (MediaFinal >= 7.5 && Frequencia >= 75)
             printf("APROVADO");
         else
             printf("REPROVADO");
 
         gotoxy(12, 23);
         scanf("%d", &Opcao);
+
 
     } while (Opcao == 1);
 
@@ -1708,9 +1711,9 @@ void CalcMediaAluno()
 
 void DeterminarSalaProva() 
 {
-	char nome[50];
-    char primeiraLetra;
-    char sala[10];
+	char Nome[50];
+    char PrimeiraLetra;
+    char Sala[10];
     int Opcao;
     int i;
     
@@ -1759,7 +1762,7 @@ void DeterminarSalaProva()
 
         gotoxy(41, 13);
         printf(" ");
-        
+
         gotoxy(41, 15);
         printf("                   ");
 
@@ -1771,39 +1774,40 @@ void DeterminarSalaProva()
 
         gotoxy(41, 6);
         fflush(stdin);
-        gets(nome);
+        gets(Nome);
 
-        if (strlen(nome) > 0)
+        if (strlen(Nome) > 0)
         {
-            primeiraLetra = toupper(nome[0]);
+            PrimeiraLetra = toupper(Nome[0]);
 
-            if (primeiraLetra >= 'A' && primeiraLetra <= 'K')
+            if (PrimeiraLetra >= 'A' && PrimeiraLetra <= 'K')
             {
-                strcpy(sala, "SALA 110");
+                strcpy(Sala, "SALA 110");
             }
-            else if (primeiraLetra >= 'L' && primeiraLetra <= 'N')
+            else if (PrimeiraLetra >= 'L' && PrimeiraLetra <= 'N')
             {
-                strcpy(sala, "SALA 120");
+                strcpy(Sala, "SALA 120");
             }
-            else if (primeiraLetra >= 'O' && primeiraLetra <= 'Z')
+            else if (PrimeiraLetra >= 'O' && PrimeiraLetra <= 'Z')
             {
-                strcpy(sala, "SALA 130");
+                strcpy(Sala, "SALA 130");
             }
             else
             {
-                strcpy(sala, "N/A - Inválida");
+                strcpy(Sala, "N/A - Inválida");
             }
         }
         else
         {
-            primeiraLetra = ' ';
-            strcpy(sala, "N/A - Vazio");
+            PrimeiraLetra = ' ';
+            strcpy(Sala, "N/A - Vazio");
         }
 
         gotoxy(41, 13);
-        printf("%c", primeiraLetra);
+        printf("%c", PrimeiraLetra);
+
         gotoxy(41, 15);
-        printf("%s", sala);
+        printf("%s", Sala);
 
         gotoxy(10, 23);
         scanf("%d", &Opcao);
@@ -1842,7 +1846,7 @@ void DeterminarSalaProva()
 
 void OrdemCrescente() 
 {
-    int a, b, c, aux;
+    int Valor1, Valor2, Valor3, Auxiliar;
     int OpcaoR, i;
 
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
@@ -1891,22 +1895,37 @@ void OrdemCrescente()
         gotoxy(12, 23); printf("  ");
 
         gotoxy(36, 6);
-        scanf("%d", &a);
+        scanf("%d", &Valor1);
 
         gotoxy(36, 8);
-        scanf("%d", &b);
+        scanf("%d", &Valor2);
 
         gotoxy(36, 10);
-        scanf("%d", &c);
+        scanf("%d", &Valor3);
 
-        if (a > b) { aux = a; a = b; b = aux; }
-        if (a > c) { aux = a; a = c; c = aux; }
-        if (b > c) { aux = b; b = c; c = aux; }
+        if (Valor1 > Valor2) 
+        { 
+            Auxiliar = Valor1; 
+            Valor1 = Valor2;
+            Valor2 = Auxiliar;
+        }
+        if (Valor1 > Valor3) 
+        { 
+            Auxiliar = Valor1; 
+            Valor1 = Valor3; 
+            Valor3 = Auxiliar; 
+        }
+        if (Valor2 > Valor3) 
+        { 
+            Auxiliar = Valor2; 
+            Valor2 = Valor3; 
+            Valor3 = Auxiliar; 
+        }
 
         gotoxy(21, 16);
-        printf("     ,     ,      "); // limpa o campo do resultado
+        printf("     ,     ,      ");
         gotoxy(21, 16);
-        printf("%d , %d , %d", a, b, c); // imprime no mesmo ponto
+        printf("%d , %d , %d", Valor1, Valor2, Valor3);
 
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
@@ -1945,7 +1964,7 @@ void OrdemCrescente()
 
 void CapitalGoias() 
 {
-    char capital[50];
+    char Capital[50];
     int OpcaoR, i;
 
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
@@ -1994,12 +2013,12 @@ void CapitalGoias()
         // ENTRADA DO NOME
         gotoxy(31, 7); 
         fflush(stdin);
-        gets(capital);
+        gets(Capital);
 
         gotoxy(15, 15); 
-        if(strcmp(capital, "Goiania") == 0 || 
-           strcmp(capital, "GOIANIA") == 0 || 
-           strcmp(capital, "goiania") == 0) 
+        if(strcmp(Capital, "Goiania") == 0 || 
+           strcmp(Capital, "GOIANIA") == 0 || 
+           strcmp(Capital, "goiania") == 0) 
         {
             printf("Correto!");
         } 
@@ -2116,10 +2135,9 @@ void SomaIntervalos()
     int N2 = 0;
     int OpcaoR = 1;
     int i;
-    int soma = 0;
-    int qtd = 0;
-    int contPar = 0;
-    double media = 0.0;
+    int Soma = 0, Qtd = 0, ContPar = 0; 
+    double Media = 0.0;
+
 
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
@@ -2196,10 +2214,10 @@ void SomaIntervalos()
         scanf("%d", &N2);
         fflush(stdin);
 
-        soma = 0;
-        qtd = 0;
-        contPar = 0;
-        media = 0.0;
+        Soma = 0;
+        Qtd = 0;
+        ContPar = 0;
+        Media = 0.0;
 
         if (N1 == N2)
         {
@@ -2213,24 +2231,24 @@ void SomaIntervalos()
                 i = N1;
                 while (i <= N2)
                 {
-                    soma = soma + i;
-                    qtd = qtd + 1;
+                    Soma = Soma + i;
+                    Qtd = Qtd + 1;
 
                     if ((i % 2) == 0)
                     {
-                        contPar = contPar + 1;
+                        ContPar = ContPar + 1;
                     }
 
                     i = i + 1;
                 }
 
-                media = soma * 1.0 / qtd;
+                Media = Soma * 1.0 / Qtd;
 
                 gotoxy(46, 13);   
-                printf("%.2f", media);
+                printf("%.2f", Media);
 
                 gotoxy(46, 15);   
-                printf("%d", contPar);
+                printf("%d", ContPar);
 
                 gotoxy(46, 17);   
                 printf("Nao");
@@ -2240,24 +2258,24 @@ void SomaIntervalos()
                 i = N1;
                 while (i >= N2)
                 {
-                    soma = soma + i;
-                    qtd = qtd + 1;
+                    Soma = Soma + i;
+                    Qtd = Qtd + 1;
 
                     if ((i % 2) == 0)
                     {
-                        contPar = contPar + 1;
+                        ContPar = ContPar + 1;
                     }
 
                     i = i - 1;
                 }
 
-                media = soma * 1.0 / qtd;
+                Media = Soma * 1.0 / Qtd;
 
                 gotoxy(46, 13);   
-                printf("%.2f", media);
+                printf("%.2f", Media);
 
                 gotoxy(46, 15);  
-                printf("%d", contPar);
+                printf("%d", ContPar);
 
                 gotoxy(46, 17);   
                 printf("Nao");
@@ -2391,8 +2409,8 @@ do {
 }
 
 void Fetuccine() {
-    int OpcaoR, i;
-    int Qtd, j, linha, s1 = 1, s2 = 2, prox;
+    int OpcaoR, i, j;
+    int Quantidade, Linha, Seq1 = 1, Seq2 = 2, Proximo;
     
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
@@ -2427,8 +2445,9 @@ void Fetuccine() {
     printf("Sequência: ");
 
 do {
-	s1 = 1;
-	s2 = 2;
+	Seq1 = 1;
+    Seq2 = 2;
+
     gotoxy(23,7);
     printf("    ");
 
@@ -2442,46 +2461,50 @@ do {
     printf("  ");
 
     gotoxy(23,7);
-    scanf("%d", &Qtd);
+    scanf("%d", &Quantidade);
 
     fflush(stdin);
 
-	if  (Qtd == 1)
-		{
-			gotoxy(14, 15);
-	    	printf("%d ", s1);
-		}
-	else
-		{
-			if  (Qtd == 2)
-				{
-					gotoxy(14, 15);
-    				printf("%d  %d ", s1, s2);
-				}
-			else
-				{
-					gotoxy(14, 15);
-    				printf("%d  %d ", s1, s2);
-    				
-					linha = 15;
-				    for (i = 3, j = 20; i <= Qtd; i++, j = j + 3)
-				    {
-				            gotoxy(j, linha);
-				            if (i % 2 == 1) {  // ímpar: soma
-				                prox = s2 + s1;
-				                printf("%d ", prox);
-				            } else {           // par: subtrai
-				                prox = s2 - s1;
-				                printf("%d ", prox);
-				            }
-				            s1 = s2;
-				            s2 = prox;
-				    }
-				}
-		}
+    if (Quantidade == 1)
+    {
+        gotoxy(14, 15);
+        printf("%d ", Seq1);
+    }
+    else
+    {
+        if (Quantidade == 2)
+        {
+            gotoxy(14, 15);
+            printf("%d  %d ", Seq1, Seq2);
+        }
+        else
+        {
+            gotoxy(14, 15);
+            printf("%d  %d ", Seq1, Seq2);
+            
+            Linha = 15;
+            for (i = 3, j = 20; i <= Quantidade; i++, j = j + 3)
+            {
+                gotoxy(j, Linha);
+                if (i % 2 == 1)  // ímpar: soma
+                {
+                    Proximo = Seq2 + Seq1;
+                    printf("%d ", Proximo);
+                }
+                else  // par: subtrai
+                {
+                    Proximo = Seq2 - Seq1;
+                    printf("%d ", Proximo);
+                }
+                Seq1 = Seq2;
+                Seq2 = Proximo;
+            }
+        }
+    }
 
     gotoxy(12, 23);
     scanf("%d", &OpcaoR);
+
 } while (OpcaoR == 1);
 
     while(1) {
@@ -2515,8 +2538,8 @@ do {
 }
 void PesoIdeal() {
 
-    double altura, pesoIdeal;
-    char sexo;
+    double Altura, PesoIdeal;
+    char Sexo;
     int X;
     int OpcaoR, i;
     
@@ -2553,40 +2576,40 @@ void PesoIdeal() {
     do {
 	
 again:
-        // limpar campos
-        gotoxy(43, 6); printf("     ");
-        gotoxy(41, 9); printf(" ");
-        gotoxy(25, 16); printf("          ");
-        gotoxy(12,23);
-   		printf("  ");
+    // limpar campos
+    gotoxy(43, 6); printf("     ");
+    gotoxy(41, 9); printf(" ");
+    gotoxy(25, 16); printf("          ");
+    gotoxy(12,23);
+    printf("  ");
 
-        // entrada
-        gotoxy(43, 6); scanf("%lf", &altura);
-        gotoxy(41, 9); scanf(" %c", &sexo);
+    // entrada
+    gotoxy(43, 6); scanf("%lf", &Altura);
+    gotoxy(41, 9); scanf(" %c", &Sexo);
 
-        if (sexo == 'M' || sexo == 'm')
-            pesoIdeal = altura * 72.7 - 58;
-        else if (sexo == 'F' || sexo == 'f')
-            pesoIdeal = altura * 62.1 - 44.7;
-        else {
-            gotoxy(11, 21);
-            printf("Sexo inválido!");
-            system("pause > null");
-                    for (X = 11; X <= 80; X++)
-                    {
-                        gotoxy(X, 21);
-                        printf("   ");
-                    }
-                    goto again;
-            pesoIdeal = 0;
+    if (Sexo == 'M' || Sexo == 'm')
+        PesoIdeal = Altura * 72.7 - 58;
+    else if (Sexo == 'F' || Sexo == 'f')
+        PesoIdeal = Altura * 62.1 - 44.7;
+    else {
+        gotoxy(11, 21);
+        printf("Sexo inválido!");
+        system("pause > null");
+        for (X = 11; X <= 80; X++)
+        {
+            gotoxy(X, 21);
+            printf("   ");
         }
+        goto again;
+        PesoIdeal = 0;
+    }
 
-        gotoxy(25, 16);
-        printf("%.2lf", pesoIdeal);
+    gotoxy(25, 16);
+    printf("%.2lf", PesoIdeal);
 
-        // repetir?
-        gotoxy(12, 23);
-        scanf("%d", &OpcaoR);
+    // repetir?
+    gotoxy(12, 23);
+    scanf("%d", &OpcaoR);
 
     } while (OpcaoR == 1);
     
@@ -2623,7 +2646,8 @@ again:
 
 void TamanhoNome() {
 
-    char nome[200];
+    char Nome[200];
+    int Tamanho;
     int OpcaoR, i;
     
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
@@ -2678,20 +2702,20 @@ void TamanhoNome() {
         // entrada
         gotoxy(36, 7);
         fflush(stdin);
-        fgets(nome, sizeof(nome), stdin);
+        fgets(Nome, sizeof(Nome), stdin);
 
         // limpar \n
-        size_t len = strlen(nome);
-        if (len > 0 && nome[len - 1] == '\n')
-            nome[len - 1] = '\0';
+        size_t len = strlen(Nome);
+        if (len > 0 && Nome[len - 1] == '\n')
+            Nome[len - 1] = '\0';
 
-        int tamanho = strlen(nome);
+        Tamanho = strlen(Nome);
 
         gotoxy(23, 15);
-        printf("%s", nome);
+        printf("%s", Nome);
         
         gotoxy(22, 17);
-        printf("%d", tamanho);
+        printf("%d", Tamanho);
 
         gotoxy(12, 23);
         scanf("%d", &OpcaoR);
@@ -2729,8 +2753,10 @@ void TamanhoNome() {
 }
 
 void Tabuada() {
-    int OpcaoR, i, j, k, y, X, num;
-    char operacao;
+    int OpcaoR, i, j; 
+    int LinhaOffset, Y, CursorX, Numero;
+    char Operacao;
+
 
     // Desenhar moldura
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
@@ -2768,10 +2794,10 @@ void Tabuada() {
         gotoxy(42, 7); printf("   ");
         gotoxy(42, 9); printf("   ");
         gotoxy(12, 23); printf("  ");
-        for ( k = 0, j = 0; k < 10; k++) {
-            if (k <= 5)
+        for (LinhaOffset = 0, j = 0; LinhaOffset < 10; LinhaOffset++) {
+            if (LinhaOffset <= 5)
             {
-                gotoxy(14, 14 + k);
+                gotoxy(14, 14 + LinhaOffset);
             }
             else
             {
@@ -2784,45 +2810,45 @@ void Tabuada() {
 
         // entrada
         gotoxy(42, 7);
-        scanf("%d", &num);
+        scanf("%d", &Numero);
 
         gotoxy(42, 9);
         fflush(stdin);
-        scanf(" %c", &operacao);
+        scanf(" %c", &Operacao);
 
         // gerar tabuada
-        for (j = 1, k = 1; j <= 10; j++) {
+        for (j = 1, LinhaOffset = 1; j <= 10; j++) {
             if (j <= 5)
             {
                 gotoxy(15, 13 + j);
             }
             else
             {
-                gotoxy(30, 13 + k);
-                k++;
+                gotoxy(30, 13 + LinhaOffset);
+                LinhaOffset++;
             }
             
-            switch (operacao) {
+            switch (Operacao) {
                 case '+':
-                    printf("%d + %d = %d", num, j, num + j);
+                    printf("%d + %d = %d", Numero, j, Numero + j);
                     break;
                 case '-':
-                    printf("%d - %d = %d", num, j, num - j);
+                    printf("%d - %d = %d", Numero, j, Numero - j);
                     break;
                 case '*':
-                    printf("%d * %d = %d", num, j, num * j);
+                    printf("%d * %d = %d", Numero, j, Numero * j);
                     break;
                 case '/':
                     if (j != 0)
-                        printf("%d / %d = %.2f", num, j, (float)num / j);
+                        printf("%d / %d = %.2f", Numero, j, (float)Numero / j);
                     break;
                 default:
                     gotoxy(12, 21);
                     printf("Operação inválida! Use +, -, * ou /");
                     system("pause > null");
-                    for (X = 12; X <= 80; X++)
+                    for (CursorX = 12; CursorX <= 80; CursorX++)
                     {
-                        gotoxy(X, 21);
+                        gotoxy(CursorX, 21);
                         printf("   ");
                     }
                     goto again;
@@ -2917,9 +2943,9 @@ Ler:
 
 void MediaNotas() {
 
-    double notas[9];
-    double medias[3];
-    double mediaFinal;
+    double Notas[9];
+    double Medias[3];
+    double MediaFinal;
     int OpcaoR, i;
 
     // ----------------- JANELA FIXA (ANTES DO LOOP) -----------------
@@ -2984,35 +3010,35 @@ void MediaNotas() {
         printf("     ");
 
         // ---------- leitura das 9 notas ----------
-        gotoxy(33, 5);  scanf("%lf", &notas[0]);
-        gotoxy(33, 6);  scanf("%lf", &notas[1]);
-        gotoxy(33, 7);  scanf("%lf", &notas[2]);
-        gotoxy(33, 8);  scanf("%lf", &notas[3]);
-        gotoxy(33, 9); scanf("%lf", &notas[4]);
-        gotoxy(33, 10); scanf("%lf", &notas[5]);
-        gotoxy(33, 11); scanf("%lf", &notas[6]);
-        gotoxy(33, 12); scanf("%lf", &notas[7]);
-        gotoxy(33, 13); scanf("%lf", &notas[8]);
+        gotoxy(33, 5);  scanf("%lf", &Notas[0]);
+        gotoxy(33, 6);  scanf("%lf", &Notas[1]);
+        gotoxy(33, 7);  scanf("%lf", &Notas[2]);
+        gotoxy(33, 8);  scanf("%lf", &Notas[3]);
+        gotoxy(33, 9);  scanf("%lf", &Notas[4]);
+        gotoxy(33, 10); scanf("%lf", &Notas[5]);
+        gotoxy(33, 11); scanf("%lf", &Notas[6]);
+        gotoxy(33, 12); scanf("%lf", &Notas[7]);
+        gotoxy(33, 13); scanf("%lf", &Notas[8]);
 
         // ---------- cálculos ----------
-        medias[0] = (notas[0] + notas[1] + notas[2]) / 3.0;
-        medias[1] = (notas[3] + notas[4] + notas[5]) / 3.0;
-        medias[2] = (notas[6] + notas[7] + notas[8]) / 3.0;
+        Medias[0] = (Notas[0] + Notas[1] + Notas[2]) / 3.0;
+        Medias[1] = (Notas[3] + Notas[4] + Notas[5]) / 3.0;
+        Medias[2] = (Notas[6] + Notas[7] + Notas[8]) / 3.0;
 
-        mediaFinal = (medias[0] + medias[1] + medias[2]) / 3.0;
+        MediaFinal = (Medias[0] + Medias[1] + Medias[2]) / 3.0;
 
         // ---------- impressão dos resultados ----------
         gotoxy(32, 15);
-        printf("%.2lf", medias[0]);
+        printf("%.2lf", Medias[0]);
 
         gotoxy(32, 16);
-        printf("%.2lf", medias[1]);
+        printf("%.2lf", Medias[1]);
 
         gotoxy(32, 17);
-        printf("%.2lf", medias[2]);
+        printf("%.2lf", Medias[2]);
 
         gotoxy(32, 19);
-        printf("%.2lf", mediaFinal);
+        printf("%.2lf", MediaFinal);
 
         // opção no rodapé
         gotoxy(12, 23);
@@ -3052,7 +3078,7 @@ void MediaNotas() {
 
 void CompVetores()
 {
-    int OpcaoR, i, j, lin, Achou;
+    int OpcaoR, i, j, Lin, Achou;
     int VetA[10], VetB[10];
 
     // Desenhar moldura
@@ -3124,18 +3150,18 @@ void CompVetores()
             scanf("%d", &VetB[j]);
         }
 		
-        for (i = 0, lin = 16; i <= 10; i++)
+        for (i = 0, Lin = 16; i <= 10; i++)
         {
         	Achou = 1;
         	for (j = 0; j <= 10 && Achou; j++)
         	{
         		if (VetA[i] == VetB[j])
 	            {
-	                gotoxy(lin, 15);
+	                gotoxy(Lin, 15);
 	                printf("%d", VetA[i]);
-	                gotoxy(lin, 17);
+	                gotoxy(Lin, 17);
 	                printf("%d", i);
-	                lin = lin + 6;
+	                Lin = Lin + 6;
 	                Achou = 0;
 	            }
 			}
@@ -3396,7 +3422,7 @@ void SomaVet()
 
             while (A[i] < 0 || A[i] >= 100)
             {
-                gotoxy(11, 21); printf("A invalido");
+                gotoxy(11, 21); printf("A inválido");
                 system("pause > null");
                     for (X = 11; X <= 80; X++)
                     {
@@ -3421,7 +3447,7 @@ void SomaVet()
 
             while (B[i] < 0 || B[i] >= 100)
             {
-                gotoxy(11, 21); printf("B invalido");
+                gotoxy(11, 21); printf("B inválido");
                 system("pause > null");
                     for (X = 11; X <= 80; X++)
                     {
