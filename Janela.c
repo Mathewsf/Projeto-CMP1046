@@ -4,6 +4,8 @@
 #include <locale.h>
 #include <math.h>
 
+void Capa();
+
 void Circulo();
 
 void CnsVeiculo(); 
@@ -87,6 +89,10 @@ int main() {
 
     //Limpa a sujeira das variaveis
     fflush(stdin); 
+
+    //chama a função da capa
+    Capa();
+    system("pause>null");
    
     //chama a função do menu principal
     TelaInicial();
@@ -94,6 +100,36 @@ int main() {
     gotoxy(1, 25);
 
     return 0;
+}
+
+void Capa() {
+    int i;
+
+    DesenharLinhaHorizontal(Esquerda, 1, Largura);
+    DesenharLinhaHorizontal(Esquerda, 3, Largura);
+    DesenharLinhaHorizontal(Esquerda, 20, Largura);
+    DesenharLinhaHorizontal(Esquerda, 22, Largura);
+    DesenharLinhaHorizontal(Esquerda, 24, Largura);
+
+    //Desenha as linhas na vertical
+    for (i = Vertical; i < Altura; i++)
+        {
+            gotoxy(Esquerda, i);
+            printf("=");
+            gotoxy(Largura, i); 
+            printf("=");
+        }
+
+    gotoxy(33, 2);  printf ("PROJETO AVALIAÇÃO 2025/2");
+    gotoxy(5, 21);  printf("Mens [                                                                         ]");
+    gotoxy(5, 23);  printf("Opção [  ]");
+	gotoxy(5, 9);   printf ("DISCIPLINA: CMP1046 - LABORATÓRIO DE PROGRAMAÇÃO");
+	gotoxy(5, 9);   printf ("TURMA: C01");
+	gotoxy(5, 14);  printf ("ALUNOS PARTICIPANTES:");
+	gotoxy(5, 15);  printf ("1. Mathew Sousa");
+	gotoxy(5, 16);  printf ("2. Olinto Manso");
+	gotoxy(5, 17);  printf ("3. Bruno Otávio");
+	gotoxy(38, 21); printf("Aperte enter para iniciar.");
 }
 
 void Hipotenusa()
@@ -820,9 +856,9 @@ void TelaInicial() {
             
         }
     
-    gotoxy(28, 1); printf("Alunos: Mathew, Olinto, Bruno");
+    gotoxy(35, 1); printf("Projeto CMP1046");
 
-    gotoxy(35, 3); printf("Projeto CMP1046");
+    gotoxy(35, 3); printf("Menu Principal");
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
