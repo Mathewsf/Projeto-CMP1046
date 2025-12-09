@@ -1127,7 +1127,7 @@ void Calculadora() {
             
         }
 
-    gotoxy(35, 2); printf("Projeto CMP1046 - Calculadora");
+    gotoxy(30, 2); printf("Projeto CMP1046 - Calculadora");
     
     gotoxy(5, 21); printf("Mens [                                                                         ]");
 
@@ -1596,7 +1596,7 @@ void CalcMediaAluno()
     gotoxy(5, 23);
     printf("Opção [  ]");
     gotoxy(17, 23);
-    printf("1 - Repetir    2 - Sair");
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3, 5);
     printf("Digite o nome do aluno...............[                                         ]");
@@ -1738,21 +1738,21 @@ void DeterminarSalaProva()
     gotoxy(28, 2);
     printf("Projeto CMP1046 - Determinar Sala de Prova");
 
-    gotoxy(3, 21);
-    printf("Mens [                                                                               ]");
-    gotoxy(3, 23);
-    printf("Opção [ ]");
+    gotoxy(5, 21);
+    printf("Mens [                                                                         ]");
+
+    gotoxy(5, 23);
+    printf("Opção [  ]");
+
     gotoxy(17, 23);
-    printf("1 - Repetir    2 - Sair");
+    printf("1 - Repetir   2 - Voltar ao menu   3 - Voltar ao menu principal");
 
     gotoxy(3, 6);
     printf("Digite o nome do aluno...............[                                 ]");
 
-    
-	
-	
 	gotoxy(3, 13);
     printf("Primeira letra do nome.............: [ ]");
+
     gotoxy(3, 15);
     printf("Sala de Prova......................: [                   ]");
 
@@ -1766,11 +1766,11 @@ void DeterminarSalaProva()
         gotoxy(41, 15);
         printf("                   ");
 
-        gotoxy(10, 21);
-        printf("                                                                             ");
+        gotoxy(11, 21);
+        printf("                                                                         ");
 
-        gotoxy(10, 23);
-        printf(" ");
+        gotoxy(12, 23);
+        printf("  ");
 
         gotoxy(41, 6);
         fflush(stdin);
@@ -1809,7 +1809,7 @@ void DeterminarSalaProva()
         gotoxy(41, 15);
         printf("%s", Sala);
 
-        gotoxy(10, 23);
+        gotoxy(12, 23);
         scanf("%d", &Opcao);
 
     } while (Opcao == 1);
@@ -2159,16 +2159,16 @@ void SomaIntervalos()
     printf("PROJETO CMP1046 - SOMA DE INTERVALO DE NÚMEROS");
 
     gotoxy(3, 6);
-    printf(" valor inteiro positivo [          ]");
+    printf(" Valor inteiro positivo [          ]");
 
     gotoxy(3, 8);
-    printf(" valor inteiro positivo [          ]");
+    printf(" Valor inteiro positivo [          ]");
 
     gotoxy(3, 13);
-    printf(" A media dos numeros do intervalo ........[    ]");
+    printf(" A média dos números do intervalo ........[    ]");
 
     gotoxy(3, 15);
-    printf(" Quantidade de numeros pares no intervalo.[    ]");
+    printf(" Quantidade de números pares no intervalo.[    ]");
 
     gotoxy(3, 17);
     printf(" Números digitados são iguais ...........[    ]");
@@ -2182,19 +2182,19 @@ void SomaIntervalos()
     do
     {
         gotoxy(3, 6);
-        printf(" valor inteiro positivos [          ]");
+        printf(" Valor inteiro positivo  [          ]");
 
         gotoxy(3, 8);
-        printf(" valor inteiro positivos [          ]");
+        printf(" Valor inteiro positivo  [          ]");
 
         gotoxy(3, 13);
-        printf(" A media dos numeros do intervalo ........[       ]");
+        printf(" A média dos números do intervalo ........[       ]");
 
         gotoxy(3, 15);
-        printf(" Quantidade de numeros pares no intervalo.[       ]");
+        printf(" Quantidade de números pares no intervalo.[      ]");
 
         gotoxy(3, 17);
-        printf(" Números digitados são iguais ...........[    ]");
+        printf(" Números digitados são iguais ............[    ]");
 
         gotoxy(12, 23);
         printf("  ");
@@ -2251,7 +2251,7 @@ void SomaIntervalos()
                 printf("%d", ContPar);
 
                 gotoxy(46, 17);   
-                printf("Nao");
+                printf("Não");
             }
             else
             {
@@ -2278,7 +2278,7 @@ void SomaIntervalos()
                 printf("%d", ContPar);
 
                 gotoxy(46, 17);   
-                printf("Nao");
+                printf("Não");
             }
         }
 
@@ -2537,8 +2537,7 @@ do {
     }
 }
 void PesoIdeal() {
-
-    double Altura, PesoIdeal;
+    double AlturaPessoa, PesoIdeal;
     char Sexo;
     int X;
     int OpcaoR, i;
@@ -2584,13 +2583,16 @@ again:
     printf("  ");
 
     // entrada
-    gotoxy(43, 6); scanf("%lf", &Altura);
-    gotoxy(41, 9); scanf(" %c", &Sexo);
+    gotoxy(43, 6); 
+    scanf("%lf", &AlturaPessoa);
+
+    gotoxy(41, 9); 
+    scanf(" %c", &Sexo);
 
     if (Sexo == 'M' || Sexo == 'm')
-        PesoIdeal = Altura * 72.7 - 58;
+        PesoIdeal = AlturaPessoa * 72.7 - 58;
     else if (Sexo == 'F' || Sexo == 'f')
-        PesoIdeal = Altura * 62.1 - 44.7;
+        PesoIdeal = AlturaPessoa * 62.1 - 44.7;
     else {
         gotoxy(11, 21);
         printf("Sexo inválido!");
@@ -2948,7 +2950,6 @@ void MediaNotas() {
     double MediaFinal;
     int OpcaoR, i;
 
-    // ----------------- JANELA FIXA (ANTES DO LOOP) -----------------
     DesenharLinhaHorizontal(Esquerda, 1, Largura);
     DesenharLinhaHorizontal(Esquerda, 3, Largura);
     //linha divisoria da entrada/saida
@@ -2991,7 +2992,6 @@ void MediaNotas() {
     // label média final
     gotoxy(3, 19); printf("Média Final:...............[      ]");
 
-    // ----------------- LOOP -----------------
     do {
 
         // limpar todas as áreas entre colchetes
@@ -3009,7 +3009,7 @@ void MediaNotas() {
         gotoxy(32, 19);
         printf("     ");
 
-        // ---------- leitura das 9 notas ----------
+        //leitura das 9 notas
         gotoxy(33, 5);  scanf("%lf", &Notas[0]);
         gotoxy(33, 6);  scanf("%lf", &Notas[1]);
         gotoxy(33, 7);  scanf("%lf", &Notas[2]);
@@ -3020,14 +3020,14 @@ void MediaNotas() {
         gotoxy(33, 12); scanf("%lf", &Notas[7]);
         gotoxy(33, 13); scanf("%lf", &Notas[8]);
 
-        // ---------- cálculos ----------
+        //cálculos
         Medias[0] = (Notas[0] + Notas[1] + Notas[2]) / 3.0;
         Medias[1] = (Notas[3] + Notas[4] + Notas[5]) / 3.0;
         Medias[2] = (Notas[6] + Notas[7] + Notas[8]) / 3.0;
 
         MediaFinal = (Medias[0] + Medias[1] + Medias[2]) / 3.0;
 
-        // ---------- impressão dos resultados ----------
+        //impressão dos resultados
         gotoxy(32, 15);
         printf("%.2lf", Medias[0]);
 
@@ -3150,10 +3150,10 @@ void CompVetores()
             scanf("%d", &VetB[j]);
         }
 		
-        for (i = 0, Lin = 16; i <= 10; i++)
+        for (i = 0, Lin = 16; i < 10; i++)
         {
         	Achou = 1;
-        	for (j = 0; j <= 10 && Achou; j++)
+        	for (j = 0; j < 10 && Achou; j++)
         	{
         		if (VetA[i] == VetB[j])
 	            {
