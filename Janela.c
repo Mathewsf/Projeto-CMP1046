@@ -121,15 +121,15 @@ void Capa() {
         }
 
     gotoxy(33, 2);  printf ("PROJETO AVALIAÇÃO 2025/2");
-    gotoxy(5, 21);  printf("Mens [                                                                         ]");
-    gotoxy(5, 23);  printf("Opção [  ]");
+    gotoxy(5, 21);  printf ("Mens [                                                                         ]");
+    gotoxy(5, 23);  printf ("Opção [  ]");
 	gotoxy(5, 9);   printf ("DISCIPLINA: CMP1046 - LABORATÓRIO DE PROGRAMAÇÃO");
 	gotoxy(5, 9);   printf ("TURMA: C01");
 	gotoxy(5, 14);  printf ("ALUNOS PARTICIPANTES:");
 	gotoxy(5, 15);  printf ("1. Mathew Sousa");
 	gotoxy(5, 16);  printf ("2. Olinto Manso");
 	gotoxy(5, 17);  printf ("3. Bruno Otávio");
-	gotoxy(38, 21); printf("Aperte enter para iniciar.");
+	gotoxy(38, 21); printf ("Aperte enter para iniciar.");
 }
 
 void Hipotenusa()
